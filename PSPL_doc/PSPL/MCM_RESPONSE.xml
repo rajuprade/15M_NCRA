@@ -1,0 +1,38 @@
+
+# RESPONSE FROM WRAPPER LAYER TO CMS .
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCM_Module>
+      <TIMESTAMP>1283928575000</TIMESTAMP>
+      <RESPONSE>
+            <ID>FE /SN /BE </ID>
+            <ACK>
+                   <CODE>1</CODE>
+                   <MESSAGE>CMD RECEIVED AT WRAPPER LAYER </MESSAGE>
+            </ACK>
+      <RESPONSE>
+ <TIMESTAMP>1283928575000</TIMESTAMP>
+      <RESPONSE>
+            <ID>FE /SN /BE </ID>
+            <ACK>
+                   <CODE> 2 </CODE>
+                   <MESSAGE>CMD SET AT SYSTEM LEVEL </MESSAGE>
+            </ACK>
+      <RESPONSE>
+<TIMESTAMP>1283928575000</TIMESTAMP>
+      <RESPONSE>
+            <ID>FE /SN /BE </ID>
+            <ACK>
+                   <CODE> 3  </CODE>
+                   <MESSAGE> ILLEGAL CMD  ( CMD MEANT FOR OTHER SYSTEM)  </MESSAGE>
+            </ACK>
+      <RESPONSE>
+<TIMESTAMP>1283928575000</TIMESTAMP>
+      <RESPONSE>
+            <ID>FE /SN /BE </ID>
+            <ACK>
+                   <CODE> 4  </CODE>
+                   <MESSAGE> ILLEGAL PARAMETER </MESSAGE>
+            </ACK>
+      <RESPONSE>
+</MCM_Module>

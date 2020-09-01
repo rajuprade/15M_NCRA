@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!-- Appenders -->
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{DATE}] [%-5p] %-5c{1}.%M() - %m%n" />
+        </layout>
+    </appender>
+
+    <!-- Daily Rolling File Appender -->
+    <appender name="cms-core-logfile" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file"   value="${catalina.home}/logs/cms-core.log" />
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern" value="[%d{DATE}] [%-5p] %-5c{1}.%M() - %m%n" />
+        </layout>
+    </appender>
+    <appender name="cms-state-machine-logfile" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file"   value="${catalina.home}/logs/cms-statemachine.log" />
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern" value="[%d{DATE}] [%-5p] %-5c{1}.%M() - %m%n" />
+        </layout>
+    </appender>
+    <appender name="cms-web-logfile" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file"   value="${catalina.home}/logs/cms-web.log" />
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern" value="[%d{DATE}] [%-5p] %-5c{1}.%M() - %m%n" />
+        </layout>
+    </appender>
+    <appender name="messageConsoleLogfile" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file"   value="${catalina.home}/logs/messageconsole.log" />
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern" value="[%d{DATE}] - %m%n" />
+        </layout>
+    </appender>
+     <appender name="dashboardHistoryLogfile" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file"   value="${catalina.home}/logs/dashboardhistory.log" />
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="append" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern" value="[%d{DATE}] - %m%n" />
+        </layout>
+    </appender>
+    <logger name="com.cms.common.astronomy">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+    <logger name="com.cms.common.command">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.dao">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.exception">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.global">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.messaging">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.model">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.scheduler">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.service">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.track">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.util">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.validator">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.ncra.model">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.ncra.service">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.ncra.util">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.statemachine">
+        <level value="info" />
+		<appender-ref ref="cms-state-machine-logfile" />
+    </logger>
+	<logger name="com.cms.common.concurrent">
+        <level value="info" />
+		<appender-ref ref="cms-state-machine-logfile" />
+    </logger>	
+	<logger name="com.cms.common.batch">
+        <level value="info" />
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.web">
+        <level value="info" />
+		<appender-ref ref="cms-web-logfile" />
+    </logger>
+	<logger name="com.cms.ncra.web">
+        <level value="info" />
+		<appender-ref ref="cms-web-logfile" />
+    </logger>
+	<logger name="com.cms.common.service.impl.UserMessageServiceImpl">
+        <level value="info" />
+		<appender-ref ref="messageConsoleLogfile" />
+    </logger>
+    <logger name="StateManager" additivity="false">
+        <level value="info" />
+		<appender-ref ref="dashboardHistoryLogfile" />
+    </logger>  
+    <logger name="org.hibernate">
+        <level value="info" />
+    </logger>
+
+    <logger name="org.apache.cxf">
+        <level value="info" />
+    </logger>
+    <logger name="org.apache.cxf.transport.https.HttpsURLConnectionFactory">
+        <level value="warn" />
+    </logger>
+    <logger name="org.apache.tiles">
+        <level value="info" />
+    </logger>
+    <logger name="org.apache.commons.digester">
+        <level value="info" />
+    </logger>
+    <logger name="org.apache.velocity">
+        <level value="info" />
+    </logger>
+    <logger name="org.springframework.security">
+        <level value="warn" />
+    </logger>
+
+    <logger name="org.springframework.beans">
+        <level value="warn" />
+    </logger>
+
+    <logger name="org.springframework.binding">
+        <level value="warn" />
+    </logger>
+
+    <logger name="org.springframework.jdbc">
+        <level value="warn" />
+    </logger>
+
+    <logger name="org.springframework.transaction">
+        <level value="warn" />
+    </logger>
+
+    <logger name="org.springframework.orm">
+        <level value="warn" />
+    </logger>
+
+    <logger name="org.springframework.web">
+        <level value="warn" />
+    </logger>
+    
+    <logger name="sleep">
+        <level value="info" />
+    </logger>
+
+    <!-- Root Logger -->
+    <root>
+        <priority value="warn" />
+        <appender-ref ref="cms-core-logfile" />
+		<appender-ref ref="cms-state-machine-logfile" />
+		<appender-ref ref="cms-web-logfile" />
+        <appender-ref ref="console" />
+    </root>
+
+</log4j:configuration>

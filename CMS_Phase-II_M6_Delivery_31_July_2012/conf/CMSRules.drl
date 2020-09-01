@@ -1,0 +1,70 @@
+package com.cms.statemachine.model
+
+import com.cms.statemachine.model.State;
+import com.cms.statemachine.model.Alarm;
+import com.cms.common.validator.request.model.Param;
+import com.cms.statemachine.controller.StateManager;
+import java.lang.Boolean;
+import org.slf4j.Logger;
+
+
+global com.cms.statemachine.controller.StateManager stateManager;
+global org.slf4j.Logger logger;
+
+rule "Windvel1 out of range"
+no-loop
+lock-on-active true
+dialect "java" 
+when
+alarm : Alarm(param != null , $p : param ) 
+Param(name == "wind_vel1", eval(Integer.parseInt(value) > 60) ) from $p
+state : State(current == "NORMAL", current != "DRIFT")
+then
+logger.info("changing state to EXCEPTION");
+stateManager.changeState("EXCEPTION","Windvel1 is out of range "+$p.getValue(),"system");
+state.setRuleApplied(true);
+update(state);	
+end
+
+
+rule "Temperature is low"
+no-loop
+lock-on-active true
+dialect "java" 
+when
+alarm : Alarm(param != null , $p : param) 
+Param(name == "temperature", eval(Integer.parseInt(value) < 10)) from $p
+state : State(current == "NORMAL")
+then
+logger.info("changing state to EXCEPTION");
+stateManager.changeState("EXCEPTION","Temperature is low " + $p.getValue(),"system");
+state.setRuleApplied(true);
+update(state);	
+end
+
+
+rule "domon time out"
+no-loop
+lock-on-active true
+dialect "java" 
+when
+alarm : Alarm(name == "domon_timeout")
+state : State(current != "SUSPEND" )
+then
+logger.info("changing state to SUSPEND due to rule - domon time out ");
+stateManager.changeState("SUSPEND","domon time out for the sub system"+alarm.getSubsystem(),"system");
+state.setRuleApplied(true);
+update(state);	
+end
+
+rule "Init state change"
+no-loop
+lock-on-active true
+dialect "java" 
+when
+state : State(current == "INIT_ON_POWERFAILURE")
+then
+logger.info("In INIT_ON_POWERFAILURE");
+state.setRuleApplied(true);
+update(state);	
+end

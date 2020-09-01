@@ -1,0 +1,30 @@
+Package : SLALIB
+Version : V2.4-12
+Library : V1.6
+
+Built by: root on node v-telescope1.persistent.co.in
+On      : Thu Mar 24 16:07:59 IST 2011
+
+Machine : i686 running Linux #1 SMP Fri Feb 29 16:26:41 EST 2008 (release 2.6.18-84.el5)
+
+make macros:
+
+   SYSTEM  : ix86_Linux
+
+   EXPORT  : .
+   INSTALL : /root
+   STARLINK: /star
+
+   AR_IN   : ar -r
+   BLD_SHR : :
+   CC      : cc
+   CFLAGS  : -O
+   FC      : gfortran
+   FFLAGS  : -O
+   LINK    : ln
+   RANLIB  : :
+   SHARE   : .so
+   SOURCE_VARIANT: ix86_Linux
+   TAR_IN  : pax -w -v -x ustar -f
+   TAR_OUT : pax -r -f
+

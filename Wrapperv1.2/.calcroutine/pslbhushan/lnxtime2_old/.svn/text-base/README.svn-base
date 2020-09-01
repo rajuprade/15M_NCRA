@@ -1,0 +1,18 @@
+
+#Both calepoch and gmrtt compilation on Linux
+# USE 'tmake'
+
+calepoch  : Used in ONLINE for MJD, epoch date and LST calculation.
+            compilation file calepoch.comp
+
+gmrtt     : used to show LST in ONLINE display (libgen.a must be linked to ./libgen/libgen.a )
+
+usage : gmrt or calepoch YY MM DD Hr Min Sec
+
+
+SLA C Routines interface created successfully to precess, equitorial to horizontal coordinate system, rise & set time calc. 2/12/2010
+Compilation file : Makefile , used lib is solaris SLALIB.a.
+main C file is 'calepochc.c'
+
+SLA LIB Required which installed in the /data/jitendra/work/jitendra_astro3/online1/lib/SLA ..
+-Jitendra 

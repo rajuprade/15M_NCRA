@@ -1,0 +1,25 @@
+objWrapserv= Wrapper_server.o dataextract.o
+objCMSserv = CMS_server.o
+objCMScli  = CMS_client.o
+Wrapperserver: $(objWrapserv)
+	cc -o Wrapper_server dataextract.o sockcommn.o Wrapper_server.o -lpthread
+	@echo "Wrapper Server Compiled Successfully."
+Wrapper_server.o:
+dataextract.o: 
+sockcommn.o:
+
+CMSserver: $(objCMSserv)
+	cc -o CMS_server CMS_server.o
+	@echo "CMS Server Compiled Successfully."
+CMS_server.o:
+
+CMSclient: $(objCMScli)
+	cc -o CMS_client CMS_client.o
+	@echo "CMS Client Compiled Successfully."
+CMS_client.o:
+
+all: Wrapperserver CMSserver CMSclient
+
+clean:
+	rm Wrapper_server CMS_client CMS_server $(objWrapserv) $(objCMSserv) $(objCMScli)
+	@echo "All executable and object files are removed."

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<supportedconfig>
+
+<supportedcommands>
+		<command>
+			<name>Init</name>
+			<id>1</id>
+			<syntax></syntax>
+			<sample></sample>			
+		</command>
+		<command>
+			<name>setCmd</name>
+			<id>2</id>
+			<syntax>mcmbit</syntax>
+			<sample>0x1</sample>
+			<params>
+			 		<param required="true">
+						<paramname>mcmbit</paramname>
+						<type>long</type>	
+						<validation>
+							<range>	
+								<min>0x1</min>
+								<max>0xFFFF</max>
+							</range>
+						</validation>						
+					</param>				
+			</params>	
+		</command>
+		<command>
+			<name>domon</name>
+			<id>3</id>
+			<syntax>monitoringfrequency</syntax>
+			<sample>9000</sample>
+			<params>
+				<param>					
+					<paramname>monitoringfrequency</paramname>
+						<type>long</type>		
+						<validation>
+							<range>
+								<min>9000</min>
+								<max>900000</max>
+							</range>
+						</validation>	
+				</param>
+			</params>
+		</command>
+</supportedcommands>
+
+<supportedresponses>
+		
+		<response>
+			<name>domon</name>
+			<id>900</id>
+			<params>
+				<param>
+					<paramname>time</paramname>
+					<type>datetime</type>
+					<validation>
+						<datetime>
+							<format>HH:mm:ss</format>
+						</datetime>
+					</validation>
+				</param>
+
+				<param>
+					<paramname>temp</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>15.0</min>
+							<max>32.0</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>status</paramname>
+					<type>string</type>
+				</param>
+				<param>
+					<paramname>chan</paramname>
+					<type>integer</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>10</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>rawcnt</paramname>
+					<type>integer</type>
+					<validation>
+						<range>
+							<min>080</min>
+							<max>158</max>
+						</range>
+					</validation>
+				</param>
+			</params>
+		</response>
+	</supportedresponses>
+	
+	<monitoringparams>
+		<param>
+			<name>time</name>
+			<value>00:00:00</value>
+		</param>
+
+		<param>
+			<name>temp</name>
+			<value>00.0</value>
+		</param>
+
+		<param>
+			<name>status</name>
+			<value>INIT</value>
+		</param>
+
+		<param>
+			<name>chan</name>
+			<value>00</value>
+		</param>
+
+		<param>
+			<name>rawcnt</name>
+			<value>00</value>
+		</param>
+	</monitoringparams>
+
+
+<supportedalarms>
+		<alarm>
+			<name>wrapper down</name>
+			<label>wrapper down</label>
+			<id>901</id>
+			<level>5</level>
+			<message>sentinal wrapper down</message>
+		</alarm>
+		<alarm>
+			<name>initSentinal</name>
+			<label>initialization fail</label>
+			<id>902</id>
+			<level>5</level>
+			<message>Sentinal initialization fail</message>
+		</alarm>
+		<alarm>
+			<name>temp</name>
+			<label>temperature have crossed its limits</label>
+			<id>903</id>
+			<level>5</level>
+			<message>temperature have crossed its limits</message>
+		</alarm>
+		<alarm>
+			<name>restoreSentinal</name>
+			<label>restore fail</label>
+			<id>904</id>
+			<level>5</level>
+			<message>Sentinal restoration fail</message>
+		</alarm>
+		<alarm>
+			<name>domon_timeout</name>
+			<label>domon command timed out</label>
+			<id>905</id>
+			<level>5</level>
+			<message>domon command timed out</message>
+		</alarm>
+		<alarm>
+			<name>shutdownSentinal</name>
+			<label>shutdown fail</label>
+			<id>9051</id>
+			<level>5</level>
+			<message>Sentinal shutdown fail</message>
+		</alarm>
+</supportedalarms>
+
+<supportedbatches>
+		<batchcommand>
+			<name>initSentinal</name>
+			<id>412</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/initSentinal.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>restoreSentinal</name>
+			<id>412</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/restore_sentinal.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>resetSentinal</name>
+			<id>412</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/reset_sentinal.txt</filepath>
+		</batchcommand>	
+		<batchcommand>
+			<name>shutdownSentinal</name>
+			<id>1012</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/shutdownSentinal.txt</filepath>
+		</batchcommand>
+</supportedbatches>
+
+
+</supportedconfig>

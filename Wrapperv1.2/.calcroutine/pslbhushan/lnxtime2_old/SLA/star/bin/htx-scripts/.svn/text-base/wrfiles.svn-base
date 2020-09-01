@@ -1,0 +1,32 @@
+
+      cd "${1}"
+      awk '
+         BEGIN{
+            FS = ":"
+         }
+         {
+            if ( $1 != file ) {
+               if ( file ) {
+                  printf( "sed <<\\END >%s%s -e '\''s/^ //'\''\n", file, suffix)
+                  for( i = 0; i < n; i++ ) printf( " %s\n", line[i] )
+                  printf( "END\n" )
+                  if ( verbose == "1" ) {
+                     printf( "echo '\''      file %s linked (%d lines)'\''\n", file, n )
+                  }
+               }
+               file = $1
+               n = 0
+            }
+            line[ n++ ] = substr( $0, length( $1 ) + 2 )
+         }
+         END{
+            if ( file ) {
+               printf( "sed <<\\END >%s%s -e '\''s/^ //'\''\n", file, suffix )
+               for( i = 0; i < n; i++ ) printf( " %s\n", line[i] )
+               printf( "END\n" )
+               if ( verbose == "1" ) {
+                  printf( "echo '\''      file %s linked (%d lines)'\''\n", file, n )
+               }
+            }
+         }
+         ' suffix="${2}" verbose="${HTX_VERBOSE}" - | sh

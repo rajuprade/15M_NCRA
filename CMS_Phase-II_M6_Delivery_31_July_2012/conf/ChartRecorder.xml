@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups template="">
+	<group name="XScale">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Xscale_StartRangeLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Xscale_StartRangeLabel</cmdid>						
+						<label>Start Range:</label>						
+					</control>
+				</column>
+				<column>
+					<control class="int">	
+						<name>Xscale_StartRange</name>
+						<type>Text</type>    
+						<cmdid>Xscale_StartRange</cmdid>
+						<maxLength>5</maxLength>						
+					</control>
+				</column>
+
+				<column>
+					<control>	
+						<name>Xscale_EndRangeLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Xscale_EndRangeLabel</cmdid>						
+						<label>End Range:</label>						
+					</control>
+				</column>
+				
+				<column>
+					<control class="int">	
+						<name>Xscale_EndRange</name>
+						<type>Text</type>    
+						<cmdid>Xscale_EndRange</cmdid>
+						<maxLength>5</maxLength>						
+					</control>
+				</column>
+
+				<column>
+					<control>	
+						<name>Xscale_IntervalLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Xscale_IntervalLabel</cmdid>						
+						<label>Plot Interval:</label>						
+					</control>
+				</column>
+
+				<column>
+					<control class="double">	
+						<name>Xscale_Interval</name>
+						<type>Text</type>    
+						<cmdid>Xscale_Interval</cmdid>
+						<maxLength>5</maxLength>												
+					</control>
+				</column> 
+				
+				<column>
+					<control>	
+						<name>Xscale_Time_Label</name>
+						<type>LABEL</type>    
+						<cmdid>Xscale_Time_Label</cmdid>						
+						<label>Scale:</label>						
+					</control>
+				</column>
+				
+				<column>
+					<control>	
+						<name>Xscale_Time_Value</name>
+						<type>LABEL</type>						
+						<cmdid>Xscale_Time_Value</cmdid>						
+						<label>Time</label>						
+					</control>
+				</column>				
+			</row> 
+		</controls>
+	</group>
+	
+	<group name="YScale">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Yscale_StartRangeLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Yscale_StartRangeLabel</cmdid>						
+						<label>Start Range:</label>						
+					</control>
+				</column>
+				<column>
+					<control class="double">	
+						<name>Yscale_StartRange</name>
+						<type>Text</type>    
+						<cmdid>Yscale_StartRange</cmdid>
+						<maxLength>5</maxLength>						
+					</control>
+				</column>
+
+				<column>
+					<control>	
+						<name>Yscale_EndRangeLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Yscale_EndRangeLabel</cmdid>						
+						<label>End Range:</label>						
+					</control>
+				</column>
+				
+				<column>
+					<control class="double">	
+						<name>Yscale_EndRange</name>
+						<type>Text</type>    
+						<cmdid>Yscale_EndRange</cmdid>
+						<maxLength>5</maxLength>						
+					</control>
+				</column>
+
+				<column>
+					<control>	
+						<name>Yscale_IntervalLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Yscale_IntervalLabel</cmdid>						
+						<label>Plot Interval:</label>						
+					</control>
+				</column>
+
+				<column>
+					<control class="double">	
+						<name>Yscale_Interval</name>
+						<type>Text</type>    
+						<cmdid>Yscale_Interval</cmdid>
+						<maxLength>5</maxLength>												
+					</control>
+				</column> 
+				
+				<column>
+					<control>	
+						<name>Yscale_dropDownLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Yscale_dropDownLabel</cmdid>						
+						<label>Scale:</label>						
+					</control>
+				</column>
+				
+				<column>
+					<control>	
+						<name>Yscale_dropDown</name>
+						<type>DropDown</type>
+						<colspan>4</colspan>						
+						<cmdid>Yscale_dropDown</cmdid>
+						<maxLength>5</maxLength>						
+						<label></label>
+						<options>
+							<option>
+								<key>Power</key>
+								<value>Power</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>Amplitude</key>
+								<value>Amplitude</value>
+								<selected>false</selected>
+							</option>						
+						</options>	    
+					</control>
+				</column>
+				
+					 
+			</row> 
+		</controls>
+	</group>
+	
+	
+	<group name="Refresh Interval">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Refresh_Interval_Label</name>
+						<type>LABEL</type>    
+						<cmdid>Refresh_Interval_Label</cmdid>						
+						<label>Refresh Interval(msec):</label>						
+					</control>
+				</column>
+				<column>
+					<control class="int">	
+						<name>Refresh_Interval_Value</name>
+						<type>Text</type>    
+						<cmdid>Refresh_Interval_Value</cmdid>
+						<maxLength>5</maxLength>						
+					</control>
+				</column>
+			</row>
+		</controls>
+	</group>
+	
+	
+	
+	<group name="Monitoring Parameters">
+		<controls>	 
+			<row>							
+				<column>
+					<control>	
+						<name>MoniParam_multipleSelct</name>
+						<type>MultipleSelectList</type>
+						<colspan>4</colspan>						
+						<cmdid>MoniParam_multipleSelct</cmdid>
+						<maxLength>10</maxLength>
+						<size>10</size>
+						<style>WIDTH:200px</style>
+						<label></label>
+						<optgroup>
+							<label>Servo</label>
+							<option>
+								<key>servo:el_motor1_current</key>
+								<value>servo:el_motor1_current</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>servo:el_cp</key>
+								<value>servo:el_cp</value>
+								<selected>false</selected>
+							</option>							
+						</optgroup>	
+						<optgroup>
+							<label>Sigcon</label>
+							<option>
+								<key>sigcon:oli</key>
+								<value>sigcon:oli</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>sigcon:ali-cv</key>
+								<value>sigcon:ali-cv</value>
+								<selected>false</selected>
+							</option>							
+						</optgroup>							
+					</control>
+				</column>	 
+			</row> 
+		</controls>
+	</group>
+	
+</groups>
+	

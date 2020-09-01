@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<supportedconfig>
+
+<supportedcommands>
+<!-- Commands for Front-End USER GUI start here-->
+		<command>
+			<name>BAND</name>
+			<id>160</id>
+			<syntax>RFPOL1, RFPOL2</syntax>
+			<sample>10,100</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>RFPOL1</paramname>
+						<type>long</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>2000</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>RFPOL2</paramname>
+						<type>double</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>2000</max>
+							</range>
+						</validation>
+					</param>					
+			</params>	
+		</command>
+		<command>
+			<name>SWAP</name>
+			<id>161</id>
+			<syntax>SWAP</syntax>
+			<sample>true</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>SWAP</paramname>
+						<type>boolean</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>
+							</values>
+						</validation>
+					</param>					
+			</params>	
+		</command>
+		<command>
+			<name>ATENN</name>
+			<id>162</id>
+			<syntax>POL1, POL2</syntax>
+			<sample>10,20</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>POL1</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>35</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<paramname>POL2</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>35</max>
+							</range>
+						</validation>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>TERMINATE</name>
+			<id>163</id>
+			<syntax>POL1, POL2</syntax>
+			<sample>true,false</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>POL1</paramname>
+						<type>boolean</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>
+							</values>
+						</validation>
+					</param>
+			 		<param required="true">
+						<paramname>POL2</paramname>
+						<type>boolean</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>
+							</values>
+						</validation>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>POWER</name>
+			<id>164</id>
+			<syntax>POWER</syntax>
+			<sample>true</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>POWER</paramname>
+						<type>boolean</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>
+							</values>
+						</validation>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>RFFILTER</name>
+			<id>165</id>
+			<syntax>POL1, POL2</syntax>
+			<sample>100,200</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>POL1</paramname>
+						<type>double</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>1000</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<paramname>POL2</paramname>
+						<type>double</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>1000</max>
+							</range>
+						</validation>
+					</param>					
+			</params>	
+		</command>	
+		<command>
+			<name>CALTYPE</name>
+			<id>166</id>
+			<syntax>CALTYPE</syntax>
+			<sample>a</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>CALTYPE</paramname>
+						<type>byte</type>
+						<validation>
+							<values>
+								<value>a</value>
+								<value>b</value>
+							</values>
+						</validation>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>SAVE</name>
+			<id>167</id>
+			<syntax>SAVE</syntax>
+			<sample>a</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>SAVE</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>a</value>
+								<value>b</value>
+							</values>
+						</validation>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>RESTORE</name>
+			<id>168</id>
+			<syntax>restore</syntax>
+			<sample>a</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>restore</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>a</value>
+								<value>b</value>
+							</values>
+						</validation>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>SETID_LNA/SETID_ATTENUATOR</name>
+			<id>169</id>
+			<syntax>id</syntax>
+			<sample>a</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>id</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>a</value>
+								<value>b</value>
+							</values>
+						</validation>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>WALSH</name>
+			<id>170</id>
+			<syntax>WALSH</syntax>
+			<sample>a</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>WALSH</paramname>
+						<type>byte</type>
+						<validation>
+							<values>
+								<value>a</value>
+								<value>b</value>
+							</values>
+						</validation>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>domon</name>
+			<id>171</id>
+			<syntax>monitoringfrequency</syntax>
+			<sample>9000</sample>
+			<params>
+				<param>					
+					<paramname>monitoringfrequency</paramname>
+						<type>long</type>		
+						<validation>
+							<range>
+								<min>9000</min>
+								<max>900000</max>
+							</range>
+						</validation>	
+				</param>
+			</params>
+		</command>
+<!-- Commands for Front-End USER GUI end here-->		
+</supportedcommands>
+<supportedresponses>
+		
+		<response>
+			<name>domon</name>
+			<id>700</id>
+			<params>
+				<param>
+					<paramname>rf-lna-ch1</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>15</min>
+							<max>30</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>rf-lna-ch2</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>15</min>
+							<max>30</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>rf-det-ch1</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0.5</min>
+							<max>2.1</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>rf-det-ch2</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0.5</min>
+							<max>2.1</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>cb-pow</paramname>
+					<type>string</type>
+					<validation>
+						<values>
+							<value>ON</value>
+						</values>
+					</validation>
+				</param>
+				<param>
+					<paramname>cb-pre-amp-ch1</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>5</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>cb-pre-amp-ch2</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>5</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>cb-post-amp-ch1</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>5</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>cb-post-amp-ch2</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>5</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>cb-temp-ch1</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>1</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>cb-temp-ch2</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>1</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>opttrans-ps</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>12</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>sigtrans-pow-ch1</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>5</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>sigtrans-pow-ch2</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>5</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>laser-temp-ch1</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>5</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>laser-temp-ch2</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>5</max>
+						</range>
+					</validation>
+				</param>
+			</params>
+		</response>
+		<response>
+			<name>BAND</name>
+			<id>160</id>		
+			<logicalvalidation>
+				<batchcommand>
+					<name>updateBandCenterFrequency</name>
+					<id>1234</id>
+					<syntax></syntax>
+					<sample></sample>					
+					<filepath>/usr/ncra/lib/updateBandCenterFrequency.txt</filepath>
+				</batchcommand>
+			</logicalvalidation>		
+		</response>		
+	</supportedresponses>
+
+	<monitoringparams>
+		<param>
+			<name>rf-lna-ch1</name>
+			<value></value>
+		</param>
+		<param>
+			<name>rf-lna-ch2</name>
+			<value></value>
+		</param>
+		<param>
+			<name>rf-det-ch1</name>
+			<value></value>
+		</param>
+		<param>
+			<name>rf-det-ch2</name>
+			<value></value>
+		</param>
+		<param>
+			<name>cb-pow</name>
+			<value></value>
+		</param>
+		<param>
+			<name>cb-pre-amp-ch1</name>
+			<value></value>
+		</param>
+		<param>
+			<name>cb-pre-amp-ch2</name>
+			<value></value>
+		</param>
+		<param>
+			<name>cb-post-amp-ch1</name>
+			<value></value>
+		</param>
+		<param>
+			<name>cb-post-amp-ch2</name>
+			<value></value>
+		</param>
+		<param>
+			<name>cb-temp-ch1</name>
+			<value></value>
+		</param>
+		<param>
+			<name>cb-temp-ch2</name>
+			<value></value>
+		</param>
+		<param>
+			<name>opttrans-ps</name>
+			<value></value>
+		</param>
+		<param>
+			<name>sigtrans-pow-ch1</name>
+			<value></value>
+		</param>
+		<param>
+			<name>sigtrans-pow-ch2</name>
+			<value></value>
+		</param>
+		<param>
+			<name>laser-temp-ch1</name>
+			<value></value>
+		</param>
+		<param>
+			<name>laser-temp-ch2</name>
+			<value></value>
+		</param>
+	</monitoringparams>
+<supportedalarms>
+		<alarm>
+			<name>wrapper down</name>
+			<label>wrapper down</label>
+			<id>701</id>
+			<level>5</level>
+			<message>frontend wrapper down</message>
+		</alarm>
+		<alarm>
+			<name>initFrontend</name>
+			<label>initialization fail</label>
+			<id>702</id>
+			<level>5</level>
+			<message>Frontend initialization fail</message>
+		</alarm>
+		<alarm>
+			<name>rf-lna-ch1</name>
+			<label>RF LNA Bias Voltage is high</label>
+			<id>703</id>
+			<level>3</level>
+			<message>RF LNA Bias Voltage is high</message>
+		</alarm>
+		<alarm>
+			<name>rf-lna-ch2</name>
+			<label>RF LNA Bias Voltage is high</label>
+			<id>704</id>
+			<level>3</level>
+			<message>RF LNA Bias Voltage is high</message>
+		</alarm>
+		<alarm>
+			<name>rf-det-ch1</name>
+			<label>RF Detector Voltage CH1 is high</label>
+			<id>705</id>
+			<level>3</level>
+			<message>RF Detector Voltage CH1 is high</message>
+		</alarm>
+		<alarm>
+			<name>rf-det-ch2</name>
+			<label>RF Detector Voltage CH2 is high</label>
+			<id>706</id>
+			<level>3</level>
+			<message>RF Detector Voltage CH2 is high</message>
+		</alarm>
+		<alarm>
+			<name>cb-pow</name>
+			<label>Common Box Power Supply status OFF</label>
+			<id>707</id>
+			<level>1</level>
+			<message>Common Box Power Supply status OFF</message>
+		</alarm>
+		<alarm>
+			<name>cb-pre-amp-ch1</name>
+			<label>Common Box Pre- Amplifier Bias Voltage CH1 is high</label>
+			<id>707</id>
+			<level>3</level>
+			<message>Common Box Pre- Amplifier Bias Voltage CH1 is high</message>
+		</alarm>
+		<alarm>
+			<name>cb-pre-amp-ch2</name>
+			<label>Common Box Pre- Amplifier Bias Voltage CH2 is high</label>
+			<id>708</id>
+			<level>3</level>
+			<message>Common Box Pre- Amplifier Bias Voltage CH2 is high</message>
+		</alarm>
+		<alarm>
+			<name>cb-post-amp-ch1</name>
+			<label>Common Box Post- Amplifier Bias Voltage CH1 is high</label>
+			<id>709</id>
+			<level>3</level>
+			<message>Common Box Post- Amplifier Bias Voltage CH1 is high</message>
+		</alarm>
+		<alarm>
+			<name>cb-post-amp-ch2</name>
+			<label>Common Box Post- Amplifier Bias Voltage CH2 is high</label>
+			<id>710</id>
+			<level>3</level>
+			<message>Common Box Post- Amplifier Bias Voltage CH2 is high</message>
+		</alarm>
+		<alarm>
+			<name>cb-temp-ch1</name>
+			<label>Common Box Temperature CH1 is high</label>
+			<id>711</id>
+			<level>5</level>
+			<message>Common Box Temperature CH1 is high</message>
+		</alarm>
+		<alarm>
+			<name>cb-temp-ch2</name>
+			<label>Common Box Temperature CH2 is high</label>
+			<id>712</id>
+			<level>5</level>
+			<message>Common Box Temperature CH2 is high</message>
+		</alarm>
+		<alarm>
+			<name>opttrans-ps</name>
+			<label>Optical Transmitter Power Supply voltage high</label>
+			<id>713</id>
+			<level>3</level>
+			<message>Optical Transmitter Power Supply voltage high</message>
+		</alarm>
+		<alarm>
+			<name>sigtrans-pow-ch1</name>
+			<label>Signal Transmitter Power CH1 is high</label>
+			<id>714</id>
+			<level>3</level>
+			<message>Signal Transmitter Power CH1 is high</message>
+		</alarm>
+		<alarm>
+			<name>sigtrans-pow-ch2</name>
+			<label>Signal Transmitter Power CH2 is high</label>
+			<id>715</id>
+			<level>3</level>
+			<message>Signal Transmitter Power CH2 is high</message>
+		</alarm>
+		<alarm>
+			<name>laser-temp-ch1</name>
+			<label>Laser Temperature for CH1 is high</label>
+			<id>716</id>
+			<level>5</level>
+			<message>Laser Temperature for CH1 is high</message>
+		</alarm>
+		<alarm>
+			<name>laser-temp-ch2</name>
+			<label>Laser Temperature for CH2 is high</label>
+			<id>717</id>
+			<level>5</level>
+			<message>Laser Temperature for CH2 is high</message>
+		</alarm>
+		<alarm>
+			<name>restoreFrontend</name>
+			<label>restore fail</label>
+			<id>718</id>
+			<level>5</level>
+			<message>Frontend restoration fail</message>
+		</alarm>
+		<alarm>
+			<name>domon_timeout</name>
+			<label>domon command timed out</label>
+			<id>719</id>
+			<level>5</level>
+			<message>domon command timed out</message>
+		</alarm>
+		<alarm>
+			<name>shutdownFrontend</name>
+			<label>shutdown fail</label>
+			<id>7191</id>
+			<level>5</level>
+			<message>Frontend shutdown fail</message>
+		</alarm>
+</supportedalarms>
+
+<supportedbatches>
+		<batchcommand>
+			<name>initfrontend</name>
+			<id>412</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/initFrontEnd.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>restorefrontend</name>
+			<id>401</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/restore_frontend.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>resetfrontend</name>
+			<id>412</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/reset_frontend.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>shutdownFrontend</name>
+			<id>1012</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/shutdownFrontend.txt</filepath>
+		</batchcommand>
+</supportedbatches>
+
+</supportedconfig>

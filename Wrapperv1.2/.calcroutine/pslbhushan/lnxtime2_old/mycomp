@@ -1,0 +1,3 @@
+ export LD_LIBRARY_PATH=`pwd`
+ cc -o mylst mycalclst.c  -L`pwd` -lastronomycalc
+

@@ -1,0 +1,96 @@
+
+           Minutes of Meeting
+           Sep 29th, 2011
+           Bhushan, Swati, Shaival, JPK, RU, Naresh
+--------------------------------------------------------------------------------------------
+(1) Bug Tracking system requirement - checking
+
+(2) STATE MACHINE Discusssion :
+  
+  ## ALARM level
+      Level 5 : On occurance of Critical alarm, STATE machine will be in suspend mode (If the 
+                exception handler failed otherwise it will restore previous state upon successully
+                handling of the alarm).
+      Level 3,4 - Warning 
+      Level 1,2 - Info
+      Level 0 - meaningless
+   
+  ## Wrapper STATE -
+      - Connected : 
+      - Notconnected : State machien shall reflect the status automatically once the wrapper disconnected.
+      - DEACTIVE : In this state CMS shall not send the command to the subsystem-wrapper server.
+      - ACTIVE :
+   
+  ## Subsystem/Device STATE -
+      -TIMEOUT - Device not COMMUNICATING, <status>TIMEOUT</status> will send.
+      -RESET   - Wrapper Reset after the reconnection by the device, <status>RESET</status> will send.
+      -NOTOK   -
+             => STATE-machine shall show the above changes   
+      -OK      - 
+   
+  ## CMS-STATE
+    (i) SHUTDOWN -(a) Execution script will first send shutdown  all the Wrapper, wrapper will send 
+                   the shutdown status   before exiting the process.
+                  (b) If the wrapper server shutdown OK - then CMS implements the tomcat/activemq shutdown
+                      If FAIL - Move Suspend state.
+    (ii) MAINT - expert/admin --- Implemented
+        If We shutdown the wrapper or it got killed, DOMON information
+        will not get to the CMS hence subsystem status will be 'disconnected'
+        and alarm will be raise.
+    (X) Power_On Failure - Normal STATE - implemented and tested
+    (iv) Exception - Exception_Handler_Execution ?SUSPEND:PREVIOUS STATE.
+    (v) STANDBY STATE _ Send Command -- Ideal state - No  raise in the alarm.
+                     
+    (vi) During the CMS run, if the sub-system/wrapper get disconnected, STATE machine raise the
+        alarm. If the exception handler fails the state to be declare is 'SUSPEND'. But once
+        the Subsystem recover automatically and get connected with Initialization successfully, 
+        the state machine should recover to the NORMAL STATE  whereas alarm history can
+        be alive so that expert/engineer can acknowlege it.
+
+(3) Browser updates the alarming and Monitoring information after the average  delay of  ~10 sec.
+
+(4) LoginPage :
+    Bestviewed in release firefox 3.6 and above, google-chore
+    Adobe flashflare must be installed to run the software.
+
+(5) User Management test -  User management login quries solved by the PSL team,
+    and cleared the test feedback items.
+
+(6) Version Management
+    Subsystem version Defined in the  /opt/ncra/lib/ncra-subsystemconfig.xml  
+    but not appearing the command. Will get in the next release.
+    
+(7) Source catalog was not getting updated, but after the explaination by the PSL
+    team, the source catalog loaded by the expert need to be declare as a 'SYSTEM'
+    catalog.
+--------------------------------------------------------------------------------
+# The CMS - next release Demonstration by the PERSISTENT
+
+(1) CMS facilities
+
+ - CMS States in the header section
+
+ - display for the command status on expert tab
+
+ - Object loading 
+   Top header shows coordinate calculation
+   gets loaded in tracking display as well
+
+ - 2d-plot for the source catalog update continuosly.
+
+(2) Flex changes queries :
+ - Flex Structural changes not possible.
+ - New field should be replaced by the existing.
+ - Navigation js
+ - By clicking the right button it will show whether the component is a  FLEX component.
+ - CR item - outer or inner track Polar plot
+
+(3) Chart, spectral and pulsar plotting demonstration and discussion.
+ - Engineering need of the Plotting the Monitoring parameters as Y Vs X
+   discussed (for e.g. encoder Vs motor current).
+ - Default scale should get load in the X-Y plot for the chosen monitoring
+   parameters.
+ - Digital backend plotting requriement and command implementation
+   like sendpulsar/spectral/chart plot data along with the specified
+   x-y range parameters, sampling interval etc. discused.
+---------------------------------------------------------------------------------------

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/SLA/dates
+END
+sla_datestamp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/SLA/dates/sla_datestamp
+END
+htx_datestamp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/SLA/dates/htx_datestamp
+END
+SLA_CONDITIONS
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/SLA/dates/SLA_CONDITIONS
+END

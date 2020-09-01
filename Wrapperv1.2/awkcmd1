@@ -1,0 +1,46 @@
+BEGIN {
+ prvtime=0;
+ day = 0;
+}
+{
+    split($2,tim,":");
+    time= tim[1] + (tim[2]/60.) + (tim[3]/3600.);
+
+   if (time > prevtime ) 
+   { 
+      prevtime = time;   
+   }
+    else
+   {
+      day = day+  24.0;
+      prevtime = time;
+  }
+
+      timeprint = time + day;
+    
+    
+   split ($4,az,":");
+
+   if (az[1] < 0 )
+   {
+      azval = az[1] - (az[2]/60.)- (az[3]/3600.);
+    }
+   else
+   {
+      azval = az[1] + (az[2]/60.)+ (az[3]/3600.);
+   }
+
+    split($6,azc,":");
+
+   if (azc[1] < 0 )
+   {
+      azcp = azc[1] - (azc[2]/60.)- (azc[3]/3600.);
+    }
+   else
+   {
+      azcp = azc[1] + (azc[2]/60.)+ (azc[3]/3600.);
+   }
+
+    print timeprint, azval, azcp;
+
+}

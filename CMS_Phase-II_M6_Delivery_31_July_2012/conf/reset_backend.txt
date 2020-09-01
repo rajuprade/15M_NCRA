@@ -1,0 +1,2 @@
+$domoncmd = command("backend,doMon");
+info("sent command doMon to backend with seq $domoncmd");

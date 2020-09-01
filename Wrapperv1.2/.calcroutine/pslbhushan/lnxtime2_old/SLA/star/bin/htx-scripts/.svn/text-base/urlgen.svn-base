@@ -1,0 +1,55 @@
+
+      docspec="${1}"
+      docname="`basename "${docspec}"`"
+      label="${2}"
+      if test ! -n "${docname}"; then
+         if test -n "${docspec}"; then
+            echo >&2 "${HTX_SCRIPT}: no document name given: ${docspec}"
+         else
+            echo >&2 "${HTX_SCRIPT}: no document name given"
+         fi
+         exit 1
+      fi
+      done=''
+      if test ! "${HTX_WHERE}" = 'r'; then
+         if path="`expr "//${docspec}" : '//\(.*\)/.*'`"; then :; else
+            path="${HTX_PATH-`${HTX_DIR}/htxpath`}"
+         fi
+         doc="`IFS=':'; for dir in ${path}; do doc="${dir:-.}/${docname}"
+            (cd "${doc}.htx" 1>/dev/null 2>/dev/null) && echo "${doc}" && break
+         done`"
+         if test -n "${doc}"; then
+            if test -n "${label}"; then
+               eds='s%^<  *\([^ ][^ ]*\)  *\('"${label}"'\) *$%\1#xref_\2%p
+                    t done
+                    b
+                    :done
+                    q'
+            else
+               eds='s%^T  *\([^ ][^ ]*\).*$%\1#xref_%p'
+            fi
+            ifile="${doc}.htx/htx.index"
+            if test -f "${ifile}" -a -r "${ifile}"; then
+               filefrg="`sed -n "${eds}" "${ifile}"`"
+            else
+               echo >&2 \
+               "${HTX_SCRIPT}: warning - document ${doc} has no index file"
+               filefrg="`${HTX_DIR}/creindex "${doc}" | sed -n "${eds}"`"
+            fi
+            case "${doc}" in [!/]*) doc="`pwd`/${doc}";; esac
+            if test -n "${filefrg}"; then
+               echo "file://${doc}.htx/${filefrg}"
+            elif test ! -n "${label}"; then
+               echo "file://${doc}.htx/${docname}.html"
+            else
+               echo >&2 \
+"${HTX_SCRIPT}: cannot find label \"${label}\" in document ${docname}"
+               exit 1
+            fi
+            done='1'
+         fi
+      fi
+      if test ! -n "${done}" -a ! "${HTX_WHERE}" = 'l'; then
+         HTX_SERVER="${HTX_SERVER-http://star-www.rl.ac.uk/cgi-bin/htxserver}"
+         echo "${HTX_SERVER}/${docname}.htx/${docname}.html?xref_${label}"
+      fi         

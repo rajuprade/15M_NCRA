@@ -1,0 +1,45 @@
+Finding of TEST result from batch file.
+
+1. We started the batch file for Sentinal system on Friday ( 21.10.2011) at around 10 AM.
+
+2.  All communication were going fine upto Saturday (22.10.11) at around  3.38 AM.
+
+3. After that time CMS stopped sending init command, It is observed in the log that after 3.38 AM, Wrapper had not received Init command from CMS.
+
+4. Also Wrapper wasn't able to connect to CMS Monitoring_port (19999) from  5:50:14 AM on 22.10.2011 onwards.
+
+     ##### Some Portion of WRAPPER LOG ######
+       RESPONSE FROM DEVICE 
+
+	 seq [20445]  Subsystemid [sentinal]  
+	 ID [5] CMDName [domon] 
+	 TimeStamp [2011-10-21T10:15:15.029+05:30] 
+Number of Arg [5] 
+5 name time Value 5:50:14 
+5 name status Value Ok 
+5 name temp Value 23 
+5 name chan Value 1 
+5 name rawcnt Value 264 
+ Id 0 0  
+ Code 10  Event 99 Message Command received successfully 
+ ###### formWrapperACK 
+  XML RESPONSE <?xml version="1.0" encoding="UTF-8"?>
+<responses><response><seq>20445</seq><id>5</id><name>Monitoring_Data</name><systemid>sentinal</systemid><timestamp>2011-10-21T10:15:15.029+05:30</timestamp><priority>0</priority><timeout>0</timeout><code>10</code><event>99</event><message>Command received successfully</message><data><param><name>time</name><value>5:50:14</value></param><param><name>status</name><value>Ok</value></param><param><name>temp</name><value>23</value></param><param><name>chan</name><value>1</value></param><param><name>rawcnt</name><value>264</value></param></data></response></responses>
+<RESP_END> 
+initClientConn() : Connection refused
+### Error : sendPktToCMS () Could not connect to CMS ..
+ initClientConn() : hostname- 192.168.3.203 resp_port 5000 Connection Successful.
+
+5. Communication between Device Client and Wrapper is still going on.
+
+6. All threads of InvokeWrapper are still alive. 
+
+    [teleset@telab2 Desktop]$ ps -aL | grep invoke
+  945   945 pts/5    00:00:00 invokeWrapper
+  945   946 pts/5    00:00:03 invokeWrapper
+  945   947 pts/5    00:01:52 invokeWrapper
+
+7.  Wrapper program running machine's virtual memory count initially showed 38820, now it's showing 40072.
+
+8. File discriptor remains constant through out the execution of Wrapper program.
+  

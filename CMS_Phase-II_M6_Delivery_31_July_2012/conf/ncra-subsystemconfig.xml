@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsystems>
+	<subsystem>
+		<name>servo</name>
+		<connectionurl>127.0.0.1:7775</connectionurl>
+		<commandfile>servo_commands.xml</commandfile>
+		<version>1</version>
+		<active>true</active>
+		<internal>false</internal>
+		<engXML>servo_engineering.xml</engXML>
+	</subsystem>
+	<subsystem>
+		<name>sentinal</name>
+		<connectionurl>127.0.0.1:7775</connectionurl>
+		<commandfile>sentinal_commands.xml</commandfile>
+		<version>1</version>
+		<active>true</active>
+		<internal>false</internal>
+		<engXML>sentinal_engineering.xml</engXML>
+	</subsystem>
+	<subsystem>
+		<name>frontend</name>
+		<connectionurl>127.0.0.1:7775</connectionurl>
+		<commandfile>frontend_commands.xml</commandfile>
+		<version>1</version>
+		<active>true</active>
+		<internal>false</internal>
+		<engXML>frontend_engineering.xml</engXML>
+	</subsystem>
+	<subsystem>
+		<name>backend</name>
+		<connectionurl>127.0.0.1:7775</connectionurl>
+		<commandfile>backend_commands.xml</commandfile>
+		<version>1</version>
+		<active>true</active>
+		<internal>false</internal>
+		<engXML>backend_engineering.xml</engXML>
+	</subsystem>
+	<subsystem>
+		<name>sigcon</name>
+		<connectionurl>127.0.0.1:7775</connectionurl>
+		<commandfile>sigcon_commands.xml</commandfile>
+		<version>1</version>
+		<active>true</active>
+		<internal>false</internal>
+		<engXML>sigcon_engineering.xml</engXML>
+	</subsystem>
+<!-- cms is treated as an internal subsystem -->
+	<subsystem>
+		<name>cms</name>
+		<connectionurl>127.0.0.1:8080</connectionurl>
+		<commandfile>cms_commands.xml</commandfile>
+		<version>1</version>
+		<active>true</active>
+		<internal>true</internal>
+	</subsystem>
+</subsystems>

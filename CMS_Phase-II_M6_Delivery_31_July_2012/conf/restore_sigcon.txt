@@ -1,0 +1,21 @@
+
+#restore lo1 and lo2
+
+$lo1 = restore("sigcon,lo1");
+$lo2 = restore("sigcon,lo2");
+
+info("lo1 value restored-> $lo1");
+info("lo2 value restored-> $lo2");
+
+if ($lo1 ne "" && $lo2 ne ""){
+
+$cmd = command("sigcon,lo,$lo1,$lo2");
+info("sent command lo with seq $cmd");
+
+$cmdstatus =  waitforCmdCompletion($cmd ,10);
+info("status of lo command : $cmdstatus");
+
+	if ($cmdstatus != 5){
+		updateBatchStatus(2);
+	}
+}

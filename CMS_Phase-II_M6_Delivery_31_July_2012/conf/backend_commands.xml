@@ -1,0 +1,1627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<supportedconfig>
+<supportedcommands>
+<!-- Commands for Back-End USER GUI start here-->
+		<command>
+			<name>SENDMETADATA</name>
+			<id>154</id>
+			<syntax>adcclock,fftlen,acqinteg,fftshift,ltainteg,sampgain,channelstart,channelstop,channelincr,sampgainctrl,stokes,chanavg,adcmode,back-end,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app, dec_app,ra_mean, dec_mean,dra, ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>200,1024,0.92,10,0.92,11,0,511,1,true,TOTALINTENSITY,10,1,BACKEND1,ncra,ncra,ncra,1,11,ncra,I,2011,10:10:10,1,10:10:10,10:10:10,1,1,1,1,1,1,1,1,1,1,1</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>adcclock</paramname>
+						<type>double</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>1000</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>fftlen</paramname>
+						<type>long</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>10000</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>acqinteg</paramname>
+						<type>float</type>
+						<validation>
+							<range>
+								<min>0.92</min>
+								<max>5.54</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>fftshift</paramname>
+						<type>long</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>1023</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>ltainteg</paramname>
+						<type>float</type>
+						<validation>
+							<range>
+								<min>0.92</min>
+								<max>32</max>
+							</range>
+						</validation>
+					</param>					
+			 		<param required="true">
+						<global>set</global>
+						<paramname>sampgain</paramname>
+						<type>long</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>channelstart</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>511</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>channelstop</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>511</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>channelincr</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>1</min>
+								<max>1</max>
+							</range>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>sampgainctrl</paramname>
+						<type>boolean</type>
+						<validation>
+							<range>
+								<min>true</min>
+								<max>false</max>
+							</range>
+						</validation>
+					</param>					
+			 		<param required="true">
+						<global>set</global>
+						<paramname>stokes</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>TOTALINTENSITY</value>
+								<value>FULLSTOKES</value>
+								<value>IQUV</value>
+								<value>I</value>
+								<value>Q</value>
+								<value>U</value>
+								<value>V</value>
+							</values>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>sampgain</paramname>
+						<type>boolean</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>
+							</values>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>chanavg</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>511</max>
+							</range>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>adcmode</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>1</value>
+								<value>2</value>
+							</values>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>back-end</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>BACKEND1</value>
+								<value>BACKEND2</value>
+							</values>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>project_code</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>observer_name</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>project_title</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>ant_id</paramname>
+						<type>integer</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>band_mask</paramname>
+						<type>short</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>source_name</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>pol_flux</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>I</value>
+								<value>Q</value>
+								<value>U</value>
+								<value>V</value>
+							</values>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>mjd_source</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>ra_app</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+							<format>HH:mm:ss</format>
+							<min>0</min>	
+							<max>24</max>
+							</datetime>
+						</validation>						
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>dec_app</paramname>
+						<type>angle</type>
+						<validation>
+						<angle>
+						<degree>
+							<min>-56</min>
+							<max>90</max>
+						</degree>
+						</angle>
+						</validation>						
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>ra_mean</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+							<format>HH:mm:ss</format>
+							<min>0</min>	
+							<max>24</max>
+							</datetime>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>dec_mean</paramname>
+						<type>angle</type>
+						<validation>
+						<angle>
+						<degree>
+							<min>-56</min>
+							<max>90</max>
+						</degree>
+						</angle>
+						</validation>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>dra</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>ddec</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>freq</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>first_lo</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>bb_lo</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>rest_freq</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>lsr_velocity</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>source_id</paramname>
+						<type>integer</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>antenna_id</paramname>
+						<type>integer</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>calcode</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>net_sign</paramname>
+						<type>integer</type>
+					</param>					
+			</params>
+		</command>	
+		<command>
+			<name>INIT</name>
+			<id>154</id>
+			<syntax>adcclock,fftlen,acqinteg,fftshift,ltainteg,sampgain,channelstart,channelstop,channelincr,sampgainctrl,stokes,chanavg,adcmode,back-end</syntax>
+			<sample>200,1024,0.92,10,0.92,11,0,511,1,true,TOTAL INTENSITY,10,1,BACKEND1</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>adcclock</paramname>
+						<type>double</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>1000</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>fftlen</paramname>
+						<type>long</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>10000</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>acqinteg</paramname>
+						<type>float</type>
+						<validation>
+							<range>
+								<min>0.92</min>
+								<max>5.54</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>fftshift</paramname>
+						<type>long</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>1023</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>ltainteg</paramname>
+						<type>float</type>
+						<validation>
+							<range>
+								<min>0.92</min>
+								<max>32</max>
+							</range>
+						</validation>
+					</param>					
+			 		<param required="true">
+						<global>set</global>
+						<paramname>sampgain</paramname>
+						<type>long</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>channelstart</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>511</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>channelstop</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>511</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>channelincr</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>1</min>
+								<max>1</max>
+							</range>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>sampgainctrl</paramname>
+						<type>boolean</type>
+						<validation>
+							<range>
+								<min>true</min>
+								<max>false</max>
+							</range>
+						</validation>
+					</param>					
+			 		<param required="true">
+						<global>set</global>
+						<paramname>stokes</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>TOTAL INTENSITY</value>
+								<value>FULL STOKES</value>
+								<value>(I, Q, U, V)</value>
+								<value>I</value>
+								<value>Q</value>
+								<value>U</value>
+								<value>V</value>
+							</values>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>sampgainctrl</paramname>
+						<type>boolean</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>
+							</values>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>chanavg</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>511</max>
+							</range>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>adcmode</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>1</value>
+								<value>2</value>
+							</values>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>back-end</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>BACKEND1</value>
+								<value>BACKEND2</value>
+							</values>
+						</validation>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>INITPRJ</name>
+			<id>147</id>
+			<syntax>project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app, dec_app,ra_mean, dec_mean,dra, ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>ncra,ncra,ncra,1,1,ncra,I,2011,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>project_code</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>observer_name</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>project_title</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>ant_id</paramname>
+						<type>integer</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>band_mask</paramname>
+						<type>short</type>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>source_name</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>pol_flux</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>I</value>
+								<value>Q</value>
+								<value>U</value>
+								<value>V</value>
+							</values>
+						</validation>
+					</param>
+			 		<param required="true">
+						<global>set</global>
+						<paramname>mjd_source</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>ra_app</paramname>
+						<type>datetime</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>dec_app</paramname>
+						<type>angle</type>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>ra_mean</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+							<format>HH:mm:ss</format>
+							<min>0</min>	
+							<max>24</max>
+							</datetime>
+						</validation>
+					</param>
+					<param required="false">
+						<global>set</global>
+						<paramname>dec_mean</paramname>
+						<type>angle</type>
+						<validation>
+						<angle>
+						<degree>
+							<min>-56</min>
+							<max>90</max>
+						</degree>
+						</angle>
+						</validation>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>dra</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>ddec</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>freq</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>first_lo</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>bb_lo</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>rest_freq</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>lsr_velocity</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>source_id</paramname>
+						<type>integer</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>antenna_id</paramname>
+						<type>integer</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>calcode</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="false">
+						<global>set</global>
+						<paramname>net_sign</paramname>
+						<type>integer</type>
+					</param>					
+			</params>	
+		</command>
+		<command>
+			<name>STRTDAS</name>
+			<id>148</id>
+			<syntax></syntax>
+			<sample></sample>
+			<timeout>120000</timeout>
+				<params>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>project_code</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>observer_name</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>project_title</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>ant_id</paramname>
+						<type>integer</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>band_mask</paramname>
+						<type>short</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>source_name</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>pol_flux</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>I</value>
+								<value>Q</value>
+								<value>U</value>
+								<value>V</value>
+							</values>
+						</validation>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>mjd_source</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>ra_app</paramname>
+						<type>datetime</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>dec_app</paramname>
+						<type>angle</type>
+					</param>
+					<param required="false">
+						<global>get</global>
+						<paramname>ra_mean</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+							<format>HH:mm:ss</format>
+							<min>0</min>	
+							<max>24</max>
+							</datetime>
+						</validation>
+					</param>
+					<param required="false">
+						<global>get</global>
+						<paramname>dec_mean</paramname>
+						<type>angle</type>
+						<validation>
+						<angle>
+						<degree>
+							<min>-56</min>
+							<max>90</max>
+						</degree>
+						</angle>
+						</validation>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>dra</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>ddec</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>freq</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>first_lo</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>bb_lo</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>rest_freq</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>lsr_velocity</paramname>
+						<type>double</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>source_id</paramname>
+						<type>integer</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>antenna_id</paramname>
+						<type>integer</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>calcode</paramname>
+						<type>string</type>
+					</param>
+			 		<param required="false">
+						<global>get</global>
+						<paramname>net_sign</paramname>
+						<type>integer</type>
+					</param>					
+			</params>			
+		</command>
+		<command>
+			<name>STOPDAS</name>
+			<id>149</id>
+			<syntax></syntax>
+			<sample></sample>
+			<timeout>120000</timeout>
+		</command>
+		<command>
+			<name>STOPPRJ</name>
+			<id>150</id>
+			<syntax>project_code</syntax>
+			<sample>project_code</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>project_code</paramname>
+						<type>string</type>
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>HALT</name>
+			<id>151</id>
+			<syntax></syntax>
+			<sample></sample>
+			<timeout>120000</timeout>
+		</command>
+		<command>
+			<name>LNKNDAS</name>
+			<id>152</id>
+			<syntax></syntax>
+			<sample></sample>
+			<timeout>120000</timeout>
+		</command>	
+		<command>
+			<name>START</name>
+			<id>101</id>
+			<syntax>data_file,acq_duration</syntax>
+			<sample>dataacqfile.dat,10:10:10</sample>
+			<timeout>120000</timeout>
+			<params>
+					<param required="true">
+						<global>set</global>
+						<paramname>data_file</paramname>
+						<type>regex</type>
+							<validation>
+								<regex>
+									<regexp>^([a-zA-Z0-9\s\._-]+)$</regexp>
+								</regex>
+						</validation>							
+					</param>
+					<param required="true">
+						<global>set</global>
+						<paramname>acq_duration</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+							<format>HH:mm:ss</format>
+							<min>0</min>	
+							<max>23</max>
+							</datetime>
+						</validation>
+					</param>
+					
+			 		<param>
+						<global>get</global>
+						<paramname>project_code</paramname>
+						<type>string</type>	
+					</param>
+			 		<param>
+						<global>get</global>
+						<paramname>observer_name</paramname>
+						<type>string</type>	
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>project_title</paramname>
+						<type>string</type>	
+					</param>
+					
+					<param>
+						<global>get</global>
+						<paramname>ant_id</paramname>
+						<type>integer</type>
+					</param>
+					
+					<param>
+						<global>get</global>
+						<paramname>band_mask</paramname>
+						<type>short</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>source_name</paramname>
+						<type>string</type>
+					</param>					
+					<param>
+						<global>get</global>
+						<paramname>pol_flux</paramname>
+						<type>string</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>mjd_source</paramname>
+						<type>double</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>ra_app</paramname>
+						<type>datetime</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>dec_app</paramname>
+						<type>angle</type>
+					</param>
+					<param required="false">
+						<global>get</global>
+						<paramname>ra_mean</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+							<format>HH:mm:ss</format>
+							<min>0</min>	
+							<max>24</max>
+							</datetime>
+						</validation>
+					</param>
+					<param required="false">
+						<global>get</global>
+						<paramname>dec_mean</paramname>
+						<type>angle</type>
+						<validation>
+						<angle>
+						<degree>
+							<min>-56</min>
+							<max>90</max>
+						</degree>
+						</angle>
+						</validation>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>dra</paramname>
+						<type>double</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>ddec</paramname>
+						<type>double</type>
+					</param>					
+					<param>
+						<global>get</global>
+						<paramname>freq</paramname>
+						<type>double</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>first_lo</paramname>
+						<type>double</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>bb_lo</paramname>
+						<type>double</type>
+					</param>
+					
+					<param>
+						<global>get</global>
+						<paramname>rest_freq</paramname>
+						<type>double</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>lsr_velocity</paramname>
+						<type>double</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>source_id</paramname>
+						<type>integer</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>antenna_id</paramname>
+						<type>integer</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>calcode</paramname>
+						<type>string</type>
+					</param>
+					<param>
+						<global>get</global>
+						<paramname>net_sign</paramname>
+						<type>integer</type>
+					</param>			 		
+			</params>	
+		</command>
+
+		<command>
+			<name>METADATA</name>
+			<id>2</id>
+			<syntax>observer,proposal_id,source_name,ra,dec,epoch,az,el</syntax>
+			<sample>SAMPLE_DATA.1,123,M1,05 34 31.9,+22 00 52,2000,15,15</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>observer</paramname>
+						<type>string</type>						
+					</param>
+					<param required="true">
+						<paramname>proposal_id</paramname>
+						<type>string</type>						
+					</param>
+					<param required="true">
+						<paramname>source_name</paramname>
+						<type>string</type>						
+					</param>
+					<param required="true">
+						<paramname>ra</paramname>
+						<type>string</type>						
+					</param>
+					<param required="true">
+						<paramname>dec</paramname>
+						<type>string</type>						
+					</param>
+					<param required="true">
+						<paramname>epoch</paramname>
+						<type>string</type>						
+					</param>
+					<param required="true">
+						<paramname>az</paramname>
+						<type>string</type>						
+					</param>
+					<param required="true">
+						<paramname>el</paramname>
+						<type>string</type>						
+					</param>
+			</params>	
+		</command>
+		<command>
+			<name>STOP</name>
+			<id>3</id>
+			<syntax></syntax>
+			<sample></sample>
+			<timeout>120000</timeout>			
+		</command>
+		<command>
+			<name>FILE</name>
+			<id>4</id>
+			<syntax>filename</syntax>
+			<sample>14JNC01_28DEC08.DATA.1</sample>
+			<timeout>120000</timeout>			
+		</command>
+		<command>
+			<name>domon</name>
+			<id>105</id>
+			<syntax>monitoringfrequency</syntax>
+			<sample>9000</sample>
+			<params>
+				<param>					
+					<paramname>monitoringfrequency</paramname>
+						<type>long</type>		
+						<validation>
+							<range>
+								<min>9000</min>
+								<max>900000</max>
+							</range>
+						</validation>	
+				</param>
+			</params>
+		</command>
+		<command>
+			<name>sendspectralplottingdata</name>
+			<id>106</id>
+			<syntax>scale,xaxis,interval,integration,polarization,noofbins,steps,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app,dec_app,ra_mean,dec_mean,dra,ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>	
+			<sample>linear,noofbins,100,1,BOTH,100,1,123,expert,cms,1,2,moon,10,12,10,10,10:10:10,10:10:10,5,5,12,10,10,15,15,4,8,3,2</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>scale</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>linear</value>
+								<value>logarithmic</value>
+							</values>
+						</validation>
+					</param>
+					<param required="true">
+						<paramname>xaxis</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>noofbins</value>
+								<value>frequency</value>
+							</values>
+						</validation>
+					</param>
+					<param required="true">
+						<paramname>interval</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>integration</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>polarization</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>LL</value>
+								<value>RR</value>
+								<value>BOTH</value>
+							</values>
+						</validation>
+					</param>
+					<param required="true">
+						<paramname>noofbins</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>steps</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>project_code</paramname>
+						<type>string</type>	
+					</param>
+			 		<param required="true">
+						<paramname>observer_name</paramname>
+						<type>string</type>	
+					</param>
+					<param required="true">
+						<paramname>project_title</paramname>
+						<type>string</type>	
+					</param>
+					
+					<param required="true">
+						<paramname>ant_id</paramname>
+						<type>integer</type>
+					</param>
+					
+					<param required="true">
+						<paramname>band_mask</paramname>
+						<type>short</type>
+					</param>
+					<param required="true">
+						<paramname>source_name</paramname>
+						<type>string</type>
+					</param>					
+					<param required="true">
+						<paramname>pol_flux</paramname>
+						<type>string</type>
+					</param>
+					<param required="true">
+						<paramname>mjd_source</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>ra_app</paramname>
+						<type>datetime</type>
+					</param>
+					<param required="true">
+						<paramname>dec_app</paramname>
+						<type>angle</type>
+					</param>
+					<param required="false">
+						<paramname>ra_mean</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+							<format>HH:mm:ss</format>
+							<min>0</min>	
+							<max>24</max>
+							</datetime>
+						</validation>
+					</param>
+					<param required="false">
+						<paramname>dec_mean</paramname>
+						<type>angle</type>
+						<validation>
+						<angle>
+						<degree>
+							<min>-56</min>
+							<max>90</max>
+						</degree>
+						</angle>
+						</validation>
+					</param>
+					<param required="true">
+						<paramname>dra</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>ddec</paramname>
+						<type>double</type>
+					</param>					
+					<param required="true">
+						<paramname>freq</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>first_lo</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>bb_lo</paramname>
+						<type>double</type>
+					</param>
+					
+					<param required="true">
+						<paramname>rest_freq</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>lsr_velocity</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>source_id</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>antenna_id</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>calcode</paramname>
+						<type>string</type>
+					</param>
+					<param required="true">
+						<paramname>net_sign</paramname>
+						<type>integer</type>
+					</param>	
+			</params>	
+		</command>
+		<command>
+			<name>sendpulsarplottingdata</name>
+			<id>107</id>
+			<syntax>scale,xaxis,interval,updates,start_chnl,stop_chnl,ref_chnl,dm,period,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app,dec_app,ra_mean,dec_mean,dra,ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>linear,noofbins,10,1,10,20,1,19.56,530.64,123,expert,cms,1,2,moon,10,12,10,10,10:10:10,10:10:10,5,5,12,10,10,15,15,4,8,3,2</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>scale</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>linear</value>
+								<value>logarithmic</value>
+							</values>
+						</validation>
+					</param>
+					<param required="true">
+						<paramname>xaxis</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>noofbins</value>
+								<value>frequency</value>
+							</values>
+						</validation>
+					</param>
+					<param required="true">
+						<paramname>interval</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>updates</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>start_chnl</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>stop_chnl</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>ref_chnl</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>dm</paramname>
+						<type>float</type>
+					</param>
+					<param required="true">
+						<paramname>period</paramname>
+						<type>float</type>
+					</param>
+					<param required="true">
+						<paramname>project_code</paramname>
+						<type>string</type>	
+					</param>
+			 		<param required="true">					
+						<paramname>observer_name</paramname>
+						<type>string</type>	
+					</param>
+					<param required="true">
+						<paramname>project_title</paramname>
+						<type>string</type>	
+					</param>
+					
+					<param required="true">		
+						<paramname>ant_id</paramname>
+						<type>integer</type>
+					</param>
+					
+					<param required="true">			
+						<paramname>band_mask</paramname>
+						<type>short</type>
+					</param>
+					<param required="true">
+						
+						<paramname>source_name</paramname>
+						<type>string</type>
+					</param>					
+					<param required="true">
+						<paramname>pol_flux</paramname>
+						<type>string</type>
+					</param>
+					<param required="true">				
+						<paramname>mjd_source</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">	
+						<paramname>ra_app</paramname>
+						<type>datetime</type>
+					</param>
+					<param required="true">	
+						<paramname>dec_app</paramname>
+						<type>angle</type>
+					</param>
+					<param required="true">
+						<paramname>ra_mean</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+							<format>HH:mm:ss</format>
+							<min>0</min>	
+							<max>24</max>
+							</datetime>
+						</validation>
+					</param>
+					<param required="true">
+						<paramname>dec_mean</paramname>
+						<type>angle</type>
+						<validation>
+						<angle>
+						<degree>
+							<min>-56</min>
+							<max>90</max>
+						</degree>
+						</angle>
+						</validation>
+					</param>
+					<param required="true">	
+						<paramname>dra</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						
+						<paramname>ddec</paramname>
+						<type>double</type>
+					</param>					
+					<param required="true">
+						<paramname>freq</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>first_lo</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>bb_lo</paramname>
+						<type>double</type>
+					</param>
+					
+					<param required="true">
+						<paramname>rest_freq</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>lsr_velocity</paramname>
+						<type>double</type>
+					</param>
+					<param required="true">
+						<paramname>source_id</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>antenna_id</paramname>
+						<type>integer</type>
+					</param>
+					<param required="true">
+						<paramname>calcode</paramname>
+						<type>string</type>
+					</param>
+					<param required="true">
+						<paramname>net_sign</paramname>
+						<type>integer</type>
+					</param>		
+			</params>	
+		</command>
+		<command>
+			<name>startpulsarplottingdata</name>
+			<id>108</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>stoppulsarplottingdata</name>
+			<id>109</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>startspectralplottingdata</name>
+			<id>110</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>stopspectralplottingdata</name>
+			<id>111</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>save_data</name>
+			<id>112</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+</supportedcommands>
+<supportedresponses>
+		<response>
+			<name>domon</name>
+			<id>800</id>
+			<params>
+				<param>
+					<paramname>dasstate</paramname>
+					<type>integer</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>5</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>backendgps</paramname>
+					<type>integer</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>1</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>acq-start-time</paramname>
+					<type>datetime</type>	
+					<validation>
+						<datetime>
+							<format>HH:mm:ss</format>
+						</datetime>
+					</validation>				
+				</param>
+				<param>
+					<paramname>acq-duration</paramname>
+					<type>datetime</type>	
+					<validation>
+						<datetime>
+							<format>HH:mm:ss</format>
+						</datetime>
+					</validation>				
+				</param>
+				<param>
+					<paramname>acq-percentage</paramname>
+					<type>float</type>	
+					<validation>
+						<range>
+							<min>0</min>
+							<max>100.00</max>
+						</range>
+					</validation>				
+				</param>
+				<param>
+					<paramname>acq-message</paramname>
+					<type>string</type>								
+				</param>
+			</params>
+			<logicalvalidation>
+				<batchcommand>
+					<name>updateAcqProgress</name>
+					<id>1233</id>
+					<syntax>acq-percentage,acq-message</syntax>
+					<sample>10,test message</sample>					
+					<filepath>/usr/ncra/lib/updateAcqProgress.txt</filepath>
+				</batchcommand>
+			</logicalvalidation>
+		</response>
+		<response>
+			<name>start</name>
+			<id>101</id>
+			<logicalvalidation>
+				<batchcommand>
+					<name>updateAcqStart</name>
+					<id>1233</id>
+					<syntax></syntax>
+					<sample></sample>					
+					<filepath>/usr/ncra/lib/updateAcqStart.txt</filepath>
+				</batchcommand>
+			</logicalvalidation>
+		</response>
+		<response>
+			<name>stop</name>
+			<id>3</id>
+			<logicalvalidation>
+				<batchcommand>
+					<name>updateAcqStop</name>
+					<id>1233</id>
+					<syntax></syntax>
+					<sample></sample>					
+					<filepath>/usr/ncra/lib/updateAcqStop.txt</filepath>
+				</batchcommand>
+			</logicalvalidation>
+		</response>
+	</supportedresponses>
+
+	<monitoringparams>
+		<param>
+			<name>dasstate</name>
+			<value></value>
+		</param>
+		<param>
+			<name>backendgps</name>
+			<value></value>
+		</param>
+	</monitoringparams>
+
+<supportedalarms>
+		<alarm>
+			<name>wrapper down</name>
+			<label>wrapper down</label>
+			<id>801</id>
+			<level>5</level>
+			<message>backend wrapper down</message>
+		</alarm>
+		<alarm>
+			<name>initBackend</name>
+			<label>initialization fail</label>
+			<id>802</id>
+			<level>5</level>
+			<message>Backend initialization fail</message>
+		</alarm>
+		<alarm>
+			<name>dasstate</name>
+			<label>dasstate reached</label>
+			<id>803</id>
+			<level>1</level>
+			<message>dasstate reached</message>
+		</alarm>
+		<alarm>
+			<name>backendgps</name>
+			<label>GPS unlock information should be logged in flag file</label>
+			<id>804</id>
+			<level>5</level>
+			<message>GPS unlock information should be logged in flag file</message>
+		</alarm>
+		<alarm>
+			<name>restoreBackend</name>
+			<label>restore fail</label>
+			<id>805</id>
+			<level>5</level>
+			<message>Backend restore fail</message>
+		</alarm>
+		<alarm>
+			<name>domon_timeout</name>
+			<label>domon command timed out</label>
+			<id>806</id>
+			<level>5</level>
+			<message>domon command timed out</message>
+		</alarm>
+		<alarm>
+			<name>shutdownBackend</name>
+			<label>shutdown fail</label>
+			<id>8061</id>
+			<level>5</level>
+			<message>Backend shutdown fail</message>
+		</alarm>
+</supportedalarms>
+
+<supportedbatches>
+		<batchcommand>
+			<name>initBackend</name>
+			<id>500</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/initBackEnd.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>restoreBackend</name>
+			<id>501</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/restore_backend.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>resetBackend</name>
+			<id>501</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/reset_backend.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>shutdownBackend</name>
+			<id>1012</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/shutdownBackend.txt</filepath>
+		</batchcommand>		
+</supportedbatches>
+
+</supportedconfig>

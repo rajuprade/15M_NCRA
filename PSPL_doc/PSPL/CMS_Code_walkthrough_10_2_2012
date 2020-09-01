@@ -1,0 +1,72 @@
+
+###############################
+Date 10.2.2012 
+
+CMS_Code_walkthrough
+
+##############################
+
+1. CMS architecture overview : 
+
+    CMS code distribution 
+
+    - Sleep routine is added as the jar module has to go major changes.
+    - Entire sleep routine has been added.
+    - state machine monitors( command response AND monitoring data) the data sent by wrapper.
+    
+
+2. Module walk through 
+
+   - Five project are required for complete CMS.
+   
+     * Cms_batch_processor
+     * cms_Validator
+     * cms_state_machine
+     * CMS_core
+     * cms_web 
+
+     *** SPRING framework background is needed.
+     --- spring basically load all parameters.
+     --- castor reads the xml file and convert it into java objects.
+     --- susbsystemMarshaller reads ncra-susbsystem.xml to create susbsystem object.  
+     --- For each sub-system a susb-system class is created.
+          -- commands supported
+          -- Response expected.
+
+     --- sub-system loader will load all sub-system.
+     --- eng_UI will be separately read by cms-web.
+     --- each controller will have handlerequest.
+     --- showhome takes us to showhomecontroller.
+
+     --- 
+     --- commandlog code get connected to getcommandcontroller.
+    *** JDBC connection is used to connect to databse via cms.
+    --- For each row of database entry we have ti establish separate connection for each row.
+    --- web-service-databse ( service layer is in cms-web)
+    --- Major business layer is in cms_core and cms_state-MACHINE 
+
+    --- cms-core is like a distribution centre.
+    --- Velocity -> when mail server is configured,it sends email to the user added by ADMIN.
+    --- stored procedure.
+
+####################################
+
+Data Monitoring for NCRA : 
+
+--- starting point will be cms-web.
+--- xsl ---> gives the struture.
+--- Tplot ---> hold all prefrence which user has chosen.
+--- flex component sends the user alert messages internally calling java objects.
+
+--- in mysql database we have to update every row by single stored procedure but in orcale kind of databse we can update all row in a one go.
+
+--- HyperSQL ---> support multiple row insertion.
+   -- Maven--> build project
+     logback --> is API for generating log file
+
+----> physhun modeler -> generate xml file for state machine diagram.
+
+---> mvn clean install --> download from online
+
+---> mvn -o clean install -- offline
+

@@ -1,0 +1,28 @@
+Date : 21/11/11 NDS/RAJ/JPK/NMS
+
+1. SET LO freq1 ( Min-100 Max -1700) step size 500 khz
+
+2. SET ATTN BCD ( xxxx four bit ) ( Min-0 Max 16 )
+            
+3. SET MON (Min -5 Max +5 volts)
+
+4. SET LO Reference ( fix frequency 105 )   
+
+
+Dt.31.1.2012
+
+Monitoring data
+
+1. channel 1 ATTN1 ( range 0-15 db )
+
+2. channel 2 ATTN2  ( range 0-15 db )
+
+3. VCO select 1/2/3    ( 1/2/3)   
+
+4. VCO lock    
+
+5. power supply of IF system.( it will contain some 4 values ).
+
+6. power supply of LO system ( it will contain some 4 values ).
+
+7. LO power level and value.

@@ -1,0 +1,9 @@
+test
+info("issuing init command");
+$init_seq = command("servo,init");
+info("done with issuing init command with seq $init_seq");
+#wait for init to complete sleep for 10 sec
+sleep(10000);
+info("issuing postion command");			
+$position_seq = command("servo,position,B,123:30:20,123:50:10");
+info("done with issuing position command with seq $position_seq");

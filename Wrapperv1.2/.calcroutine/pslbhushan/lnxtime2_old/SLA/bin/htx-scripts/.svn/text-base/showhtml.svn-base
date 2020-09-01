@@ -1,0 +1,6 @@
+
+      dir="${1}"
+      if (cd ${dir} 1>/dev/null 2>/dev/null); then
+         files=`echo ${1}/*.html`
+         if test ! "${files}" = "${1}/*.html"; then echo ${files}; fi
+      fi

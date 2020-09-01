@@ -1,0 +1,26 @@
+# RESPONSE FROM DEVICE( SYSTEM ) TO WRAPPER LAYER .
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCM_Module>
+      <TIMESTAMP>1283928575000</TIMESTAMP>
+      <RESPONSE>
+            <ID>FE /SN /BE </ID>
+            <ACK>
+                      <MESSAGE>CMD RECEIVED </MESSAGE>
+            </ACK>
+      <RESPONSE>
+ <TIMESTAMP>1283928575000</TIMESTAMP>
+      <RESPONSE>
+            <ID>FE /SN /BE </ID>
+            <ACK>
+                     <MESSAGE> ILLEGAL CMD ( CMD MEANT FOR OTHER SYSTEM ) </MESSAGE>
+            </ACK>
+      <RESPONSE>
+<TIMESTAMP>1283928575000</TIMESTAMP>
+      <RESPONSE>
+            <ID>FE /SN /BE </ID>
+            <ACK>
+                     <MESSAGE> ILLEGAL PARAMETER  </MESSAGE>
+            </ACK>
+      <RESPONSE>
+</MCM_Module>

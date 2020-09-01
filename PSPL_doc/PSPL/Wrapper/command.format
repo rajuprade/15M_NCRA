@@ -1,0 +1,23 @@
+
+ Wrapper <=> Device
+
+# Request - Response parameter
+
+1. XML-CMD : XML-RESP : LOGFILE 
+2. Queue is in Structure Format, When Command stored, send Wrapper-ACK to the CMS.
+3. When the command will be retrieved from the Queue and respond send in XML format
+   XMLRoutine can use structre information to Wrape response in XML format which need
+   to send to the CMS.
+
+  Struct {
+   long ID;
+   Char TimeStamp[256];
+   Char CommandName[512];
+   int NoofArg;
+   Char CommandArg[256][512];
+   // Field separater from command File
+   } SUBSYSTEM
+
+# Periodic Command
+  1. Structure will give us ID, Command, Interval to execute command-consCMS.c (This need to verify).
+  2. While invoking server, <SYSMON>.XML will define monitoring parameter structure in XML format.

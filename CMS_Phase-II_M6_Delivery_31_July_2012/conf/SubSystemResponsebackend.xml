@@ -1,0 +1,24 @@
+<SubsystemName id="backend">
+	<params>
+		<param>
+			<name>dasstate</name>
+			<value>3</value>
+			<type>int</type>
+		</param>
+		<param>
+			<name>gps</name>
+			<value>0</value>
+			<type>int</type>
+		</param>
+		<param>
+			<name>acq-percentage</name>
+			<value>0</value>
+			<type>int</type>
+		</param>
+		<param>
+			<name>acq-message</name>
+			<value>from simulator</value>
+			<type>string</type>
+		</param>
+	</params>
+</SubsystemName>

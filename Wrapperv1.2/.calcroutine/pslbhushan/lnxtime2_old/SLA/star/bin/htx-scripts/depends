@@ -1,0 +1,28 @@
+
+      newlist="${*}"
+      indexlist=`sed -e 's%$%.htx/htx.index%'`
+      (
+         for doc in ${HTX_ALLDOCS}; do echo "> ${doc}"; done
+         for doc in ${newlist}; do echo "< ${doc}"; done
+      ) | awk '
+         {
+            if ( FILENAME == "-" ) {
+               np = split( $2, path, "/" )
+               doc = path[ np ]
+               if ( $1 == ">" ) {
+                  global[ doc ] = 1
+               } else if ( $1 == "<" ) {
+                  new[ doc ] = 1
+               }
+            } else {
+               if ( $1 == ">" ) {
+                  if ( new[ $3 ] || ( !global[ $3 ] && ( remote == "1" ) ) ) {
+                     if ( FILENAME != note ) {
+                        print( substr( FILENAME, 1, length( FILENAME) - 14 ) )
+                        note = FILENAME
+                     }
+                  }
+               }
+            }
+         }
+         ' remote="${HTX_REMOTE}" - ${indexlist}

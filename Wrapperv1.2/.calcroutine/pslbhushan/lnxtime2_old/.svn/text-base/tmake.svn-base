@@ -1,0 +1,21 @@
+\rm -rf core
+
+
+cc -o gmrtt gmrtt.c date2mjd.c gastm.c Calc_Lst.c  -lm -L`pwd` -lgen
+
+cc -c fangle_.c
+cc -c calepoch.c
+cc -c stime_.c
+cc -c ltostr.c
+f77 -c fryej.f
+f77 -c ep2daj.f
+f77 -c slacaldj.f
+f77 -c slacldj.f
+f77 -c slagmst_.f
+f77 -c sladranrm.f
+f77 -c azel.f
+f77 -c crdrd2ae.f
+f77 -c precess.f
+f77 -g -o calepoch calepoch.o fangle_.c azel.o precess.f crdrd2ae.o fryej.o ep2daj.o slacaldj.o slacldj.o slagmst_.o sladranrm.o stime_.o ltostr.o
+
+f77 -c hms2r.f

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<engineering-ui>
+<detailedparams>
+	<paramsgroup>
+		<groupname>Vars</groupname>	
+		<param>
+			<label>oli</label>
+			<paramname>oli</paramname>
+			<type>boolean</type>
+			<paramvalue></paramvalue>
+		</param>
+		<param>
+			<label>ali-cv</label>
+			<paramname>ali-cv</paramname>
+			<type>float</type>
+			<paramvalue></paramvalue>
+		</param>
+		<param>
+			<label>ali-cvi</label>
+			<paramname>ali-cvi</paramname>
+			<type>string</type>
+			<paramvalue></paramvalue>
+		</param>
+		<param>
+			<label>lo-power</label>
+			<paramname>lo-power</paramname>
+			<type>float</type>
+			<paramvalue></paramvalue>
+		</param>
+		<param>
+			<label>power</label>
+			<paramname>power</paramname>
+			<type>double</type>
+			<paramvalue></paramvalue>
+		</param>
+		<param>
+			<label>gps</label>
+			<paramname>gps</paramname>
+			<type>string</type>
+			<paramvalue></paramvalue>
+		</param>
+		<param>
+			<label>required-lo</label>
+			<paramname>required-lo</paramname>
+			<type>double</type>
+			<paramvalue></paramvalue>
+		</param>
+		<param>
+			<label>set-lo</label>
+			<paramname>set-lo</paramname>
+			<type>double</type>
+			<paramvalue></paramvalue>
+		</param>
+	</paramsgroup>
+</detailedparams>
+
+<basiccommands>
+	<command>
+			<name>PREATTN</name>
+			<id>180</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>1,2</sample>
+			<timeout>120000</timeout>
+	</command>
+	
+	<command>
+			<name>LO</name>
+			<id>181</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>300,400</sample>
+			<timeout>120000</timeout>
+	</command>
+	
+	<command>
+			<name>FILTER</name>
+			<id>182</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>100,400</sample>
+			<timeout>120000</timeout>
+	</command>
+	
+	<command>
+			<name>POSTATTEN</name>
+			<id>183</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>1,3</sample>
+			<timeout>120000</timeout>
+	
+	</command>
+	<command>
+			<name>AGC</name>
+			<id>184</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>true,true</sample>
+			<timeout>120000</timeout>
+	</command>
+	
+</basiccommands>
+
+
+<trendplot>
+	<supportedx>
+		<param>
+			<label>time of day</label>
+			<paramname>timeofday</paramname>
+			<type>datetime</type>				
+		</param>	
+
+		<param>
+			<label>time</label>
+			<paramname>systemtime</paramname>
+			<type>time</type>				
+		</param>			
+
+	</supportedx>
+
+	<supportedy>
+		<param>
+			<label>motor current1</label>
+			<paramname>motorcurrent1</paramname>
+			<type>float</type>	
+			<linestyle></linestyle>	
+			<color>0x00FF00</color>		
+		</param>	
+		<param>
+			<label>motor current1</label>
+			<paramname>motorcurrent1</paramname>
+			<type>float</type>	
+			<linestyle></linestyle>		
+			<color>0x00FFFF</color>		
+		</param>	
+
+	</supportedy>
+
+
+</trendplot>
+</engineering-ui>

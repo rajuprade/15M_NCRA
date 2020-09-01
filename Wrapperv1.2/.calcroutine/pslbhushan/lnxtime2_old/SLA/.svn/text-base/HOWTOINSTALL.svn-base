@@ -1,0 +1,27 @@
+
+Total Steps Four
+
+## REMOVE FOLLWOING FILE
+(1)
+cd SLA/sla
+remove following three files
+.BUILT                 
+.INSTALLED_sun4_Solaris 
+sla_datestamp
+
+(2)
+remove following two files
+.BUILT                 
+.INSTALLED_sun4_Solaris 
+cd htx/
+
+(3)
+## Give very new directory for installation!
+set SYSTEM options to 
+setenv SYSTEM sun4_Solaris  ### For Sun OS 5.x e.g. 5.8 or 5.10 (lenyadri).
+
+(4)
+Then give command
+./SLA/star_build sla
+
+.

@@ -1,0 +1,18 @@
+info("issuing init command");
+$init_seq = command("servo,init");
+info("done with issuing init command with seq [ $init_seq ]");
+#wait for init to complete successfully
+if ($init_seq ne ""){
+	#sleep for 20 sec
+	sleep(20000);
+	$init_status = getCommandStatusInt($init_seq);
+	info("init status int value is $init_status");
+	$init_status_msg = getCommandStatus($init_seq);
+	info("init status is $init_status_msg");
+	#check if init command successful
+	if ($init_status == 5) {
+		info("issuing postion command");
+		$position_seq = command("servo,position,B,123:30:20,123:50:10");
+		info("done with issuing position command with seq $position_seq");
+	}
+}

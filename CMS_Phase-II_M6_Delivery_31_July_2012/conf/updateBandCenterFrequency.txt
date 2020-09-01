@@ -1,0 +1,7 @@
+if ($code == "10" && $event == "12"){
+	updateBandCenterFrequency("0");
+} else if( $code ne "10"){
+	updateBandCenterFrequency("2");
+} else if( $code == "10" &&  $event lt 10){
+	updateBandCenterFrequency("2");
+}

@@ -1,0 +1,59 @@
+ Sep 29th, 2011
+Bhushan, Swati, Shaival, JPK, RU, Naresh
+
+(1) Bug Tracking system requirement - checking
+
+(2) State machine changes upon getting correct value.
+    Alarm can be alive.
+
+(3) STATE Machine is normal even if System not communicating
+
+# ALARM level
+    Level 5 - STATE MAchine will in suspned (Action handler)
+    Level 3,4 - Warning 
+    Level 1,2 - Info
+    Level 0 - meaningless
+
+   CMSSTATE - Level 5 - Exception handler-fail()? ACTION: SUSPEND
+
+# Wrapper STATE -
+    Connected
+    Notconnected
+    DEACTIVE
+    ACTIVE
+
+# Subsystem STATE -
+  TIMEOUT - Device not COMMUNICATING
+  RESET   - It is not applicable mode because initialization failed.
+  NOTOK  
+      Cases   ------------------------------------> STATE-machine change   
+  OK   
+# CMS-STATE
+    (1) SHUTDOWN - ( ) script, it will first send shutdown to all wrapper
+                       Wrapper will send the shutdown status   
+                       OK - then go for tomcat/active shutdonw
+                       FAIL - Move Suspend state.
+    (2) MAINT - expert/admin --- Implemented
+        We shutdown/killed the wrapper - DOMON will get timeout
+        and Subsystem Notconnected/disconnected and Alarm will be raise.
+
+    (X) Power_On Failure - Normal STATE - implemtned and tested
+    (4) Exception - Exception_Handler_Execution ?SUSPEND:PREVIOUS STATE.
+    (5) STANDBY STATE _ Send Command -- Ideal state - Not raise in the alarm.
+                     
+# RULES ENGINE AND SCRIPT NEED TO BE PROPERLY.
+
+(4) TIME- Delay ~10 sec  for DOMON and ALARM
+
+(5) LoginPage :
+    Bestviewed in release firefox 3.6 and above, google-chore
+    Adobe flashflare must be installed to run the software.
+
+(6) User Management test - 
+
+(7) Version Management
+    Subsystem version Defined in the  /opt/ncra/lib/ncra-subsystemconfig.xml  
+    but not appearing the command. Will get in the next release.
+    
+
+ Browser - some comment character appearing

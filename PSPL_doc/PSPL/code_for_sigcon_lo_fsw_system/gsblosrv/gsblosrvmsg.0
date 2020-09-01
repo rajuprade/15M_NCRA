@@ -1,0 +1,30 @@
+server: waiting for connections...
+server: got connection from ::ffff:192.168.1.12
+GSBLO[2010FEB11_03:45:12] : received 37 bytes '7FFFFFFE SET,GSBLO,148000,157000,1,1;' 
+
+### LoFsw() : Successfully Set 
+GSBLO[2010FEB11_03:45:25] : received 37 bytes '7FFFFFFE SET,GSBLO,148000,157000,1,1;' 
+
+### LoFsw() : Successfully Set 
+GSBLO[2010JUN11_15:52:32] : received 37 bytes '7FFFFFFE SET,GSBLO,148000,157000,1,1;' 
+
+### LoFsw() : Successfully Set 
+GSBLO[2010JUN11_15:52:36] : received 37 bytes '7FFFFFFE SET,GSBLO,148000,157000,1,1;' 
+
+### LoFsw() : Successfully Set 
+GSBLO[2010JUN11_15:52:39] : received 37 bytes '7FFFFFFE SET,GSBLO,148000,157000,1,1;' 
+
+### LoFsw() : Successfully Set 
+GSBLO[2010JUN14_15:36:08] : received 37 bytes '7FFFFFFE SET,GSBLO,148000,157000,1,1;' 
+
+### LoFsw() : Successfully Set 
+GSBLO[2010JUN14_15:36:30] : received 14 bytes 'init  7FFFFFFE' 
+GSBLO[2010JUN14_15:36:38] : received 37 bytes '7FFFFFFE SET,GSBLO,148000,157000,1,1;' 
+
+### LoFsw() : Successfully Set 
+GSBLO[2010JUN15_12:33:16] : received 37 bytes '7FFFFFFE SET,GSBLO,148000,157000,1,1;' 
+
+### LoFsw() : Successfully Set 
+GSBLO[2010JUN15_12:33:22] : received 37 bytes '7FFFFFFE SET,GSBLO,148000,157000,1,1;' 
+
+### LoFsw() : Successfully Set 

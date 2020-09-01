@@ -1,0 +1,28 @@
+<COMMANDS>
+    <TIMESTAMP>123456789</TIMESTAMP>
+                <COMMAND>
+                                <SEQ>123</SEQ>
+                                <ID>44</ID>
+                                <NAME>TRACK</NAME>
+                                <SYSTEMID>1</SYSTEMID>
+                                <DATA>
+                                                <PARAM>
+                                                                <NAME>SUBSYSTEMID</NAME>
+                                                                <VALUE>1</VALUE>
+                                                </PARAM>
+                                                <PARAM>
+                                                                <NAME>AX</NAME>
+                                                                <VALUE>A</VALUE>
+                                                </PARAM>
+                                                <PARAM>
+                                                                <NAME>TIME</NAME>
+                                                                <VALUE>10:02:34</VALUE>
+                                                </PARAM>
+                                                <PARAM>
+                                                                <NAME>ANG1</NAME>
+                                                                <VALUE>90:45:45</VALUE>
+                                                </PARAM>
+                                </DATA>
+                </COMMAND>
+</COMMANDS>
+

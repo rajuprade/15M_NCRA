@@ -1,0 +1,86 @@
+
+      if dir="`expr "//${0}" : '//\(.*\)/.*'`"; then :; else
+         dir="`IFS=':'; for d in $PATH; do file="${d:=.}/${0}"
+            test -x "${file}" -a ! -d "${file}" && echo "${d}" && break
+         done`"
+      fi
+      case "${dir}" in [!/]*) dir="`pwd`/${dir}";; esac
+      HTX_DIR="${dir}/htx-scripts"
+      HTX_SCRIPT="`basename "${0}"`"
+      if test -t 0; then
+         HTX_TTY="`tty 2>/dev/null`"
+      else
+         HTX_TTY='/dev/null'
+      fi
+      HTX_WARN='1'
+      browse='1'
+      ref=''
+      where=''
+      while :; do
+         case "${1}" in
+         -f) ref='file'; shift;;
+         -l) where='l'; shift;;
+         -n) browse=''; shift;;
+         -r) where='r'; shift;;
+         -u) ref='url'; shift;;
+         -warn) HTX_WARN=''; shift;;
+         -*)
+            echo >&2 "${HTX_SCRIPT}: unknown switch \""${1}"\" given"
+            exit 1;;
+         *) break;;
+         esac
+      done
+      export DISPLAY
+      export HTX_DIR
+      export HTX_SCRIPT
+      export HTX_TTY
+      export HTX_WARN
+      export HTX_WHERE
+      if test "${ref}" = 'file'; then
+         if test ! -n "${1}"; then
+            echo >&2 "${HTX_SCRIPT}: no file name given"
+            exit 1
+         fi
+         url="${1}"
+         case "${url}" in [!/]*) url="file://`pwd`/${url}";; esac
+         where='l'
+      elif test "${ref}" = 'url'; then
+         if test ! -n "${1}"; then
+            echo >&2 "${HTX_SCRIPT}: no url given"
+            exit 1
+         fi
+         url="${1}"
+         where='r'
+      else
+         doc="${1}"
+         label="${2}"
+         case "${doc}" in *.htx)
+            doc="`expr "X${doc}" : 'X\(.*\)\.htx$'`";;
+         esac
+         url=''
+         if test ! "${where}" = 'r'; then
+            HTX_WHERE='l'
+            url="`${HTX_DIR}/urlgen "${doc}" "${label}"`" || exit
+         fi
+         if test -n "${url}"; then
+            where='l'
+         elif test "${where}" = 'l'; then
+            echo >&2 \
+            "${HTX_SCRIPT}: document ${doc} not found on local file system"
+            exit 1
+         else
+            HTX_WHERE='r'
+            url="`${HTX_DIR}/urlgen "${doc}" "${label}"`" || exit
+            where='r'
+         fi
+      fi
+      if test "${browse}" = '1'; then
+         HTX_WHERE="${where}"
+         ${HTX_DIR}/browse "${url}"
+      else
+         if test "${where}" = 'l'; then
+            echo "file://localhost${url}"
+         else
+            echo "${url}"
+         fi
+      fi

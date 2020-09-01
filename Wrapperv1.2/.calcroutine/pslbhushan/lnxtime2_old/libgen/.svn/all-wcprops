@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen
+END
+format_angle.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/format_angle.c
+END
+Form_Date.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/Form_Date.c
+END
+Debug_Print.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/Debug_Print.c
+END
+position.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/position.c
+END
+Print_Err.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/Print_Err.c
+END
+ASTRCNST.H
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/ASTRCNST.H
+END
+clrstring.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/clrstring.c
+END
+rectpol.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/rectpol.c
+END
+sangle_.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/sangle_.c
+END
+display.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/display.h
+END
+gastm.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/gastm.c
+END
+frac.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/frac.c
+END
+ABPTRB.H
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/ABPTRB.H
+END
+libvlba.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/libvlba.h
+END
+aberrat.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/aberrat.c
+END
+Get_Field.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/Get_Field.c
+END
+intel_int.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/intel_int.c
+END
+ltostr.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/ltostr.c
+END
+date2mjd.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/date2mjd.c
+END
+IAUCONST.H
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/IAUCONST.H
+END
+tolower_.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/tolower_.c
+END
+rsformat.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/rsformat.c
+END
+nutate.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/nutate.c
+END
+rduce2p.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/rduce2p.c
+END
+clrfp.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/clrfp.c
+END
+cvrtuc.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/cvrtuc.c
+END
+prcesj2.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/prcesj2.c
+END
+sangle.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/sangle.c
+END
+arccos.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/arccos.c
+END
+dotpr3.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/dotpr3.c
+END
+NUTPARMS.H
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/NUTPARMS.H
+END
+stime_.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/stime_.c
+END
+rotate3.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/rotate3.c
+END
+dircos.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/dircos.c
+END
+srclist.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/srclist.c
+END
+Calc_Lst.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/Calc_Lst.c
+END
+MATHCNST.H
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/MATHCNST.H
+END
+online.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/online.h
+END
+intel_short.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/intel_short.c
+END
+makefile.libgen
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/makefile.libgen
+END
+fangle_.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/fangle_.c
+END
+Packet_Dump.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/Packet_Dump.c
+END
+rsformat_.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libgen/rsformat_.c
+END

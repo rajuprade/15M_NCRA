@@ -1,0 +1,49 @@
+
+      head="${HTX_DIR}/edhead.sed"
+      tail="${HTX_DIR}/edtail.sed"
+      maxcmd=99
+      if test "`uname -s`" = 'SunOS'; then 
+         maxchar=5000
+      else 
+         maxchar=999999
+      fi
+      awk '
+           {
+               if ( FILENAME != "-" ) {
+                  if ( ( $0 != "" ) && ( substr( $0, 1, 1 ) != "#" ) ) {
+                     if ( FILENAME == head ) {
+                        headline[ ++nh ] = $0
+                     } else if ( FILENAME == tail ) {
+                        tailline[ ++nt ] = $0
+                     }
+                     maxcmd--
+                     maxchar -= length()
+                  }
+               } else {
+                  if ( !cmd++ ) {
+                     if ( pipe++ ) printf( " | " )
+                     printf( "sed -n '\''" )
+                     for ( i = 1; i <= nh; i++ ) print( headline[ i ] )
+                  }
+                  print( $0 )
+                  char += length()
+                  if( cmd >= maxcmd || char >= maxchar ) {
+                     cmd = 0
+                     char = 0
+                     for ( i = 1; i <= nt - 1; i++ ) {
+                        print( tailline[ i ] )
+                     }
+                     printf ( "%s'\''", tailline[ nt ] )
+                  }
+               }
+            }
+            END{
+               if ( cmd ) {
+                  for ( i = 1; i <= nt - 1; i++ ) {
+                     print( tailline[ i ] )
+                  }
+                  printf ( "%s'\''", tailline[ nt ] )
+               }
+            }
+            ' maxcmd=${maxcmd} maxchar=${maxchar} \
+              head="${head}" tail="${tail}" "${head}" "${tail}" -

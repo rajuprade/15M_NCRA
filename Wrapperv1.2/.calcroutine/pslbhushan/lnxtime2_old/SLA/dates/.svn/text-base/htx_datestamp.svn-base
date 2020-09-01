@@ -1,0 +1,20 @@
+Package : HTX
+Version : V1.2-10
+
+Built by: star on node rlsul0
+On      : Fri May 21 16:51:31 BST 2004
+
+Machine : sun4u running SunOS Generic_112233-11 (release 5.9)
+
+make macros:
+
+   SYSTEM  : sun4_Solaris
+
+   EXPORT  : /home/rlsul0/cvsbuild/classic/export-star
+   INSTALL : /star
+   STARLINK: /star
+
+   LINK    : ln -s
+   TAR_IN  : tar -cvhf
+   TAR_OUT : tar -xf
+

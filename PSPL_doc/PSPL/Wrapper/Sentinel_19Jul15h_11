@@ -1,0 +1,12 @@
+ Starting TIME is  Tue Jul 19 15:54:05 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>262</seq><id>1</id><name>INIT</name><systemid>sentinal</systemid><timestamp>2011-07-19T15:53:04.242+05:30</timestamp><data/></command></commands>
+ Closing TIME is  Tue Jul 19 15:54:05 2011
+ 
+ Starting TIME is  Tue Jul 19 15:54:09 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>263</seq><id>1</id><name>INIT</name><systemid>sentinal</systemid><timestamp>2011-07-19T15:53:08.542+05:30</timestamp><data/></command></commands>
+ Closing TIME is  Tue Jul 19 15:54:09 2011
+ 

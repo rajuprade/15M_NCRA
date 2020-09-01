@@ -1,0 +1,13 @@
+devServo.c: In function ‘localRespToCMS’:
+devServo.c:24: warning: too few arguments for format
+devServo.c:25: warning: implicit declaration of function ‘sendRespToCMS’
+devServo.c: In function ‘newTrk’:
+devServo.c:47: warning: implicit declaration of function ‘setTrkPara’
+devServo.c: In function ‘issueTrk’:
+devServo.c:68: warning: implicit declaration of function ‘formServoCmd’
+devServo.c: In function ‘devServo’:
+devServo.c:92: error: ‘etrk15m’ has both ‘extern’ and initializer
+devServo.c:144: warning: implicit declaration of function ‘setAntPara’
+devServo.c:92: warning: unused variable ‘etrk15m’
+devServo.c:89: warning: unused variable ‘localtm0’
+make: *** [devServo.o] Error 1

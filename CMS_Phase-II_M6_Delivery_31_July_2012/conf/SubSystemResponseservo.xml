@@ -1,0 +1,118 @@
+<SubsystemName id="servo">
+	<params>
+		<param>
+			<name>el_dnf</name>
+			<value>0</value>
+			<type>bit</type>
+		</param>
+		<param>
+			<name>el_cp</name>
+			<value>100</value>
+			<type>angle</type>
+		</param>
+		<param>
+			<name>el_motor1_current</name>
+			<value>235</value>
+			<type>float</type>
+		</param>
+		
+		<param>
+			<name>el_motor2_current</name>
+			<value>238</value>
+			<type>float</type>
+		</param>
+		
+		<param>
+			<name>el_motor1_temp</name>
+			<value>35</value>
+			<type>float</type>
+		</param>
+		<param>
+			<name>el_motor2_temp</name>
+			<value>38</value>
+			<type>float</type>
+		</param>
+		<param>
+			<name>az_cfl</name>
+			<value>0</value>
+			<type>bit</type>
+		</param>
+		<param>
+			<name>az_ccf</name>
+			<value>0</value>
+			<type>bit</type>
+		</param>
+		<param>
+			<name>az_cpl</name>
+			<value>0</value>
+			<type>bit</type>
+		</param>
+		<param>
+			<name>az_ccp</name>
+			<value>0</value>
+			<type>bit</type>
+		</param>	
+		<param>
+			<name>az_motor1_temp</name>
+			<value>35</value>
+			<type>float</type>
+		</param>
+		<param>
+			<name>az_motor2_temp</name>
+			<value>30</value>
+			<type>float</type>
+		</param>
+	
+		<param>
+			<name>az_motor2_current</name>
+			<value>235</value>
+			<type>float</type>
+		</param>
+		  <param>
+			<name>el_brk</name>
+			<value>0</value>
+			<type>bit</type>
+		</param>
+		<param>
+			<name>az_cp</name>
+			<value>356</value>
+			<type>int</type>
+		</param>
+		<param>
+			<name>az_motor1_current</name>
+			<value>235</value>
+			<type>float</type>
+		</param>
+		<param>
+			<name>az_motor2_current</name>
+			<value>35</value>
+			<type>float</type>
+		</param>
+		
+		<param>
+			<name>az_brk</name>
+			<value>0</value>
+			<type>bit</type>
+		</param>
+		
+		<param>
+			<name>track</name>
+			<value>false</value>
+			<type>string</type>
+		</param>
+
+		<param>
+			<name>state</name>
+			<value>TestServo</value>
+			<type>string</type>
+		</param>
+
+		<param>
+			<name>rawstream</name>
+			<value>0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0xFFFFFF 0x000000</value>
+			<type>string</type>
+		</param>
+
+		
+	</params>
+</SubsystemName>

@@ -1,0 +1,27 @@
+
+      doclist="${*}"
+      for doc in ${doclist}; do echo "${doc}"; done | awk '
+         BEGIN{
+            docsin[ "" ] = ""
+         }
+         {
+            np = split( $0, path, "/" )
+            dir = substr( $0, 1, length( $0 ) - length( path [ np ] ) )
+            if ( dir == "" ) dir = "./"
+            docsin[ dir ] = docsin[ dir ] $0 ".htx/htx.index "
+         }
+         END {
+            printf( "newdocs_update: " )
+            for ( dir in docsin ) if ( dir ) {
+               printf( "%shtx.log ", dir )
+            }
+            printf( "; @ :\n" )
+            for ( dir in docsin ) if ( dir ) {
+               printf( "%shtx.log:", dir )
+               ndocs = split( docsin[ dir ], doc, " " )
+               for ( i = 1; i <= ndocs; i++ ) printf( " %s", doc[ i ] )
+               printf( "; @ echo $?\n" )
+            }
+         }
+         ' | make -s -f - | tr ' ' '
+' | sed -e 's%\.htx/htx\.index$%%'

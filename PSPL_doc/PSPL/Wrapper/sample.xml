@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<mcm>
+<cmd>
+<id>IF </id>
+<data>IF MON</data>
+<keyword>IF SET</keyword>
+<headline>mon and setting cmd</headline>
+<para>bw 6 6 pg 12 12 pa 8 8 al 0 0</para>
+</cmd>
+</mcm>

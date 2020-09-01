@@ -1,0 +1,70 @@
+#shutdown script for all subsystems
+
+#call servo shutdown
+$servoshutdown = command("servo,shutdownServo");
+info("done with issuing shutdownServo command $servoshutdown");
+$servoshutdownstatus =  waitforCmdCompletion($servoshutdown,10);
+info("status of shutdownServo command : $servoshutdownstatus");
+
+if ($servoshutdownstatus != 5) 
+{
+	error("marking batch as failed since servo shutdown failed");
+	updateBatchStatus(2,"servo shutdown failed");
+	return;
+}
+
+
+#call backend shutdown
+$backendshutdown = command("backend,shutdownBackend");
+info("done with issuing shutdownBackend command $backendshutdown ");
+$backendshutdownstatus =  waitforCmdCompletion($backendshutdown,10);
+info("status of backendshutdown command : $backendshutdownstatus ");
+
+if ($backendshutdownstatus != 5) 
+{
+	error("marking batch as failed since servo shutdown failed");
+	updateBatchStatus(2,"backend shutdown failed");
+	return;
+}
+
+
+#call sentinal shutdown
+$sentinalshutdown = command("sentinal,shutdownSentinal");
+info("done with issuing shutdownSentinal command $sentinalshutdown ");
+$sentinalshutdownstatus =  waitforCmdCompletion($sentinalshutdown ,10);
+
+if ($sentinalshutdownstatus != 5) 
+{
+	error("marking batch as failed since servo shutdown failed");
+	updateBatchStatus(2, "servo shutdown failed");
+	return;
+}
+
+
+#call sigcon shutdown
+$sigconshutdown = command("sigcon,shutdownSigcon");
+info("done with issuing shutdownSigcon command $sigconshutdown ");
+$sigconshutdownstatus =  waitforCmdCompletion($sigconshutdown,10);
+
+if ($sigconshutdownstatus != 5) 
+{
+	error("marking batch as failed since servo shutdown failed");
+	updateBatchStatus(2,"sigcon shutdown failed");
+	return;
+}
+
+#call frontend shutdown
+$frontendshutdown = command("frontend,shutdownFrontend");
+info("done with issuing shutdownFrontend command $frontendshutdown ");
+$frontendshutdownstatus =  waitforCmdCompletion($frontendshutdown ,10);
+
+if ($frontendshutdownstatus != 5) 
+{
+	error("marking batch as failed since frontend shutdown failed");
+	updateBatchStatus(2,"front end shutdown failed");
+	return;
+}
+
+#if any shutdown command fails mark shutdownAllSubsystems also as failed with status 2
+#|| $backendshutdownstatus != 5 || $sentinalshutdownstatus != 5 || $sigconshutdownstatus != 5 || $frontendshutdownstatus !=5
+

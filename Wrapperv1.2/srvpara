@@ -1,0 +1,120 @@
+
+--------------------------------------|----------------------------------------|-------------------------------------|-------------------------------------|--------------------------------------|
+<name>scan</name>                     |  <name>trackObject</name>              |<name>rawtrack</name>                |<name>trackOffazel</name>            |<name>trackOffradec</name>            |
+--------------------------------------|----------------------------------------|-------------------------------------|-------------------------------------|--------------------------------------|
+source_name                           |  <paramname>source_name</paramname>    |<paramname>source_name</paramname>   |<paramname>source_name</paramname>   |<paramname>source_name</paramname>    |
+ra_mean                               |  <paramname>ra_mean</paramname>        |<paramname>ra_mean</paramname>       |<paramname>ra_mean</paramname>       |<paramname>ra_mean</paramname>        |
+dec_mean                              |  <paramname>dec_mean</paramname>       |<paramname>dec_mean</paramname>      |<paramname>dec_mean</paramname>      |<paramname>dec_mean</paramname>       |
+epoch                                 |  <paramname>epoch</paramname>          |<paramname>epoch</paramname>         |<paramname>epoch</paramname>         |<paramname>epoch</paramname>          |
+ra_app                                |  <paramname>ra_app</paramname>         |<paramname>ra_app</paramname>        |<paramname>ra_app</paramname>        |<paramname>ra_app</paramname>         |
+dec_app                               |  <paramname>dec_app</paramname>        |<paramname>dec_app</paramname>       |<paramname>dec_app</paramname>       |<paramname>dec_app</paramname>        |
+target_epoch                          |  <paramname>target_epoch</paramname>   |<paramname>target_epoch</paramname>  |<paramname>target_epoch</paramname>  |<paramname>target_epoch</paramname>   |
+ra_offset                             |  <paramname>ra_offset</paramname>      |<paramname>ra_offset</paramname>     |<paramname>ra_offset</paramname>     |<paramname>ra_offset</paramname>      |
+dra                                   |  <paramname>dra</paramname>            |<paramname>dra</paramname>           |<paramname>dra</paramname>           |<paramname>dra</paramname>            |
+dec_offset                            |  <paramname>dec_offset</paramname>     |<paramname>dec_offset</paramname>    |<paramname>dec_offset</paramname>    |<paramname>dec_offset</paramname>     |
+ddec                                  |  <paramname>ddec</paramname>           |<paramname>ddec</paramname>          |<paramname>ddec</paramname>          |<paramname>ddec</paramname>           |
+d_ref_time                            |  <paramname>d_ref_time</paramname>     |<paramname>d_ref_time</paramname>    |<paramname>d_ref_time</paramname>    |<paramname>d_ref_time</paramname>     |
+az_offset                             |  <paramname>az_offset</paramname>      |<paramname>az_offset</paramname>     |<paramname>az_offset</paramname>     |<paramname>az_offset</paramname>      |
+daz                                   |  <paramname>daz</paramname>            |<paramname>daz</paramname>           |<paramname>daz</paramname>           |<paramname>daz</paramname>            |
+el_offset                             |  <paramname>el_offset</paramname>      |<paramname>el_offset</paramname>     |<paramname>el_offset</paramname>     |<paramname>el_offset</paramname>      |
+del                                   |  <paramname>del</paramname>            |<paramname>del</paramname>           |<paramname>del</paramname>           |<paramname>del</paramname>            |
+ref_time_offset                          <paramname>ref_time_offset</paramname>|<paramname>ref_time_offset</paramname|<paramname>ref_time_offset</paramname|<paramname>ref_time_offset</paramname>|
+current_time                          |  <paramname>current_time</paramname>   |<paramname>current_time</paramname>  |<paramname>current_time</paramname>  |<paramname>current_time</paramname>   |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+scan_length                           |  <paramname>on_source_flag</paramname> |                                     |                                     |                                      |
+scan_dra                              |  <paramname>tracking_on</paramname>    |                                     |                                     |                                      |
+scan_ddec                             |     (will use for in/out)              |                                     |                                     |                                      |
+scan_daz                                    |                                     |                                     |                                      |
+scan_del                             #                                   |                                     |                                     |                                      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+TRKOBJECT
+
+ source_name 3C147 
+ ra_mean 10:10:10 
+ dec_mean 10:10:10 
+ epoch 2000.0 
+ ra_app 10:10:43 
+ dec_app 00:40:41 
+ target_epoch 2012.3804 
+ ra_offset 0 
+ dra 12.00 
+ dec_offset 0 
+ ddec 10 
+ d_ref_time 11 
+ az_offset 0 
+ daz 14 
+ el_offset 0 
+ del 16 
+ ref_time_offset 17 
+ current_time 2012:51:19 03:51:50 
+ on_source_flag false 
+ tracking_on false 
+
+TRKAZEL                                |TRACKOFFRADEC                               
+az_offset 1900.00                       ra_offset Value 0 
+el_offset 1800.00                       dec_offset Value 0 
+source_name 3C147                       source_name Value 3C147 
+ra_mean 10:10:10                        ra_mean Value 10:10:10 
+dec_mean 10:10:10                       dec_mean Value 10:10:10 
+epoch 2000.0                            epoch Value 2000.0 
+ra_app 10:10:43                         ra_app Value 10:10:43 
+dec_app 00:40:41                        dec_app Value 00:40:41 
+target_epoch 2012.3804                  target_epoch Value 2012.3804 
+ra_offset 0                             dra Value 12.00 
+dra 12.00                               ddec Value 10 
+dec_offset 0                            d_ref_time Value 11 
+ddec 10                                 az_offset Value 0 
+d_ref_time 11                           daz Value 14 
+daz 14                                  el_offset Value 0 
+del 16                                  del Value 16 
+ref_time_offset 17                      ref_time_offset Value 17               
+current_time 2012:54:19 03:54:23        current_time Value 2012:55:19 03:55:11
+
+ RAWTRACK
+ ArgSorted  source_name 3C147 
+ ArgSorted  ra_mean 10:10:10 
+ ArgSorted  dec_mean 10:10:10 
+ ArgSorted  epoch 2000.0 
+ ArgSorted  ra_app 10:10:10 
+ ArgSorted  dec_app 10:10:10 
+ ArgSorted  target_epoch 2011 
+ ArgSorted  ra_offset 19.00 
+ ArgSorted  dra 12.00 
+ ArgSorted  dec_offset 10 
+ ArgSorted  ddec 10 
+ ArgSorted  d_ref_time 11 
+ ArgSorted  az_offset 13 
+ ArgSorted  daz 14 
+ ArgSorted  el_offset 15 
+ ArgSorted  del 16 
+ ArgSorted  ref_time_offset 17 
+ ArgSorted  current_time 1985:12:12 12:12:30 
+
+sortArgs SCAN SNTYX:  az_offset,el_offset,
+ ra_offset,dec_offset,scan_length 
+ isort 19 numpkt 19 
+ ArgSorted  az_offset 1800 
+ ArgSorted  el_offset 1900 
+ ArgSorted  ra_offset 0 
+ ArgSorted  dec_offset 0 
+ ArgSorted  scan_length 350 
+ ArgSorted  source_name 3C147 
+ ArgSorted  ra_mean 10:10:10 
+ ArgSorted  dec_mean 10:10:10 
+ ArgSorted  epoch 2000.0 
+ ArgSorted  ra_app 10:10:43 
+ ArgSorted  dec_app 00:40:41 
+ ArgSorted  target_epoch 2012.3804 
+ ArgSorted  dra 12.00 
+ ArgSorted  ddec 10 
+ ArgSorted  d_ref_time 11 
+ ArgSorted  daz 14 
+ ArgSorted  del 16 
+ ArgSorted  ref_time_offset 17 
+ ArgSorted  current_time 2012:56:19 03:56:37 
+ 
+
+<name>ldantoff</name>
+<paramname>ant_az_offset</paramname>
+<paramname>ant_el_offset</paramname>
+

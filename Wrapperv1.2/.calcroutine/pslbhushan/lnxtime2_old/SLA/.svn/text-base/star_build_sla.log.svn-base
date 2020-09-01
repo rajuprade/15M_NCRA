@@ -1,0 +1,602 @@
+star_build_sla logfile
+Building SLA  on Mon Oct 20 15:17:08 IST 2008
+mk: Environment variables defined for sun4_Solaris system
+make -e -s install
+Updating index file for document: sun188
+Updating index file for document: sun67
+2 hypertext documents need re-linking
+   updating cross-references in document sun188 (11 files to modify)...
+      ...document sun188 linked
+   updating cross-references in document sun67 (0 files to modify)...
+      ...document sun67 linked
+
+*** The HTX package has been installed in directory /home/aips/libonline/SLA/star
+
+mk: Environment variables defined for sun4_Solaris system
+make -e -s build
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c addet.f
+addet.f:
+	sla_addet:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c afin.f
+afin.f:
+	sla_afin:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c airmas.f
+airmas.f:
+	sla_airmas:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c altaz.f
+altaz.f:
+	sla_altaz:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c amp.f
+amp.f:
+	sla_amp:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ampqk.f
+ampqk.f:
+	sla_ampqk:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c aop.f
+aop.f:
+	sla_aop:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c aoppa.f
+aoppa.f:
+	sla_aoppa:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c aoppat.f
+aoppat.f:
+	sla_aoppat:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c aopqk.f
+aopqk.f:
+	sla_aopqk:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c atmdsp.f
+atmdsp.f:
+	sla_atmdsp:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c atms.f
+atms.f:
+	sla__atms:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c atmt.f
+atmt.f:
+	sla__atmt:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c av2m.f
+av2m.f:
+	sla_av2m:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c bear.f
+bear.f:
+	sla_bear:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c caf2r.f
+caf2r.f:
+	sla_caf2r:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c caldj.f
+caldj.f:
+	sla_caldj:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c calyd.f
+calyd.f:
+	sla_calyd:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c cc2s.f
+cc2s.f:
+	sla_cc2s:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c cc62s.f
+cc62s.f:
+	sla_cc62s:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c cd2tf.f
+cd2tf.f:
+	sla_cd2tf:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c cldj.f
+cldj.f:
+	sla_cldj:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c clyd.f
+clyd.f:
+	sla_clyd:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c combn.f
+combn.f:
+	sla_combn:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c cr2af.f
+cr2af.f:
+	sla_cr2af:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c cr2tf.f
+cr2tf.f:
+	sla_cr2tf:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c cs2c.f
+cs2c.f:
+	sla_cs2c:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c cs2c6.f
+cs2c6.f:
+	sla_cs2c6:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ctf2d.f
+ctf2d.f:
+	sla_ctf2d:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ctf2r.f
+ctf2r.f:
+	sla_ctf2r:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c daf2r.f
+daf2r.f:
+	sla_daf2r:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dafin.f
+dafin.f:
+	sla_dafin:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dat.f
+dat.f:
+	sla_dat:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dav2m.f
+dav2m.f:
+	sla_dav2m:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dbear.f
+dbear.f:
+	sla_dbear:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dbjin.f
+dbjin.f:
+	sla_dbjin:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dc62s.f
+dc62s.f:
+	sla_dc62s:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dcc2s.f
+dcc2s.f:
+	sla_dcc2s:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dcmpf.f
+dcmpf.f:
+	sla_dcmpf:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dcs2c.f
+dcs2c.f:
+	sla_dcs2c:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dd2tf.f
+dd2tf.f:
+	sla_dd2tf:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c de2h.f
+de2h.f:
+	sla_de2h:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c deuler.f
+deuler.f:
+	sla_deuler:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dfltin.f
+dfltin.f:
+	sla_dfltin:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dh2e.f
+dh2e.f:
+	sla_dh2e:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dimxv.f
+dimxv.f:
+	sla_dimxv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c djcal.f
+djcal.f:
+	sla_djcal:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c djcl.f
+djcl.f:
+	sla_djcl:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dm2av.f
+dm2av.f:
+	sla_dm2av:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dmat.f
+dmat.f:
+	sla_dmat:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dmoon.f
+dmoon.f:
+	sla_dmoon:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dmxm.f
+dmxm.f:
+	sla_dmxm:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dmxv.f
+dmxv.f:
+	sla_dmxv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dpav.f
+dpav.f:
+	sla_dpav:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dr2af.f
+dr2af.f:
+	sla_dr2af:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dr2tf.f
+dr2tf.f:
+	sla_dr2tf:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c drange.f
+drange.f:
+	sla_drange:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dranrm.f
+dranrm.f:
+	sla_dranrm:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ds2c6.f
+ds2c6.f:
+	sla_ds2c6:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ds2tp.f
+ds2tp.f:
+	sla_ds2tp:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dsep.f
+dsep.f:
+	sla_dsep:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dsepv.f
+dsepv.f:
+	sla_dsepv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dt.f
+dt.f:
+	sla_dt:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dtf2d.f
+dtf2d.f:
+	sla_dtf2d:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dtf2r.f
+dtf2r.f:
+	sla_dtf2r:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dtp2s.f
+dtp2s.f:
+	sla_dtp2s:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dtp2v.f
+dtp2v.f:
+	sla_dtp2v:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dtps2c.f
+dtps2c.f:
+	sla_dtps2c:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dtpv2c.f
+dtpv2c.f:
+	sla_dtpv2c:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dtt.f
+dtt.f:
+	sla_dtt:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dv2tp.f
+dv2tp.f:
+	sla_dv2tp:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dvdv.f
+dvdv.f:
+	sla_dvdv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dvn.f
+dvn.f:
+	sla_dvn:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c dvxv.f
+dvxv.f:
+	sla_dvxv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c e2h.f
+e2h.f:
+	sla_e2h:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c earth.f
+earth.f:
+	sla_earth:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ecleq.f
+ecleq.f:
+	sla_ecleq:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ecmat.f
+ecmat.f:
+	sla_ecmat:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ecor.f
+ecor.f:
+	sla_ecor:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c eg50.f
+eg50.f:
+	sla_eg50:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c el2ue.f
+el2ue.f:
+	sla_el2ue:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c epb.f
+epb.f:
+	sla_epb:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c epb2d.f
+epb2d.f:
+	sla_epb2d:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c epco.f
+epco.f:
+	sla_epco:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c epj.f
+epj.f:
+	sla_epj:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c epj2d.f
+epj2d.f:
+	sla_epj2d:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c eqecl.f
+eqecl.f:
+	sla_eqecl:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c eqeqx.f
+eqeqx.f:
+	sla_eqeqx:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c eqgal.f
+eqgal.f:
+	sla_eqgal:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c etrms.f
+etrms.f:
+	sla_etrms:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c euler.f
+euler.f:
+	sla_euler:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c evp.f
+evp.f:
+	sla_evp:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c fitxy.f
+fitxy.f:
+	sla_fitxy:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c fk425.f
+fk425.f:
+	sla_fk425:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c fk45z.f
+fk45z.f:
+	sla_fk45z:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c fk524.f
+fk524.f:
+	sla_fk524:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c fk52h.f
+fk52h.f:
+	sla_fk52h:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c fk54z.f
+fk54z.f:
+	sla_fk54z:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c fk5hz.f
+fk5hz.f:
+	sla_fk5hz:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c flotin.f
+flotin.f:
+	sla_flotin:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c galeq.f
+galeq.f:
+	sla_galeq:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c galsup.f
+galsup.f:
+	sla_galsup:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ge50.f
+ge50.f:
+	sla_ge50:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c geoc.f
+geoc.f:
+	sla_geoc:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c gmst.f
+gmst.f:
+	sla_gmst:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c gmsta.f
+gmsta.f:
+	sla_gmsta:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c h2e.f
+h2e.f:
+	sla_h2e:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c h2fk5.f
+h2fk5.f:
+	sla_h2fk5:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c hfk5z.f
+hfk5z.f:
+	sla_hfk5z:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c idchf.f
+idchf.f:
+	sla__idchf:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c idchi.f
+idchi.f:
+	sla__idchi:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c imxv.f
+imxv.f:
+	sla_imxv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c intin.f
+intin.f:
+	sla_intin:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c invf.f
+invf.f:
+	sla_invf:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c kbj.f
+kbj.f:
+	sla_kbj:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c m2av.f
+m2av.f:
+	sla_m2av:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c map.f
+map.f:
+	sla_map:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c mappa.f
+mappa.f:
+	sla_mappa:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c mapqk.f
+mapqk.f:
+	sla_mapqk:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c mapqkz.f
+mapqkz.f:
+	sla_mapqkz:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c moon.f
+moon.f:
+	sla_moon:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c mxm.f
+mxm.f:
+	sla_mxm:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c mxv.f
+mxv.f:
+	sla_mxv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c nut.f
+nut.f:
+	sla_nut:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c nutc.f
+nutc.f:
+	sla_nutc:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c nutc80.f
+nutc80.f:
+	sla_nutc80:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c oap.f
+oap.f:
+	sla_oap:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c oapqk.f
+oapqk.f:
+	sla_oapqk:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c obs.f
+obs.f:
+	sla_obs:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pa.f
+pa.f:
+	sla_pa:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pav.f
+pav.f:
+	sla_pav:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pcd.f
+pcd.f:
+	sla_pcd:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pda2h.f
+pda2h.f:
+	sla_pda2h:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pdq2h.f
+pdq2h.f:
+	sla_pdq2h:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c permut.f
+permut.f:
+	sla_permut:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pertel.f
+pertel.f:
+	sla_pertel:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pertue.f
+pertue.f:
+	sla_pertue:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c planel.f
+planel.f:
+	sla_planel:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c planet.f
+planet.f:
+	sla_planet:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c plante.f
+plante.f:
+	sla_plante:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c plantu.f
+plantu.f:
+	sla_plantu:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pm.f
+pm.f:
+	sla_pm:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c polmo.f
+polmo.f:
+	sla_polmo:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c prebn.f
+prebn.f:
+	sla_prebn:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c prec.f
+prec.f:
+	sla_prec:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c precl.f
+precl.f:
+	sla_precl:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c preces.f
+preces.f:
+	sla_preces:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c prenut.f
+prenut.f:
+	sla_prenut:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pv2el.f
+pv2el.f:
+	sla_pv2el:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pv2ue.f
+pv2ue.f:
+	sla_pv2ue:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pvobs.f
+pvobs.f:
+	sla_pvobs:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c pxy.f
+pxy.f:
+	sla_pxy:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c range.f
+range.f:
+	sla_range:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ranorm.f
+ranorm.f:
+	sla_ranorm:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c rcc.f
+rcc.f:
+	sla_rcc:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c rdplan.f
+rdplan.f:
+	sla_rdplan:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c refco.f
+refco.f:
+	sla_refco:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c refcoq.f
+refcoq.f:
+	sla_refcoq:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c refro.f
+refro.f:
+	sla_refro:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c refv.f
+refv.f:
+	sla_refv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c refz.f
+refz.f:
+	sla_refz:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c rverot.f
+rverot.f:
+	sla_rverot:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c rvgalc.f
+rvgalc.f:
+	sla_rvgalc:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c rvlg.f
+rvlg.f:
+	sla_rvlg:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c rvlsrd.f
+rvlsrd.f:
+	sla_rvlsrd:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c rvlsrk.f
+rvlsrk.f:
+	sla_rvlsrk:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c s2tp.f
+s2tp.f:
+	sla_s2tp:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c sep.f
+sep.f:
+	sla_sep:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c sepv.f
+sepv.f:
+	sla_sepv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c smat.f
+smat.f:
+	sla_smat:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c subet.f
+subet.f:
+	sla_subet:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c supgal.f
+supgal.f:
+	sla_supgal:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c svd.f
+svd.f:
+	sla_svd:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c svdcov.f
+svdcov.f:
+	sla_svdcov:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c svdsol.f
+svdsol.f:
+	sla_svdsol:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c tp2s.f
+tp2s.f:
+	sla_tp2s:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c tp2v.f
+tp2v.f:
+	sla_tp2v:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c tps2c.f
+tps2c.f:
+	sla_tps2c:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c tpv2c.f
+tpv2c.f:
+	sla_tpv2c:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ue2el.f
+ue2el.f:
+	sla_ue2el:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c ue2pv.f
+ue2pv.f:
+	sla_ue2pv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c unpcd.f
+unpcd.f:
+	sla_unpcd:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c v2tp.f
+v2tp.f:
+	sla_v2tp:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c vdv.f
+vdv.f:
+	sla_vdv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c vn.f
+vn.f:
+	sla_vn:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c vxv.f
+vxv.f:
+	sla_vxv:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c xy2xy.f
+xy2xy.f:
+	sla_xy2xy:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c zd.f
+zd.f:
+	sla_zd:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c gresid.f
+gresid.f:
+	sla_gresid:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c random.f
+random.f:
+	sla_random:
+NOTICE: Invoking /bin/f90 -f77 -ftrap=%none -O -PIC -c wait.f
+wait.f:
+	sla_wait:
+ar: creating libsla.a
+
+*** The SLALIB package has been built
+
+mk: Environment variables defined for sun4_Solaris system
+make -e -s install
+Updating index file for document: sun67
+1 hypertext document needs re-linking
+   updating cross-references in document sun67 (0 files to modify)...
+      ...document sun67 linked
+
+*** The SLALIB package has been installed in directory /home/aips/libonline/SLA/star
+

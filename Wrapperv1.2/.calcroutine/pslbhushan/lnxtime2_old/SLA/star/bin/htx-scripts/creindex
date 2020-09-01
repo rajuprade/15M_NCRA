@@ -1,0 +1,29 @@
+
+      doc="${1}"
+      if test -n "${doc}"; then
+         dir="`dirname ${doc}`"
+         base="`basename ${doc}`"
+         cd "${dir}"
+         htmlfiles="`find "${base}.htx" \( -type d -o -type l \) \
+                                        -exec sh ${HTX_DIR}/showhtml {} \;`"
+         tempfile="/tmp/htx-creindex-$$.homefile"
+         rm -f "${tempfile}"
+         grep '^' ${htmlfiles} /dev/null \
+            | sed -n -f ${HTX_DIR}/creindex.sed \
+            | sort -u -k1,1 -k4,4 -k3,3 -k2,2 \
+            | sed -n 'p
+                      s%^<  *\([^ ][^ ]*\) *$%\1%w '"${tempfile}"
+         homefile=''
+         if test -f "${tempfile}"; then
+            homefile="`sed '1q' "${tempfile}"`"
+         fi
+         rm -f "${tempfile}"
+         homefile="`${HTX_DIR}/homepage "${base}" "${homefile}"`"
+         {
+            ${HTX_DIR}/gettitle ${htmlfiles} \
+               | sed 's%^[^/]*/%t %
+                      s%^t\( '"${homefile}"' \)%T\1%
+                      s%^t\( '"${homefile}"'\)$%T\1%'
+            if test ! -n "${homefile}"; then echo 'T'; fi
+         } | sort -k3
+      fi

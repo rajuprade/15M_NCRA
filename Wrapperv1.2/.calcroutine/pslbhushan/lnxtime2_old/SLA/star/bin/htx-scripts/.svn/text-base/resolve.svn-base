@@ -1,0 +1,94 @@
+
+      maindoc="${1}"
+      docdir="`dirname "${maindoc}"`"
+      shift
+      refs="${*}"
+      indexlist=`for ref in ${refs}; do
+         ifile="${ref}.htx/htx.index"
+         if test -f "${ifile}" -a -r "${ifile}"; then
+            echo "${ifile}"
+         else
+            echo >&2 "${HTX_SCRIPT}: cannot link against document ${ref} with no index file"
+         fi
+      done`
+      if test ! -n "${HTX_SERVER}"; then
+         server='http://star-www.rl.ac.uk/cgi-bin/htxserver'
+      else
+         server="${HTX_SERVER}"
+      fi
+      tempfile="/tmp/htx-$$.error"
+      if test -f "${tempfile}"; then rm -f "${tempfile}"; fi
+      sed -n 's%^> *%%p' "${maindoc}.htx/htx.index" | awk '
+         BEGIN{
+            doc[ "" ] = ""
+            ref[ "" ] = ""
+            reffound[ "" ] = ""
+         }
+         {
+            if ( FILENAME == "-" ) {
+                ref[ $2":"$3 ] = ref[ $2":"$3 ] $1 " "
+                doc[ $2 ] = 1
+            } else if ( $1 == "<" ) {
+               if ( FILENAME != last ) {
+                  np = split( FILENAME, path, "/" )
+                  ldir = length( FILENAME ) - length( path [ np ] ) - length( path[ np - 1 ] ) - 2
+                  dir = ""
+                  if ( ldir >= 0 ) dir = substr( FILENAME, 1, ldir )
+                  if ( dir == "" ) dir = "."
+                  name = substr( path[ np - 1 ], 1, length( path[ np - 1 ] ) - 4 )
+                  if ( dir == docdir ) {
+                     prefix = ""
+                  } else {
+                     prefix = dir
+                     if ( substr( dir, 1, 1 ) != "/" ) {
+                        if ( dir == "." ) {
+                           prefix = pwd
+                        } else {
+                           prefix = pwd "/" dir
+                        }
+                     }
+                     prefix = prefix "/"
+                  }
+                  docfound[ name ] = 1
+                  docpre[ name ] = prefix
+                  last = FILENAME
+               }
+               if ( ref[ name":"$3 ] ) {
+                  reffound[ name":"$3 ] = 1
+                  refdoc[ name":"$3 ] = name
+                  reflab[ name":"$3 ] = $3
+                  refpre[ name":"$3 ] = prefix
+                  reffil[ name":"$3 ] = $2
+               }
+            }
+         }
+         END {
+            for ( i in doc ) if ( i ) {
+               if ( docfound[ i ] ) {
+                  print( "s%\\(<\\n*[ 	]*[aA][ 	]\\n*[^>]*[hH][rR][eE][fF]\\n*[ 	]*=\\n*[ 	]*\"\\)[^ 	\"]*/"i"\\.htx/[^ 	\"]*[#?]\\(xref_\"[^>]*>\\)%\\1"docpre[ i ]i".htx/"i".html#\\2%g" )
+               }
+            }
+            for ( i in doc ) if ( i ) {
+               if ( ! docfound[ i ] ) {
+                  print( "s%\\(<\\n*[ 	]*[aA][ 	]\\n*[^>]*[hH][rR][eE][fF]\\n*[ 	]*=\\n*[ 	]*\"\\)[^ 	\"]*\\(/"i"\\.htx/[^ 	\"]*\\)[#?]\\(xref_[^  \"]*\"[^>]*>\\)%\\1"server"\\2?\\3%g" )
+               }
+            }
+            for ( i in reffound ) if ( i ) {
+               print( "s%\\(<\\n*[ 	]*[aA][ 	]\\n*[^>]*[hH][rR][eE][fF]\\n*[ 	]*=\\n*[ 	]*\"\\)[^ 	\"]*/\\("refdoc[ i ]"\\.htx/\\)[^ 	\"]*[#?]\\(xref_"reflab[ i ]"\"[^>]*>\\)%\\1"refpre[ i ]"\\2"reffil[ i ]"#\\3%g" )
+            }
+            for ( i in ref ) if ( i ) {
+               if ( ref[ i ] && ! reffound[ i ] ) {
+                  split( i, field, ":" )
+                  if ( docfound[ field[ 1 ] ] && field[ 2 ] ) {
+                     print( "!! WARNING - reference to label \""field[ 2 ]"\" in document "field[ 1 ]" is invalid." ) >tempfile
+                     print( "!            reference occurs in file(s): "ref[ i ] ) >tempfile
+                  }
+               }
+            }
+         }
+         ' docdir="${docdir}" pwd="`pwd`" server="${server}" \
+           tempfile="${tempfile}" - ${indexlist}
+         if test -f "${tempfile}"; then
+            cat "${tempfile}" >&2
+            rm -f "${tempfile}"
+         fi

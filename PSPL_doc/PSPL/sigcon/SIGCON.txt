@@ -1,0 +1,10 @@
+
+Date : 21/11/11 NDS/RAJ/JPK/NMS
+
+1. SET LO freq1 ( Min-100 Max -1700) step size 500 khz
+
+2. SET ATTN BCD ( xxxx four bit ) ( Min-0 Max 16 )
+            
+3. SET MON (Min -5 Max +5 volts)
+
+4. SET LO Reference ( fix frequency 105 )         

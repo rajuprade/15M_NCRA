@@ -1,0 +1,42 @@
+ Starting TIME is  Tue Jul 19 14:11:39 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>255</seq><id>2</id><name>SETCMD</name><systemid>sentinal</systemid><timestamp>2011-07-19T14:10:39.238+05:30</timestamp><data><param><name>mcmbit</name><value>0x1</value></param></data></command></commands>
+ Closing TIME is  Tue Jul 19 14:11:39 2011
+ 
+ Starting TIME is  Tue Jul 19 14:11:45 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>256</seq><id>2</id><name>SETCMD</name><systemid>sentinal</systemid><timestamp>2011-07-19T14:10:44.549+05:30</timestamp><data><param><name>mcmbit</name><value>0x1</value></param></data></command></commands>
+ Closing TIME is  Tue Jul 19 14:11:45 2011
+ 
+ Starting TIME is  Tue Jul 19 14:15:10 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>257</seq><id>2</id><name>SETCMD</name><systemid>sentinal</systemid><timestamp>2011-07-19T14:14:09.722+05:30</timestamp><data><param><name>mcmbit</name><value>0x1</value></param></data></command></commands>
+ Closing TIME is  Tue Jul 19 14:15:10 2011
+ 
+ Starting TIME is  Tue Jul 19 14:15:27 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>258</seq><id>2</id><name>SETCMD</name><systemid>sentinal</systemid><timestamp>2011-07-19T14:14:26.478+05:30</timestamp><data><param><name>mcmbit</name><value>0x1</value></param></data></command></commands>
+ Closing TIME is  Tue Jul 19 14:15:27 2011
+ 
+ Starting TIME is  Tue Jul 19 14:15:33 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>259</seq><id>2</id><name>SETCMD</name><systemid>sentinal</systemid><timestamp>2011-07-19T14:14:32.838+05:30</timestamp><data><param><name>mcmbit</name><value>0x1</value></param></data></command></commands>
+ Closing TIME is  Tue Jul 19 14:15:33 2011
+ 
+ Starting TIME is  Tue Jul 19 14:15:37 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>260</seq><id>2</id><name>SETCMD</name><systemid>sentinal</systemid><timestamp>2011-07-19T14:14:37.029+05:30</timestamp><data><param><name>mcmbit</name><value>0x1</value></param></data></command></commands>
+ Closing TIME is  Tue Jul 19 14:15:37 2011
+ 
+ Starting TIME is  Tue Jul 19 14:15:44 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>261</seq><id>1</id><name>INIT</name><systemid>sentinal</systemid><timestamp>2011-07-19T14:14:43.865+05:30</timestamp><data/></command></commands>
+ Closing TIME is  Tue Jul 19 14:15:44 2011
+ 

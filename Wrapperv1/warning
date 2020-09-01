@@ -1,0 +1,59 @@
+invokeWrapper.c: In function ‘handle_clients’:
+invokeWrapper.c:141: warning: passing argument 1 of ‘pthread_cancel’ makes integer from pointer without a cast
+invokeWrapper.c:156: warning: too few arguments for format
+invokeWrapper.c:159: warning: passing argument 1 of ‘pthread_create’ from incompatible pointer type
+invokeWrapper.c:164: warning: passing argument 1 of ‘pthread_setschedprio’ makes integer from pointer without a cast
+invokeWrapper.c:176: warning: too few arguments for format
+invokeWrapper.c:180: warning: passing argument 1 of ‘pthread_create’ from incompatible pointer type
+invokeWrapper.c:221: warning: passing argument 1 of ‘pthread_cancel’ makes integer from pointer without a cast
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o wrapperCom.o wrapperCom.c
+wrapperCom.c:5:27: warning: extra tokens at end of #ifdef directive
+wrapperCom.c: In function ‘printBasicFld’:
+wrapperCom.c:206: warning: format ‘%ld’ expects type ‘long int’, but argument 3 has type ‘int’
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o handleQue.o handleQue.c
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o xmlParse.o xmlParse.c
+xmlParse.c: In function ‘parsecommand’:
+xmlParse.c:127: warning: pointer targets in passing argument 2 of ‘parseCmdStore’ differ in signedness
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o xmlResp.o xmlResp.c
+xmlResp.c: In function ‘formDataXmlResp’:
+xmlResp.c:38: warning: passing argument 2 of ‘strcpy’ from incompatible pointer type
+xmlResp.c:40: warning: passing argument 2 of ‘strcpy’ from incompatible pointer type
+xmlResp.c: In function ‘formAnsXmlResp’:
+xmlResp.c:99: warning: passing argument 2 of ‘strcpy’ from incompatible pointer type
+xmlResp.c: In function ‘formBasicXmlResp’:
+xmlResp.c:188: warning: format ‘%ld’ expects type ‘long int’, but argument 3 has type ‘int’
+xmlResp.c: In function ‘formRespXML’:
+xmlResp.c:292: warning: return from incompatible pointer type
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o servCMS.o servCMS.c
+servCMS.c: In function ‘deviceStatResponse’:
+servCMS.c:132: warning: implicit declaration of function ‘sendPktToCMS’
+servCMS.c: In function ‘service’:
+servCMS.c:158: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘pthread_t’
+servCMS.c:285: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘pthread_t’
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o consumCMS.o consumCMS.c
+consumCMS.c:4:27: warning: extra tokens at end of #ifdef directive
+consumCMS.c: In function ‘getSysId’:
+consumCMS.c:79: warning: control reaches end of non-void function
+consumCMS.c: In function ‘devSpecExecute’:
+consumCMS.c:192: warning: passing argument 1 of ‘strcpy’ from incompatible pointer type
+consumCMS.c:209: warning: format ‘%ld’ expects type ‘long int’, but argument 3 has type ‘int’
+consumCMS.c:209: warning: format ‘%ld’ expects type ‘long int’, but argument 4 has type ‘int’
+consumCMS.c: In function ‘consumer’:
+consumCMS.c:271: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘pthread_t’
+consumCMS.c:381: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘pthread_t’
+consumCMS.c:387: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘pthread_t’
+consumCMS.c:259: warning: unused variable ‘i’
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o devSentinal.o devSentinal.c
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o devFrontend.o devFrontend.c
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o devDataserver.o devDataserver.c
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o devSigcon.o devSigcon.c
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o devServo.o devServo.c
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o devBackend.o devBackend.c
+gcc -g  invokeWrapper.o wrapperCom.o handleQue.o xmlParse.o xmlResp.o servCMS.o consumCMS.o devSentinal.o devFrontend.o devDataserver.o devSigcon.o devServo.o devBackend.o -lm -L/usr/lib -lnsl -L/usr/include/libxml2 -lxml2 -lpthread -o invokeWrapper 
+gcc -U_DATASERVER_ -c -Wall -g -I /usr/include/libxml2  -I. -o deviceClient.o deviceClient.c
+deviceClient.c: In function ‘formDeviceResp’:
+deviceClient.c:29: warning: format ‘%s’ expects type ‘char *’, but argument 3 has type ‘char (*)[64]’
+deviceClient.c: In function ‘formDeviceCmd’:
+deviceClient.c:118: warning: function returns address of local variable
+gcc -g  deviceClient.o wrapperCom.o -lm -L/usr/lib -lnsl  -o deviceClient
+

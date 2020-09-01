@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups template="">
+	<group name="XScale">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Xscale_StartRangeLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Xscale_StartRangeLabel</cmdid>						
+						<label>XScale:</label>						
+					</control>
+				</column>
+				<column>
+					<control>	
+						<name>Xscale_dropDown</name>
+						<type>DropDown</type>    
+						<cmdid>Xscale_dropDown</cmdid>
+						<maxLength>5</maxLength>	
+						<onchange>takeMinMaxValueForTrendPlot</onchange>
+						<options>
+							<option>
+								<key>frontend:time</key>
+								<value>frontend:time</value>								
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:rf_det1</key>
+								<value>frontend:rf_det1</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:rf_det2</key>
+								<value>frontend:rf_det2</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:cb_temp1</key>
+								<value>frontend:cb_temp1</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:cb_temp2</key>
+								<value>frontend:cb_temp2</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:cb_temp3</key>
+								<value>frontend:cb_temp3</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:laser_temp1</key>
+								<value>frontend:laser_temp1</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:laser_temp2</key>
+								<value>frontend:laser_temp2</value>
+								<selected>false</selected>
+							</option>
+						</options>						
+					</control>
+				</column>
+				
+				<column>
+					<control>	
+						<name>Xscale_Min_Label</name>
+						<type>LABEL</type>    
+						<cmdid>Xscale_Min_Label</cmdid>						
+						<label>Min Value:</label>						
+					</control>
+				</column>
+
+				<column>
+					<control class="double">	
+						<name>Xscale_Min_Text</name>
+						<type>Text</type>    
+						<cmdid>Xscale_Min_Text</cmdid>
+						<maxLength>5</maxLength>
+						<value></value> 						
+					</control>
+				</column>
+				
+				<column>
+					<control>	
+						<name>Xscale_Max_Label</name>
+						<type>LABEL</type>    
+						<cmdid>Xscale_Max_Label</cmdid>						
+						<label>Max Value:</label>						
+					</control>
+				</column>
+
+				<column>
+					<control class="double">	
+						<name>Xscale_Max_Text</name>
+						<type>Text</type>    
+						<cmdid>Xscale_Max_Text</cmdid>
+						<maxLength>5</maxLength>
+						<value></value> 
+					</control>
+				</column>
+				<column>
+					<control>	
+						<name>Xscale_IntervalLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Xscale_IntervalLabel</cmdid>						
+						<label>Plot Interval:</label>						
+					</control>
+				</column>
+
+				<column>
+					<control class="double">	
+						<name>Xscale_Interval</name>
+						<type>Text</type>    
+						<cmdid>Xscale_Interval</cmdid>
+						<maxLength>5</maxLength>	
+						<value></value> 						
+					</control>
+				</column>
+			</row> 
+		</controls>
+	</group>
+	
+	<group name="YScale">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Yscale_StartRangeLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Yscale_StartRangeLabel</cmdid>						
+						<label>YScale:</label>						
+					</control>
+				</column>
+				<column>
+					<control>	
+						<name>Yscale_dropDown</name>
+						<type>DropDown</type>    
+						<cmdid>Yscale_dropDown</cmdid>
+						<maxLength>5</maxLength>
+						<onchange>takeMinMaxValueForTrendPlot</onchange>
+						<options>
+							<option>
+								<key>frontend:time</key>
+								<value>frontend:time</value>								
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:rf_det1</key>
+								<value>frontend:rf_det1</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:rf_det2</key>
+								<value>frontend:rf_det2</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:cb_temp1</key>
+								<value>frontend:cb_temp1</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:cb_temp2</key>
+								<value>frontend:cb_temp2</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:cb_temp3</key>
+								<value>frontend:cb_temp3</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:laser_temp1</key>
+								<value>frontend:laser_temp1</value>
+								<selected>false</selected>
+							</option>
+							<option>
+								<key>frontend:laser_temp2</key>
+								<value>frontend:laser_temp2</value>
+								<selected>false</selected>
+							</option>
+						</options>						
+					</control>
+				</column>
+				
+				<column>
+					<control>	
+						<name>Yscale_Min_Label</name>
+						<type>LABEL</type>    
+						<cmdid>Yscale_Min_Label</cmdid>						
+						<label>Min Value:</label>						
+					</control>
+				</column>
+
+				<column>
+					<control class="double">	
+						<name>Yscale_Min_Text</name>
+						<type>Text</type>    
+						<cmdid>Yscale_Min_Text</cmdid>
+						<maxLength>5</maxLength>
+						<value></value> 
+					</control>
+				</column>
+				
+				<column>
+					<control>	
+						<name>Yscale_Max_Label</name>
+						<type>LABEL</type>    
+						<cmdid>Yscale_Max_Label</cmdid>						
+						<label>Max Value:</label>						
+					</control>
+				</column>
+
+				<column>
+					<control class="double">	
+						<name>Yscale_Max_Text</name>
+						<type>Text</type>    
+						<cmdid>Yscale_Max_Text</cmdid>
+						<maxLength>5</maxLength>
+						<value></value> 						
+					</control>
+				</column>
+
+				<column>
+					<control>	
+						<name>Yscale_IntervalLabel</name>
+						<type>LABEL</type>    
+						<cmdid>Yscale_IntervalLabel</cmdid>						
+						<label>Plot Interval:</label>						
+					</control>
+				</column>
+
+				<column>
+					<control class="double">	
+						<name>Yscale_Interval</name>
+						<type>Text</type>    
+						<cmdid>Yscale_Interval</cmdid>
+						<maxLength>5</maxLength>											
+						<value></value> 						
+					</control>
+				</column>					 
+			</row> 
+		</controls>
+	</group>
+	<group name="Time Range">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Time_From_Label</name>
+						<type>LABEL</type>    
+						<cmdid>Time_From_Label</cmdid>						
+						<label>Time From:</label>
+					</control>
+				</column>
+				<column>
+					<control readonly="readonly">	
+						<name>Time_From_Text</name>
+						<type>Text</type>    
+						<cmdid>Time_From_Text</cmdid>
+						<maxLength>5</maxLength>	
+						<metaData>true</metaData>												
+						<value></value> 						
+					</control>
+				</column>
+				<column>
+					<control>	
+						<name>Time_From_Link</name>
+						<type>a</type>
+						<href>javascript: NewCssCal('Time_From_Text','mmddyyyy','dropdown',true,12)</href>    
+						<cmdid>Time_From_Link</cmdid>						
+						<metaData>true</metaData>
+						<class>icoCalender</class>	
+						<tooltip>Select from date</tooltip>
+						<value></value> 						
+					</control>
+				</column>
+				<column>
+					<control>	
+						<name>Time_To_Label</name>
+						<type>LABEL</type>    
+						<cmdid>Time_To_Label</cmdid>						
+						<label>Time To:</label>													
+					</control>
+				</column>
+				<column>
+					<control readonly="readonly">	
+						<name>Time_To_Text</name>
+						<type>Text</type>    
+						<cmdid>Time_To_Text</cmdid>
+						<maxLength>5</maxLength>	
+						<metaData>true</metaData>
+						<value></value> 						
+					</control>
+				</column>
+				<column>
+					<control>	
+						<name>Time_To_Link</name>
+						<type>a</type>
+						<href>javascript: NewCssCal('Time_To_Text','mmddyyyy','dropdown',true,12)</href>    
+						<cmdid>Time_To_Link</cmdid>						
+						<metaData>true</metaData>
+						<class>icoCalender</class>
+						<tooltip>Select to date</tooltip>
+						<value></value> 
+					</control>
+				</column>
+			</row>
+		</controls>
+	</group>
+	
+	<group name="Refresh Interval">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Refresh_Interval_Label</name>
+						<type>LABEL</type>    
+						<cmdid>Refresh_Interval_Label</cmdid>						
+						<label>Refresh Interval(msec):</label>						
+					</control>
+				</column>
+				<column>
+					<control class="int">	
+						<name>Refresh_Interval_Value</name>
+						<type>Text</type>    
+						<cmdid>Refresh_Interval_Value</cmdid>
+						<maxLength>5</maxLength>	
+						<metaData>true</metaData>
+						<value></value> 
+					</control>
+				</column>
+			</row>
+		</controls>
+	</group>
+</groups>
+	

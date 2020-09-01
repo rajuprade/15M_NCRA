@@ -1,0 +1,15 @@
+#update Data acq Start
+
+
+if ($code != "10"){
+	#nack received
+	#re-enable Start Acq
+	error("Start Data Acquisition failed");
+	enableStartDataAcq();
+
+} else if ($event == "12"){
+#final response
+	info("Start Data Acquisition successful");
+	#disable starting of Data Acquistion
+	disableStartDataAcq();
+}

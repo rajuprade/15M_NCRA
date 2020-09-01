@@ -1,0 +1,155 @@
+
+Sentinel system command Requests & Responses
+--------------------------------------------
+
+Command Requests
+----------------
+
+1) SET Command
+   -----------
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCMSEN_Module>
+	<TIMESTAMP>1283928575000</TIMESTAMP>
+	<COMMAND>
+		<ID>SET</ID>
+		<DATA>SET XXXX</DATA>
+	</COMMAND>
+</MCMSEN_Module>
+
+########################################################
+ 
+2) SET TIME Command
+   ----------------
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCMSEN_Module>
+	<TIMESTAMP>1283928575000</TIMESTAMP>
+	<COMMAND>
+		<ID>SET TIME</ID>
+		<DATA>SET hr.mn.se</DATA>
+	</COMMAND>
+</MCMSEN_Module>
+
+########################################################
+ 
+3) MON TEMP Command
+   ----------------
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCMSEN_Module>
+	<TIMESTAMP>1283928575000</TIMESTAMP>
+	<COMMAND>
+		<ID>MON</ID>
+		<DATA>MON TEMP</DATA>
+	</COMMAND>
+</MCMSEN_Module>
+
+########################################################
+
+4) MON RAW Command 
+   ---------------
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCMSEN_Module>
+	<TIMESTAMP>1283928575000</TIMESTAMP>
+	<COMMAND>
+		<ID>MON</ID>
+		<DATA>MON RAW</DATA>
+	</COMMAND>
+</MCMSEN_Module>
+
+#########################################################
+
+Command Responses
+-----------------
+
+1) RESPONSE : Command Accepted
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCMSEN_Module>
+	<TIMESTAMP>1283928575000</TIMESTAMP>
+	<RESPONSE>
+		<ID>ACCEPTED</ID>		
+   		<CODE>10</CODE>
+		<TYPE>SUCCESS</TYPE>
+		<MSG>Command Accepted</MSG>
+	<RESPONSE>
+</MCMSEN_Module>
+
+##########################################################
+
+2) RESPONSE : Command NotAccepted
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCMSEN_Module>
+	<TIMESTAMP>1283928575000</TIMESTAMP>
+	<RESPONSE>
+		<ID>NOT ACCEPTED</ID>		
+   		<CODE>11</CODE>
+		<TYPE>FAIL</TYPE>
+		<MSG>Command NotAccepted</MSG>
+	<RESPONSE>
+</MCMSEN_Module>
+
+##########################################################
+
+3) RESPONSE : Command Set
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCMSEN_Module>
+	<TIMESTAMP>1283928575000</TIMESTAMP>
+	<RESPONSE>
+		<ID>SET</ID>		
+   		<CODE>10</CODE>
+		<TYPE>SUCCESS</TYPE>
+		<MSG>Command Set</MSG>
+	<RESPONSE>
+</MCMSEN_Module>
+
+#########################################################
+
+4) RESPONSE : Illegal Command 
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCMSEN_Module>
+	<TIMESTAMP>1283928575000</TIMESTAMP>
+	<RESPONSE>
+		<ID>Illegal Command</ID>		
+   		<CODE>11</CODE>
+		<TYPE>FAIL</TYPE>
+		<MSG>Illegal Command</MSG>
+	<RESPONSE>
+</MCMSEN_Module>
+
+##########################################################
+
+5) RESPONSE : Illegal Parameter 
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCMSEN_Module>
+	<TIMESTAMP>1283928575000</TIMESTAMP>
+	<RESPONSE>
+		<ID>Illegal Parameter</ID>		
+   		<CODE>11</CODE>
+		<TYPE>FAIL</TYPE>
+		<MSG>Illegal PARAMETER</MSG>
+	<RESPONSE>
+</MCMSEN_Module>
+
+#########################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

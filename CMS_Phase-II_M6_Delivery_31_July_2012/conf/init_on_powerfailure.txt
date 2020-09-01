@@ -1,0 +1,144 @@
+#initialization on power failur script for all subsystems
+
+#execute domon and if fails try twice and if it fails set the subystem status as NOT CONNECTED
+sub doMonExecute
+{	
+	$domoncmd = command("$1,doMon,$monitoringfrequency");
+
+	info("sent command doMon to $1 with seq $domoncmd");
+	$domonstatus = waitforCmdCompletion($domoncmd,10);
+	#check for connection refused status
+	if ($domonstatus == -3){
+		error("$1 doMon connection refused ");
+
+		#try sending domon once again
+		$domoncmd = command("$1,doMon,$monitoringfrequency");
+		info("sent command doMon to $1 with seq $domoncmd");
+		$domonstatus = waitforCmdCompletion($domoncmd,10);
+
+		#check for connection refused status once again
+		if ($domonstatus == -3){
+
+			error("$1 doMon connection refused ");
+			#try sending domon the second time
+			$domoncmd = command("$1,doMon,$monitoringfrequency");
+			info("sent command doMon to $1 with seq $domoncmd");
+
+			$domonstatus = waitforCmdCompletion($domoncmd,10);
+			
+			if ($domonstatus == -3){
+
+				error("$1 doMon connection refused updating the subsystem state as NOT CONNECTED");
+				#domon failed thrice so update subsystem status as NOT CONNECTED
+				updateSubSystemState("$1,NOT CONNECTED");
+				return 0;
+			}			
+		}
+	}
+	return 1;
+}
+
+$status = checkSubSystemStatus("servo");
+if($status == 1)
+{
+	#call servo restore
+	$servorestore = command("servo,restoreServo");
+	info("done with issuing restoreServo command:  $servorestore");
+	$servorestorestatus =  waitforCmdCompletion($servorestore,10);
+	info("status of restoreServo command : $servorestorestatus");
+	#$domoncmd = command("servo,doMon");
+	#info("sent command doMon to servo with seq $domoncmd");
+	$servodomon = doMonExecute("servo");
+	info("done with issuing servo domon command:  $servodomon ");
+	
+}
+else
+{
+	info("Sub system:servo is deactive, so not executing the restoreServo batch script");
+	$servoinitstatus = 5;
+}
+
+$status = checkSubSystemStatus("backend");
+if($status == 1)
+{
+	#call backend restore
+	$backendrestore = command("backend,restorebackend");
+	info("done with issuing restorebackend command $backendrestore ");
+	$backendrestorestatus =  waitforCmdCompletion($backendrestore,10);
+	info("status of restorebackend command : $backendrestorestatus");
+	#$domoncmd = command("backend,doMon");
+	#info("sent command doMon to backend with seq $domoncmd");
+	$backenddomon = doMonExecute("backend");
+	info("done with issuing backend domon command:  $backenddomon ");
+
+}
+else
+{
+	info("Sub system:backend is deactive, so not executing the restorebackend batch script");
+}
+
+$status = checkSubSystemStatus("sentinal");
+if($status == 1)
+{
+	#call sentinal restore
+	$sentinalrestore = command("sentinal,restoreSentinal");
+	info("done with issuing restoreSentinal command $sentinalrestore ");
+	$sentinalrestorestatus =  waitforCmdCompletion($sentinalrestore ,10);
+	info("status of restoreSentinal command : $backendrestorestatus");
+	#$domoncmd = command("sentinal,doMon");
+	#info("sent command doMon to sentinal with seq $domoncmd");
+	$sentinaldomon = doMonExecute("sentinal");
+	info("done with issuing sentinal domon command:  $sentinaldomon ");
+
+}
+else
+{
+	info("Sub system:sentinal is deactive, so not executing the restoreSentinal batch script");
+}
+
+$status = checkSubSystemStatus("sigcon");
+if($status == 1)
+{
+	#call sigcon restore
+	$sigconrestore = command("sigcon,restoresigcon");
+	info("done with issuing restoresigcon command $sigconrestore ");
+	$sigconrestorestatus =  waitforCmdCompletion($sigconrestore,10);
+	info("status of restoresigcon command : $backendrestorestatus");
+	#$domoncmd = command("sigcon,doMon");
+	#info("sent command doMon to sigcon with seq $domoncmd");
+	$sigcondomon = doMonExecute("sigcon");
+	info("done with issuing sigcon domon command:  $sigcondomon ");
+
+
+}
+else{
+	info("Sub system:sigcon is deactive, so not executing the restoresigcon batch script");
+}
+
+$status = checkSubSystemStatus("frontend");
+if($status == 1)
+{
+	#call frontend restore
+	$frontendrestore = command("frontend,restorefrontend");
+	info("done with issuing restorefrontend command $frontendrestore ");
+	$frontendrestorestatus =  waitforCmdCompletion($frontendrestore ,10);
+	info("status of restorefrontend command : $backendrestorestatus");
+	#$domoncmd = command("frontend,doMon");
+	#info("sent command doMon to frontend with seq $domoncmd");
+	$frontenddomon = doMonExecute("frontend");
+	info("done with issuing frontend domon command:  $frontenddomon ");
+
+}
+else
+{
+	info("Sub system:frontend is deactive, so not executing the restorefrontend batch script");
+}
+
+#if any restoration command fails mark initonpowerfailure also as failed with status 2
+#|| $backendrestorestatus != 5 || $sentinalrestorestatus != 5 || $sigconrestorestatus != 5 || $frontendrestorestatus !=5
+
+if ($servorestorestatus != 5  || $servodomon == 0) 
+{
+	error("marking batch as failed since servo restoration failed");
+	updateBatchStatus(2);
+}

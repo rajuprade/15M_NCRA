@@ -1,0 +1,3 @@
+info("restoring properties az");
+$wind1 = restore("servo,wind_vel1");
+info("property restored---> $wind1");

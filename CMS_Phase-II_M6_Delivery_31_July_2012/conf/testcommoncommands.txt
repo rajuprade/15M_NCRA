@@ -1,0 +1,25 @@
+$x = "servo";
+$time = "19:07:00";
+info("Script will start at time $time");
+startTime($time);
+info("issuing $x command");
+$cmd1 = command("$x,init");
+info("done with issuing init command $cmd1");
+waitforCmdCompletion($cmd1);
+$status = getCommandStatus($cmd1);
+info("Command STATUS is $status");
+$statusInt = getCommandStatusInt($cmd1);
+info("Command STATUS int is $statusInt");
+#stop();
+$paramvalue = getParamValue($cmd1,"test");
+info("Param value  is $paramvalue ");
+
+#test for getMonitoringParam
+$value = getMonitoringParam("servo,az_cp");
+info("Monitoring Param value  is $value ");
+
+#test for getProperty
+$value = getProperty("daz");
+info("getProperty value  is $value ");
+
+

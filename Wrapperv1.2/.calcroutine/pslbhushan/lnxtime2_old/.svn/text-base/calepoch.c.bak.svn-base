@@ -1,0 +1,85 @@
+
+/* calepoch.c : This routine gives MJD Date and LST for given YY MM DD Hr Min Sec
+ * A C interface has been written to call Fortran routines used in ONLINE software
+ * for calculating the Epoch Date, MJD and LST for HA & Alt-Az coordinates for the source 
+ * JPK Jan 19th, 2009  */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+   double r2h = 3.819718634205488 ;
+   double r2d = 57.29577951308232;
+   double twopi = 6.283185307179586 ;
+  
+
+int main(int argc, char **argv)
+{
+   char lststring[80]; unsigned char lsti[8];
+   char *format_str = "\0";
+   int *d1, *d2, *d31, *stat, i;
+   double *mytime;
+   int it[3];
+   float *d32;
+   double *d3, *epoch, *djm, ti, *lst, *t0az;
+   double tz1 = -5.5 ;
+   double long1 =  -74.05; 
+
+   if(argc == 1)  {
+       fprintf(stderr, "Usage %s YY MM DD Hr min sec \n",argv[0]) ;
+       exit(1);
+   }
+
+
+   epoch =(double *) malloc(sizeof(double));
+   d32 =(float *) malloc(sizeof(float));
+
+   i=0;
+   mytime= (double *)malloc(sizeof(double));
+
+   d1 =(int *) malloc(sizeof(int));
+   d2 =(int *) malloc(sizeof(int));
+   d31 =(int *) malloc(sizeof(int));
+   stat =(int *) malloc(sizeof(int));
+
+   d3   =(double *) malloc(sizeof(double));
+   djm  =(double *) malloc(sizeof(double));
+   t0az =(double *) malloc(sizeof(double));
+   lst  =(double *) malloc(sizeof(double));
+
+   *d1 = (int) atoi(argv[1]);
+   *d2 = (int) atoi(argv[2]);
+   *d3 = (double ) atof(argv[3]);
+
+   it[0] = (int) atoi(argv[4]);
+   it[1] = (int) atoi(argv[5]);
+   it[2] = (int ) atof(argv[6]); 
+
+   fprintf(stderr,  "  date %d %d %lf Time %d:%d:%d ", (int) *d1, (int) *d2, (double) *d3, it[0],it[1],it[2]); 
+   (void) frye_(d1,d2,d3,epoch);   
+   fprintf(stderr, " frye epoch %lf ", (double) *epoch); 
+   (void) ep2da_((float *)epoch,d1,d2,d31,d32);
+    fprintf(stderr, " ep2da_  %d %d %d %f   ", (int) *d1, (int) *d2, (int) *d31, (float) *d32);    
+
+   (void) slacaldj_(d1,d2,d31,djm,stat);
+   fprintf(stderr, " MJD %lf %d \n", (double ) *djm, (int) *stat);
+
+   /* LST calculation Part */
+  *mytime =    (double) ( (double) (it[0] + ( it[1]/60.0) + (it[2]/3600.0) ))/r2h;
+  /*(void)hms2r_(it, (float *)mytime); */
+
+    ti= *mytime+(tz1/r2h);
+   *t0az = *djm +(ti * r2h/24);
+
+    (void) slagmst_(t0az,lst);
+    *lst = *lst - long1/r2d;
+    if(*lst > twopi)*lst=*lst - twopi;
+  /* printf(" slagmst_ return %f \n",(float) *lst); */
+
+/*
+     sprintf(lsti,"%f",(float) *lst); lsti[8]='\0';
+     fprintf(stderr, " lst %f lsti?  %s", (float) *lst, (unsigned char*) lsti);     
+*/
+     i=stime_(lst,format_str,lststring);     
+     fprintf(stderr, " ### LST %lf lststing %s \n", *lst, lststring); 
+}

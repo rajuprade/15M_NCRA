@@ -1,0 +1,24 @@
+<COMMANDS>
+    <TIMESTAMP></TIMESTAMP>
+                <COMMAND>
+                                <SEQ>1</SEQ>
+                                <ID>80</ID>
+                                <NAME>POSITION</NAME>
+                                <SYSTEMID>1</SYSTEMID>
+                                <DATA>
+                                                <PARAM>
+                                                                <NAME>SUBSYSTEMID</NAME>
+                                                                <VALUE>1</VALUE>
+                                                </PARAM>
+                                                <PARAM>
+                                                                <NAME>AX</NAME>
+                                                                <VALUE>A</VALUE>
+                                                </PARAM>
+                                                <PARAM>
+                                                                <NAME>ANG1</NAME>
+                                                                <VALUE>10</VALUE>
+                                                </PARAM>
+                                </DATA>
+                </COMMAND>
+</COMMANDS>
+<REQ_END>

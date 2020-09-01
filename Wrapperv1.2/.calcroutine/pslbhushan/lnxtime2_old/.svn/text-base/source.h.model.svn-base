@@ -1,0 +1,40 @@
+
+typedef struct {
+        char            name[12];
+        float           ra_ref;
+        float           dec_ref;
+        float           epoch_ref;
+        float           ra_date;
+        float           dec_date;
+        float           epoch_date;
+        float           ra_off;
+        float           dra_off;
+        float           dec_off;
+        float           ddec_off;
+        float           tradec_ref;
+        float           az_off;
+        float           daz_off;
+        float           el_off;
+        float           del_off;
+        float           tazel_ref;
+        float           time_calc;
+        double          rad_ref;
+        double          decd_ref;
+        double          depoch_ref;
+        double          rad_date;
+        double          decd_date;
+        double      rad_app;
+        double      decd_app;   
+        double          depoch_date;
+}               SOURCE;
+
+typedef struct {
+      float  lctr
+      float  ldayr
+      float  lcts
+      float  ldays
+      float  az
+      float  el
+      float  deltaz
+      float  deltel
+}

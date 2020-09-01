@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engineering-ui>
+<statusparams>
+        <paramsgroup>
+                <groupname>DATASERVER STATUS</groupname>
+                <param>
+                        <label>DAS TIME</label>
+                        <paramname>time</paramname>
+                        <type>datetime</type>
+                        <paramvalue>00:00:00</paramvalue>
+                </param>
+                <param>
+                        <label>STATUS</label>
+                        <paramname>state</paramname>
+                        <type>string</type>
+                        <paramvalue>RESET</paramvalue>
+                        <bgcolor>0x0000FF</bgcolor>
+                </param>
+        </paramsgroup>
+
+        <paramsgroup>
+
+                <groupname>DATARECORD STATUS</groupname>
+                <param>
+                        <label>START TIME</label>
+                        <paramname>acq-start-time</paramname>
+                        <type>datetime</type>
+                        <paramvalue>00:00:00</paramvalue>
+                </param>
+                <param>
+                        <label>DURATION</label>
+                        <paramname>acq-duration</paramname>
+                        <type>datetime</type>
+                        <paramvalue>00:00:00</paramvalue>
+                </param>
+                <param>
+                        <label> ACQPROGRESS</label>
+                        <paramname>acq-percentage</paramname>
+                        <type>float</type>
+                        <paramvalue>00.00</paramvalue>
+                </param>
+                <param>
+                        <label> MSG : </label>
+                        <paramname>acq-message</paramname>
+                        <type>string</type>
+                        <paramvalue>ACQ_IDLE</paramvalue>
+                </param>
+        </paramsgroup>
+
+</statusparams>
+
+<detailedparams>
+	<paramsgroup>
+		<groupname>Vars</groupname>	
+		<param>
+			<label>dasstate</label>
+			<paramname>dasstate</paramname>
+			<type>integer</type>
+			<paramvalue></paramvalue>
+		</param>
+	</paramsgroup>
+</detailedparams>
+
+<basiccommands>
+		<command>
+			<name>INIT</name>
+			<id>301</id>
+			<syntax>moninterval</syntax>
+			<sample>5</sample>
+		</command>
+
+		<command>
+			<name>record</name>
+			<id>302</id>
+			<syntax>filename,duration,integration</syntax>
+			<sample>14JNC01_28DEC08.DATA.1,200,1.0</sample>
+		</command>
+
+		<command>
+			<name>domon</name>
+			<id>105</id>
+			<syntax>monitoringfrequency</syntax>
+			<sample>3000</sample>
+		</command>
+</basiccommands>
+
+<detailedcommands>
+		<command>
+			<name>STRTRECORD</name>
+			<id>302</id>
+			<syntax>data_file,acq_duration</syntax>
+			<sample>dataacqfile.dat,10:10:10</sample>
+		</command>
+
+		<command>
+			<name>STOPRECORD</name>
+			<id>303</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+                
+		<command>
+			<name>domon</name>
+			<id>105</id>
+			<syntax>monitoringfrequency</syntax>
+			<sample>3000</sample>
+	 	</command>
+
+		<command>
+			<name>sendspectralplottingdata</name>
+			<id>106</id>
+			<syntax>scale,xaxis,interval,integration,polarization,noofbins,steps,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app,dec_app,ra_mean,dec_mean,dra,ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>	
+			<sample>linear, noofbins, 100, 1, BOTH, 1023, 1, 12SSK01, expert, cms, 1, 1, 3C147, I, 5505, 10:00:0, 10:00:0, 10:10:10, 10:10:10, 1., 1.0, 1280, 1210, 70, 1420.0, 15., 1, 1, c, 1</sample>
+		</command>
+
+		<command>
+			<name>sendpulsarplottingdata</name>
+			<id>107</id>
+			<syntax>scale,xaxis,interval,updates,start_chnl,stop_chnl,ref_chnl,dm,period,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app,dec_app,ra_mean,dec_mean,dra,ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>linear,noofbins,10 ,1 ,10 ,20 ,1 ,19.56 ,530.64 ,123 ,expert ,cms ,1 ,1 ,3C147 ,I ,5505 ,10:00:00 ,10:00:00 ,10:10:10 ,10:10:10 ,1.0 ,1.0 ,1280 ,1210 ,70 ,1420.0 ,15.0 ,5 ,1 ,c ,1</sample>
+		</command>
+
+		<command>
+			<name>startpulsarplottingdata</name>
+			<id>108</id>
+			<syntax>moninterval</syntax>
+			<sample>30000</sample>
+	 	</command>
+
+		<command>
+			<name>stoppulsarplottingdata</name>
+			<id>109</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+
+		<command>
+			<name>startspectralplottingdata</name>
+			<id>110</id>
+			<syntax>moninterval</syntax>
+			<sample>30000</sample>
+	        </command>
+
+		<command>
+			<name>stopspectralplottingdata</name>
+			<id>111</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+
+		<command>
+			<name>save_data</name>
+			<id>112</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+
+</detailedcommands>
+
+</engineering-ui>

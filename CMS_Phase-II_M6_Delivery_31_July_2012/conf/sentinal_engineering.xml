@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engineering-ui>
+<detailedparams>
+	<paramsgroup>
+		<groupname>Vars</groupname>	
+		<param>
+			<label>temp</label>
+			<paramname>temp</paramname>
+			<type>float</type>
+			<paramvalue></paramvalue>
+		</param>
+	</paramsgroup>
+</detailedparams>
+
+<basiccommands>
+	<command>		
+		<name>init</name>
+		<id>1</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>
+
+	<command>
+		<name>setCmd</name>
+		<id>2</id>
+		<syntax>mcmbit</syntax>
+		<sample>0x1</sample>
+	</command>
+	
+</basiccommands>
+</engineering-ui>
+

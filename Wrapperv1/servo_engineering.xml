@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<engineering-ui>
+
+<statusparams>
+		
+	<paramsgroup>
+		<groupname>Angles</groupname>
+		<param>
+			<label>time of day</label>
+			<paramname>timeofday</paramname>
+			<type>datetime</type>
+			<paramvalue>10:12:20</paramvalue>
+			<bgcolor>0x0000FF</bgcolor>
+		</param>
+
+		<param>
+			<label>az_cp</label>
+			<paramname>az_cp</paramname>
+			<type>angle</type>
+			<paramvalue>123:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>az_tp</label>
+			<paramname>az_tp</paramname>
+			<type>angle</type>
+			<paramvalue>10:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>az_pp</label>
+			<paramname>az_pp</paramname>
+			<type>angle</type>
+			<paramvalue>13:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>el_cp</label>
+			<paramname>el_cp</paramname>
+			<type>angle</type>
+			<paramvalue>123:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>el_tp</label>
+			<paramname>el_tp</paramname>
+			<type>angle</type>
+			<paramvalue>123:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>el_pp</label>
+			<paramname>el_pp</paramname>
+			<type>angle</type>
+			<paramvalue>123:50:10</paramvalue>
+		</param>
+	</paramsgroup>
+
+
+</statusparams>
+
+<detailedparams>
+	<paramsgroup>
+		<groupname>Angles</groupname>
+		<param>
+			<label>time of day</label>
+			<paramname>timeofday</paramname>
+			<type>datetime</type>
+			<paramvalue>10:12:20</paramvalue>
+		</param>
+
+		<param>
+			<label>az_cp</label>
+			<paramname>az_cp</paramname>
+			<type>angle</type>
+			<paramvalue>123:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>az_tp</label>
+			<paramname>az_tp</paramname>
+			<type>angle</type>
+			<paramvalue>10:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>az_pp</label>
+			<paramname>az_pp</paramname>
+			<type>angle</type>
+			<paramvalue>13:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>el_cp</label>
+			<paramname>el_cp</paramname>
+			<type>angle</type>
+			<paramvalue>123:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>el_tp</label>
+			<paramname>el_tp</paramname>
+			<type>angle</type>
+			<paramvalue>123:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>el_pp</label>
+			<paramname>el_pp</paramname>
+			<type>angle</type>
+			<paramvalue>123:50:10</paramvalue>
+		</param>
+	</paramsgroup>
+
+	<paramsgroup>
+		<groupname>Analog vars</groupname>
+
+		<param>
+			<label>timeofday</label>
+			<paramname>timeofday</paramname>
+			<type>datetime</type>
+			<paramvalue>12:50:10</paramvalue>
+		</param>
+
+		<param>
+			<label>az_motor1_current</label>
+			<paramname>az_motor1_current</paramname>
+			<type>Amps</type>
+			<paramvalue>35.12</paramvalue>
+		</param>
+
+		<param>
+			<label>az_motor2_current</label>
+			<paramname>az_motor2_current</paramname>
+			<type>Amps</type>
+			<paramvalue>34.56</paramvalue>
+		</param>
+
+
+		<param>
+			<label>az_tacho1</label>
+			<paramname>az_tacho1</paramname>
+			<type>RPM</type>
+			<paramvalue>434</paramvalue>
+		</param>
+
+
+		<param>
+			<label>az_tacho2</label>
+			<paramname>az_tacho2</paramname>
+			<type>RPM</type>
+			<paramvalue>23</paramvalue>
+		</param>
+
+
+		<param>
+			<label>el_motor1_current</label>
+			<paramname>el_motor1_current</paramname>
+			<type>Amps</type>
+			<paramvalue>34</paramvalue>
+		</param>
+
+
+		<param>
+			<label>el_motor2_current</label>
+			<paramname>el_motor2_current</paramname>
+			<type>Amps</type>
+			<paramvalue>12.50</paramvalue>
+		</param>
+
+
+		<param>
+			<label>el_tacho1</label>
+			<paramname>el_tacho1</paramname>
+			<type>RPM</type>
+			<paramvalue>978</paramvalue>
+		</param>
+
+
+		<param>
+			<label>wind velocity 1</label>
+			<paramname>wind_vel1</paramname>
+			<type>KMPH</type>
+			<paramvalue>64</paramvalue>
+		</param>
+
+		<param>
+			<label>wind velocity 2</label>
+			<paramname>wind_vel2</paramname>
+			<type>KMPH</type>
+			<paramvalue>64</paramvalue>
+		</param>
+		</paramsgroup>
+		
+		<paramsgroup>
+		<groupname>System Digital vars</groupname>
+
+		<param>
+			<label>POSG</label>
+			<paramname>POSG</paramname>
+			<type>bit</type>
+			<paramvalue>1</paramvalue>
+		</param>
+
+		
+
+		<param>
+			<label>TRKG</label>
+			<paramname>TRKG</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+
+		<param>
+			<label>SLWG</label>
+			<paramname>SLWG</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>CWRP</label>
+			<paramname>CWRP</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>WND50</label>
+			<paramname>WND50</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>WND85</label>
+			<paramname>WND85</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		
+		<param>
+			<label>MAN</label>
+			<paramname>MAN</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>LOC</label>
+			<paramname>LOC</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>REM</label>
+			<paramname>REM</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>ACKOK</label>
+			<paramname>ACKOK</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>DCOK</label>
+			<paramname>ACKOK</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>SSCOK</label>
+			<paramname>SSCOK</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>	
+
+	</paramsgroup>
+	<paramsgroup>
+		<groupname>EL Digital vars</groupname>
+		<param>
+			<label>AMPOL</label>
+			<paramname>AMPOL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>STPOS</label>
+			<paramname>STPOS</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		<param>
+			<label>STWD</label>
+			<paramname>STWD</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		<param>
+			<label>STWD</label>
+			<paramname>STWD</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>STRLSD</label>
+			<paramname>STRLSD</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		
+		<param>
+			<label>BRK1</label>
+			<paramname>BRK1</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		<param>
+			<label>BRK2</label>
+			<paramname>BRK2</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		<param>
+			<label>ENCKOK</label>
+			<paramname>ENCKOK</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		<param>
+			<label>RUN</label>
+			<paramname>RUN</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		<param>
+			<label>CCPL</label>
+			<paramname>CCPL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>CCFL</label>
+			<paramname>CCFL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		<param>
+			<label>CWPL</label>
+			<paramname>CWPL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		<param>
+			<label>CWFL</label>
+			<paramname>CWFL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+	</paramsgroup>
+
+	<paramsgroup>
+		<groupname>AZ Digital vars</groupname>
+
+		<param>
+			<label>AMPOL</label>
+			<paramname>AMPOL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>STPOS</label>
+			<paramname>STPOS</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		<param>
+			<label>STWD</label>
+			<paramname>STWD</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		<param>
+			<label>STWD</label>
+			<paramname>STWD</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>STRLSD</label>
+			<paramname>STRLSD</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		
+		<param>
+			<label>BRK1</label>
+			<paramname>BRK1</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		<param>
+			<label>BRK2</label>
+			<paramname>BRK2</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		
+		<param>
+			<label>ENCKOK</label>
+			<paramname>ENCKOK</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		<param>
+			<label>RUN</label>
+			<paramname>RUN</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		<param>
+			<label>CCPL</label>
+			<paramname>CCPL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+
+		<param>
+			<label>CCFL</label>
+			<paramname>CCFL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		<param>
+			<label>CWPL</label>
+			<paramname>CWPL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+		<param>
+			<label>CWFL</label>
+			<paramname>CWFL</paramname>
+			<type>bit</type>
+			<paramvalue>0</paramvalue>
+		</param>
+	</paramsgroup>
+
+
+</detailedparams>
+
+<basiccommands>
+	<command>		
+		<name>init</name>
+		<id>1</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>
+
+	<command>
+		<name>coldstart</name>
+		<id>40</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>
+
+	<command>
+		<name>position</name>
+		<id>42</id>
+		<syntax>ax,ang1,ang2</syntax>
+		<sample>B,123:30:20,123:50:10</sample>		
+	</command>
+	<command>
+		<name>track</name>
+		<id>44</id>
+		<syntax>ax,time,ang1,ang2</syntax>
+		<sample>B,12:30:20,123:50:10,123:50:10</sample>		
+	</command>
+	<command>
+		<name>trackObject</name>
+		<id>44</id>
+		<syntax>source_name,ra_mean,dec_mean,epoch</syntax>
+		<sample>3C147,10:10:10,10:10:10,2000.0</sample>	
+	</command>
+
+	<command>
+		<name>hold</name>
+		<id>46</id>
+		<syntax>ax</syntax>
+		<sample>B</sample>		
+	</command>
+	<command>
+		<name>stop</name>
+		<id>48</id>
+		<syntax>ax</syntax>
+		<sample>B</sample>		
+	</command>
+	<command>
+		<name>close</name>
+		<id>4a</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>	
+	
+	<command>
+		<name>set_time_of_day</name>
+		<id>52</id>
+		<syntax>time,date</syntax>
+		<sample>12:12:12,12:12:2010</sample>		
+	</command>
+	<command>
+		<name>setstowangles</name>
+		<id>54</id>
+		<syntax>ax,ang1,ang2</syntax>
+		<sample>B,123:30:20,123:50:10</sample>		
+	</command>
+	
+</basiccommands>
+
+<detailedcommands>	
+	<command>
+		<name>close</name>
+		<id>4a</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>
+	<command>
+		<name>stow</name>
+		<id>4c</id>
+		<syntax>ax</syntax>
+		<sample>B</sample>		
+	</command>
+	<command>
+		<name>stowrelease</name>
+		<id>4e</id>
+		<syntax>ax</syntax>
+		<sample>B</sample>		
+	</command>
+	<command>
+		<name>abort</name>
+		<id>50</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>
+	<command>
+		<name>readangles</name>
+		<id>30</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>
+	<command>
+		<name>readanalogvars</name>
+		<id>32</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>
+
+	<command>
+		<name>readdigitalvars</name>
+		<id>34</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>
+
+	<command>
+		<name>readsetparameters</name>
+		<id>36</id>
+		<syntax></syntax>
+		<sample></sample>
+	</command>
+	<command>
+		<name>set_time_of_day</name>
+		<id>52</id>
+		<syntax>time,date</syntax>
+		<sample>12:12:12,12:12:2010</sample>		
+	</command>
+	<command>
+		<name>setstowangles</name>
+		<id>54</id>
+		<syntax>ax,ang1,ang2</syntax>
+		<sample>B,123:30:20,123:50:10</sample>		
+	</command>
+	<command>
+		<name>set_S/W_Hi_limit</name>
+		<id>56</id>
+		<syntax>ax,ang1,ang2</syntax>
+		<sample>B,123:30:20,123:50:10</sample>		
+	</command>
+	<command>
+		<name>Set_S/W_Lo_limit</name>
+		<id>58</id>
+		<syntax>ax,ang1,ang2</syntax>
+		<sample>B,123:30:20,123:50:10</sample>		
+	</command>
+	<command>
+		<name>Set_windvel_limit</name>
+		<id>5A</id>
+		<syntax>windvel</syntax>
+		<sample>123.4567</sample>		
+	</command>
+</detailedcommands>
+
+
+<trendplot>
+	<supportedx>
+		<param>
+			<label>time of day</label>
+			<paramname>timeofday</paramname>
+			<type>datetime</type>				
+		</param>	
+
+		<param>
+			<label>time</label>
+			<paramname>systemtime</paramname>
+			<type>time</type>				
+		</param>			
+
+	</supportedx>
+
+	<supportedy>
+		<param>
+			<label>motor current1</label>
+			<paramname>motorcurrent1</paramname>
+			<type>float</type>	
+			<linestyle></linestyle>	
+			<color>0x00FF00</color>		
+		</param>	
+		<param>
+			<label>motor current1</label>
+			<paramname>motorcurrent1</paramname>
+			<type>float</type>	
+			<linestyle></linestyle>		
+			<color>0x00FFFF</color>		
+		</param>	
+
+	</supportedy>
+
+
+</trendplot>
+</engineering-ui>

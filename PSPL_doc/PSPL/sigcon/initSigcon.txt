@@ -1,0 +1,4 @@
+#initialization script for Sigcon
+#doMon command
+$cmd3 = command("sigcon,doMon");
+info("done with is suing doMon command $cmd3");

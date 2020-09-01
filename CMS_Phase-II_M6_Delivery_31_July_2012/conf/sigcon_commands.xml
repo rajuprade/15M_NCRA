@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<supportedconfig>
+
+<supportedcommands>
+<!-- Commands for SIGCON USER GUI start here-->
+		<command>
+			<name>PREATTN</name>
+			<id>180</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>1,2</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>POL1</paramname>
+						<type>float</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>15</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<paramname>POL2</paramname>
+						<type>float</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>15</max>
+							</range>
+						</validation>
+					</param>					
+			</params>	
+		</command>
+		<command>
+			<name>LO</name>
+			<id>181</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>300,400</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>POL1</paramname>
+						<type>long</type>
+						<validation>
+							<range>
+								<min>240</min>
+								<max>1500</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<paramname>POL2</paramname>
+						<type>long</type>
+						<validation>
+							<range>
+								<min>240</min>
+								<max>1500</max>
+							</range>
+						</validation>
+					</param>					
+			</params>	
+		</command>
+		<command>
+			<name>FILTER</name>
+			<id>182</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>100,400</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>POL1</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>500</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<paramname>POL2</paramname>
+						<type>integer</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>500</max>
+							</range>
+						</validation>
+					</param>					
+			</params>	
+		</command>
+		<command>
+			<name>POSTATTEN</name>
+			<id>183</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>1,3</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>POL1</paramname>
+						<type>float</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>15</max>
+							</range>
+						</validation>
+					</param>
+			 		<param required="true">
+						<paramname>POL2</paramname>
+						<type>float</type>
+						<validation>
+							<range>
+								<min>0</min>
+								<max>15</max>
+							</range>
+						</validation>
+					</param>					
+			</params>	
+		</command>
+		<command>
+			<name>AGC</name>
+			<id>184</id>
+			<syntax>POL1,POL2</syntax>
+			<sample>true,true</sample>
+			<timeout>120000</timeout>
+			<params>
+			 		<param required="true">
+						<paramname>POL1</paramname>
+						<type>boolean</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>
+							</values>
+						</validation>
+					</param>
+			 		<param required="true">
+						<paramname>POL2</paramname>
+						<type>boolean</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>
+							</values>
+						</validation>
+					</param>					
+			</params>	
+		</command>
+		<command>
+			<name>domon</name>
+			<id>185</id>
+			<syntax>monitoringfrequency</syntax>
+			<sample>9000</sample>
+			<params>
+				<param>					
+					<paramname>monitoringfrequency</paramname>
+						<type>long</type>		
+						<validation>
+							<range>
+								<min>9000</min>
+								<max>900000</max>
+							</range>
+						</validation>	
+				</param>
+			</params>
+		</command>
+<!-- Commands for SIGCON USER GUI end here-->
+</supportedcommands>
+<supportedresponses>
+		
+		<response>
+			<name>domon</name>
+			<id>600</id>
+			<params>
+				<param>
+					<paramname>oli</paramname>
+					<type>boolean</type>
+					<validation>
+						<values>
+							<value>true</value>
+						</values>
+					</validation>
+				</param>
+				<param>
+					<paramname>ali-cv</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>1.8</min>
+							<max>15</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>ali-cvi</paramname>
+					<type>string</type>
+					<validation>
+						<values>
+							<value>LOCK</value>
+						</values>
+					</validation>
+				</param>
+				<param>
+					<paramname>lo-power</paramname>
+					<type>float</type>
+					<validation>
+						<range>
+							<min>5</min>
+							<max>25</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>	</paramname>
+					<type>double</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>240</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>gps</paramname>
+					<type>string</type>
+					<validation>
+						<values>
+							<value>LOCK</value>
+						</values>
+					</validation>
+				</param>
+				<param>
+					<paramname>required-lo</paramname>
+					<type>double</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>240</max>
+						</range>
+					</validation>
+				</param>
+				<param>
+					<paramname>set-lo</paramname>
+					<type>double</type>
+					<validation>
+						<range>
+							<min>0</min>
+							<max>0.5</max>
+						</range>
+					</validation>
+				</param>
+			</params>
+		</response>
+	</supportedresponses>
+
+	<monitoringparams>
+		<param>
+			<name>oli</name>
+			<value></value>
+		</param>
+		<param>
+			<name>ali-cv</name>
+			<value></value>
+		</param>
+		<param>
+			<name>ali-cvi</name>
+			<value></value>
+		</param>
+		<param>
+			<name>lo-power</name>
+			<value></value>
+		</param>
+		<param>
+			<name>power</name>
+			<value></value>
+		</param>
+		<param>
+			<name>gps</name>
+			<value></value>
+		</param>
+		<param>
+			<name>required-lo</name>
+			<value></value>
+		</param>
+		<param>
+			<name>set-lo</name>
+			<value></value>
+		</param>
+	</monitoringparams>
+<supportedalarms>
+		<alarm>
+			<name>wrapper down</name>
+			<label>wrapper down</label>
+			<id>601</id>
+			<level>5</level>
+			<message>sigcon wrapper down</message>
+		</alarm>
+		<alarm>
+			<name>initSicon</name>
+			<label>initialization fail</label>
+			<id>602</id>
+			<level>5</level>
+			<message>Sigcon initialization fail</message>
+		</alarm>
+		<alarm>
+			<name>oli</name>
+			<label>Over all Lock Indicator unlocked</label>
+			<id>603</id>
+			<level>5</level>
+			<message>Over all Lock Indicator unlocked</message>
+		</alarm>
+		<alarm>
+			<name>ali-cv</name>
+			<label>ALI Control Voltage is high</label>
+			<id>604</id>
+			<level>3</level>
+			<message>ALI Control Voltageis high</message>
+		</alarm>
+		<alarm>
+			<name>ali-cvi</name>
+			<label>ALI Control Voltage Indicator unlocked</label>
+			<id>605</id>
+			<level>3</level>
+			<message>ALI Control Voltage Indicator unlocked</message>
+		</alarm>
+		<alarm>
+			<name>lo-power</name>
+			<label>lo-power is high</label>
+			<id>606</id>
+			<level>1</level>
+			<message>lo-power is high</message>
+		</alarm>
+		<alarm>
+			<name>power</name>
+			<label>Power supply failed</label>
+			<id>607</id>
+			<level>3</level>
+			<message>Power supply failed</message>
+		</alarm>
+		<alarm>
+			<name>gps</name>
+			<label>GPS unlocked</label>
+			<id>608</id>
+			<level>5</level>
+			<message>GPS unlocked</message>
+		</alarm>
+		<alarm>
+			<name>set-lo</name>
+			<label>SET-LO should be within the threshold </label>
+			<id>609</id>
+			<level>5</level>
+			<message>SET-LO should be within the threshold </message>
+		</alarm>
+		<alarm>
+			<name>restoreSigcon</name>
+			<label>restore fail</label>
+			<id>610</id>
+			<level>5</level>
+			<message>Sigcon restoration fail</message>
+		</alarm>
+		<alarm>
+			<name>domon_timeout</name>
+			<label>domon command timed out</label>
+			<id>611</id>
+			<level>5</level>
+			<message>domon command timed out</message>
+		</alarm>
+		<alarm>
+			<name>shutdownSigcon</name>
+			<label>shutdown fail</label>
+			<id>6111</id>
+			<level>5</level>
+			<message>Sigcon shutdown fail</message>
+		</alarm>
+</supportedalarms>
+
+<supportedbatches>
+	<batchcommand>
+		<name>initSigcon</name>
+		<id>412</id>
+		<syntax></syntax>
+		<sample></sample>			
+		<filepath>/usr/ncra/lib/initSigcon.txt</filepath>		
+	</batchcommand>
+	<batchcommand>
+		<name>restoreSigcon</name>
+		<id>412</id>
+		<syntax></syntax>
+		<sample></sample>			
+		<filepath>/usr/ncra/lib/restore_sigcon.txt</filepath>		
+	</batchcommand>
+	<batchcommand>
+			<name>resetSentinal</name>
+			<id>412</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/reset_sentinal.txt</filepath>
+	</batchcommand>
+	<batchcommand>
+		<name>shutdownSigcon</name>
+		<id>1011</id>
+		<syntax></syntax>
+		<sample></sample>			
+		<filepath>/usr/ncra/lib/shutdownSigcon.txt</filepath>
+	</batchcommand>
+</supportedbatches>
+
+
+</supportedconfig>

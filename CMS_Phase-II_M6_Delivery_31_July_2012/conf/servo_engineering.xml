@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<engineering-ui>
+
+	<statusparams>
+
+		<paramsgroup>
+			<groupname>Angles</groupname>
+			<param>
+				<label>time of day</label>
+				<paramname>time_of_day</paramname>
+				<type>datetime</type>
+				<paramvalue></paramvalue>
+				<bgcolor>0x0000FF</bgcolor>
+			</param>
+
+			<param>
+				<label>az current position</label>
+				<paramname>az_cp</paramname>
+				<type>angle</type>
+				<paramvalue></paramvalue>
+			</param>
+
+			<param>
+				<label>az_tp</label>
+				<paramname>az_tp</paramname>
+				<type>angle</type>
+				<paramvalue></paramvalue>
+			</param>
+
+			<param>
+				<label>az_pp</label>
+				<paramname>az_pp</paramname>
+				<type>angle</type>
+				<paramvalue></paramvalue>
+			</param>
+
+			<param>
+				<label>el_cp</label>
+				<paramname>el_cp</paramname>
+				<type>angle</type>
+				<paramvalue></paramvalue>
+			</param>
+
+			<param>
+				<label>el_tp</label>
+				<paramname>el_tp</paramname>
+				<type>angle</type>
+				<paramvalue></paramvalue>
+			</param>
+
+
+			<!--
+				<param> <label>el_pp</label> <paramname>el_pp</paramname>
+				<type>angle</type> <paramvalue>123:50:10</paramvalue> </param>
+				<param> <label>az_state</label> <paramname>az_state</paramname>
+				<type>string</type> <paramvalue></paramvalue> </param>
+			-->
+		</paramsgroup>
+
+		<paramsgroup>
+			<groupname>State</groupname>
+			<param>
+				<label>subystem state</label>
+				<paramname>state</paramname>
+				<type>string</type>
+				<paramvalue></paramvalue>
+			</param>
+		</paramsgroup>
+
+	</statusparams>
+
+	<detailedparams>
+		<paramsgroup>
+			<groupname>AZ</groupname>
+
+			<param>
+				<label>az_cp</label>
+				<paramname>az_cp</paramname>
+				<type>angle</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_tp</label>
+				<paramname>az_tp</paramname>
+				<type>angle</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_err</label>
+				<paramname>az_err</paramname>
+				<type>string</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_motor1_current</label>
+				<paramname>az_motor1_current</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_motor2_current</label>
+				<paramname>az_motor2_current</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_motor1_temp</label>
+				<paramname>az_motor1_temp</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_motor2_temp</label>
+				<paramname>az_motor2_temp</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_run</label>
+				<paramname>az_run</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_aol</label>
+				<paramname>az_aol</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_brk</label>
+				<paramname>az_brk</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_ccp</label>
+				<paramname>az_ccp</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_ccf</label>
+				<paramname>az_ccf</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_cpl</label>
+				<paramname>az_cpl</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_cfl</label>
+				<paramname>az_cfl</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_cwr</label>
+				<paramname>az_cwr</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_enc</label>
+				<paramname>az_enc</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>az_ac</label>
+				<paramname>az_ac</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+
+
+			<!--
+				<param> <label>az_motor2_current</label>
+				<paramname>az_motor2_current</paramname> <type>Amps</type>
+				<paramvalue>34.56</paramvalue> </param> <param>
+				<label>az_tacho1</label> <paramname>az_tacho1</paramname>
+				<type>RPM</type> <paramvalue>434</paramvalue> </param> <param>
+				<label>az_tacho2</label> <paramname>az_tacho2</paramname>
+				<type>RPM</type> <paramvalue>23</paramvalue> </param> <param>
+				<label>el_motor1_current</label>
+				<paramname>el_motor1_current</paramname> <type>Amps</type>
+				<paramvalue>34</paramvalue> </param> <param>
+				<label>el_motor2_current</label>
+				<paramname>el_motor2_current</paramname> <type>Amps</type>
+				<paramvalue>12.50</paramvalue> </param> <param>
+				<label>el_tacho1</label> <paramname>el_tacho1</paramname>
+				<type>RPM</type> <paramvalue>978</paramvalue> </param> <param>
+				<label>wind velocity 2</label> <paramname>wind_vel2</paramname>
+				<type>KMPH</type> <paramvalue>64</paramvalue> </param> <param>
+				<label>wind velocity 1</label> <paramname>wind_vel1</paramname>
+				<type>KMPH</type> <paramvalue>64</paramvalue> </param>
+			-->
+		</paramsgroup>
+
+		<paramsgroup>
+			<groupname>EL</groupname>
+
+			<param>
+				<label>el_cp</label>
+				<paramname>el_cp</paramname>
+				<type>angle</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_tp</label>
+				<paramname>el_tp</paramname>
+				<type>angle</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_err</label>
+				<paramname>el_err</paramname>
+				<type>string</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_motor1_current</label>
+				<paramname>el_motor1_current</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_motor2_current</label>
+				<paramname>el_motor2_current</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_motor1_temp</label>
+				<paramname>el_motor1_temp</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_motor2_temp</label>
+				<paramname>el_motor2_temp</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_run</label>
+				<paramname>el_run</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_aol</label>
+				<paramname>el_aol</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_brk</label>
+				<paramname>el_brk</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_dnp</label>
+				<paramname>el_dnp</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_dnf</label>
+				<paramname>el_dnf</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_upp</label>
+				<paramname>el_upp</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_upf</label>
+				<paramname>el_upf</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_std</label>
+				<paramname>el_std</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_str</label>
+				<paramname>el_str</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_stp</label>
+				<paramname>el_stp</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_enc</label>
+				<paramname>el_enc</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>el_ac</label>
+				<paramname>el_ac</paramname>
+				<type>integer</type>
+				<paramvalue></paramvalue>
+			</param>
+			<!--
+				<param> <label>POSG</label> <paramname>POSG</paramname>
+				<type>bit</type> <paramvalue>1</paramvalue> </param> <param>
+				<label>TRKG</label> <paramname>TRKG</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>SLWG</label>
+				<paramname>SLWG</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>CWRP</label>
+				<paramname>CWRP</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>WND50</label>
+				<paramname>WND50</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>WND85</label>
+				<paramname>WND85</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>MAN</label>
+				<paramname>MAN</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>LOC</label>
+				<paramname>LOC</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>REM</label>
+				<paramname>REM</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>ACKOK</label>
+				<paramname>ACKOK</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>DCOK</label>
+				<paramname>ACKOK</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param> <param> <label>SSCOK</label>
+				<paramname>SSCOK</paramname> <type>bit</type>
+				<paramvalue>0</paramvalue> </param>
+			-->
+
+		</paramsgroup>
+		<paramsgroup>
+			<groupname>Vars</groupname>
+
+			<param>
+				<label>time of day</label>
+				<paramname>time_of_day</paramname>
+				<type>datetime</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>mode</label>
+				<paramname>mode</paramname>
+				<type>string</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>w50</label>
+				<paramname>w50</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>w80</label>
+				<paramname>w80</paramname>
+				<type>float</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>pos</label>
+				<paramname>pos</paramname>
+				<type>string</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>trk</label>
+				<paramname>trk</paramname>
+				<type>string</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>slw</label>
+				<paramname>slw</paramname>
+				<type>string</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>ssc</label>
+				<paramname>ssc</paramname>
+				<type>string</type>
+				<paramvalue></paramvalue>
+			</param>
+			<param>
+				<label>dc</label>
+				<paramname>dc</paramname>
+				<type>string</type>
+				<paramvalue></paramvalue>
+			</param>
+
+		</paramsgroup>
+
+
+	</detailedparams>
+
+	<rawparams>
+		<paramsgroup>
+			<groupname>Raw Stream</groupname>
+			<param>
+				<label>raw stream</label>
+				<paramname>rawstream</paramname>
+				<type>string</type>
+				<paramvalue>
+					111111111111111000000000000000000000000000000000000001111111111100000000000
+				</paramvalue>
+				<bgcolor>0x0000FF</bgcolor>
+			</param>
+		</paramsgroup>
+	</rawparams>
+
+	<basiccommands>
+		<command>
+			<name>init</name>
+			<id>1</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+
+		<command>
+			<name>coldstart</name>
+			<id>40</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+
+		<command>
+			<name>position</name>
+			<id>42</id>
+			<syntax>ax,ang1,ang2</syntax>
+			<sample>B,123:30:20,123:50:10</sample>
+		</command>
+		<command>
+			<name>track</name>
+			<id>44</id>
+			<syntax>ax,time,ang1,ang2</syntax>
+			<sample>B,12:30:20,123:50:10,123:50:10
+			</sample>
+		</command>
+		<command>
+			<name>trackObject</name>
+			<id>44</id>
+			<syntax>source_name,ra_mean,dec_mean,epoch
+			</syntax>
+			<sample>3C147,10:10:10,10:10:10,2000.0
+			</sample>
+		</command>
+
+		<command>
+			<name>hold</name>
+			<id>46</id>
+			<syntax>ax</syntax>
+			<sample>B</sample>
+		</command>
+		<command>
+			<name>stop</name>
+			<id>48</id>
+			<syntax>ax</syntax>
+			<sample>B</sample>
+		</command>
+		<command>
+			<name>close</name>
+			<id>4a</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+
+		<command>
+			<name>set_time_of_day</name>
+			<id>52</id>
+			<syntax>time,date</syntax>
+			<sample>12:12:12,12:12:2010</sample>
+		</command>
+		<command>
+			<name>setstowangles</name>
+			<id>54</id>
+			<syntax>ax,ang1,ang2</syntax>
+			<sample>B,123:30:20,123:50:10</sample>
+		</command>
+		<command>
+			<name>rawtrack</name>
+			<id>50</id>
+			<syntax>
+				source_name,ra_mean,dec_mean,epoch,ra_app,dec_app,target_epoch,ra_offset,dra,dec_offset,ddec,d_ref_time,az_offset,daz,el_offset,del,ref_time_offset,current_time
+			</syntax>
+			<sample>
+				3C147,10:10:10,10:10:10,2000.0,10:10:10,10:10:10,2011,19.00,12.00,10,10,11,13,14,15,16,17,1985:12:12
+				12:12:30</sample>
+		</command>
+		<command>
+			<name>stowrelease</name>
+			<id>4e</id>
+			<syntax>ax</syntax>
+			<sample>B</sample>
+		</command>
+		<command>
+			<name>abort</name>
+			<id>50</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>readangles</name>
+			<id>30</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>readanalogvars</name>
+			<id>32</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>readdigitalvars</name>
+			<id>34</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>readsetparameters</name>
+			<id>36</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>set_S/W_Hi_limit</name>
+			<id>56</id>
+			<syntax>ax,ang1,ang2</syntax>
+			<sample>B,123:30:20,123:50:10</sample>
+		</command>
+		<command>
+			<name>set_S/W_Lo_limit</name>
+			<id>58</id>
+			<syntax>ax,ang1,ang2</syntax>
+			<sample>B,123:30:20,123:50:10</sample>
+		</command>
+		<command>
+			<name>set_windvel_limit</name>
+			<id>5A</id>
+			<syntax>windvel</syntax>
+			<sample>123.4567</sample>
+		</command>
+		<command>
+			<name>scan</name>
+			<id>45</id>
+			<syntax>az_offset,el_offset,ra_offset,dec_offset,scan_length
+			</syntax>
+			<sample>1800,1900,0,0,350</sample>
+		</command>
+		<command>
+			<name>trackObject</name>
+			<id>44</id>
+			<syntax>source_name,ra_mean,dec_mean,epoch
+			</syntax>
+			<sample>3C147,10:10:10,10:10:10,2000.0
+			</sample>
+		</command>
+		<command>
+			<name>trackOffazel</name>
+			<id>47</id>
+			<syntax>az_offset,el_offset</syntax>
+			<sample>1900.00,1800.00</sample>
+		</command>		
+		<command>
+			<name>trackOffradec</name>
+			<id>48</id>
+			<syntax>ra_offset,dec_offset</syntax>
+			<sample>0,0</sample>
+		</command>
+		<command>
+			<name>domon</name>
+			<id>49</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>goin</name>
+			<id>50</id>
+			<syntax>srvcrd</syntax>
+			<sample>0</sample>
+		</command>
+		<command>
+			<name>goout</name>
+			<id>51</id>
+			<syntax>srvcrd</syntax>
+			<sample>1</sample>
+		</command>
+		<command>
+			<name>ldantoff</name>
+			<id>52</id>
+			<syntax>ant_az_offset,ant_el_offset
+			</syntax>
+			<sample>1,1</sample>
+		</command>
+	</basiccommands>
+
+	<detailedcommands>
+		<command>
+			<name>close</name>
+			<id>4a</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>stow</name>
+			<id>4c</id>
+			<syntax>ax</syntax>
+			<sample>B</sample>
+		</command>
+		<command>
+			<name>stowrelease</name>
+			<id>4e</id>
+			<syntax>ax</syntax>
+			<sample>B</sample>
+		</command>
+		<command>
+			<name>abort</name>
+			<id>50</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>readangles</name>
+			<id>30</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>readanalogvars</name>
+			<id>32</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+
+		<command>
+			<name>readdigitalvars</name>
+			<id>34</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+
+		<command>
+			<name>readsetparameters</name>
+			<id>36</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>set_time_of_day</name>
+			<id>52</id>
+			<syntax>time,date</syntax>
+			<sample>12:12:12,12:12:2010</sample>
+		</command>
+		<command>
+			<name>setstowangles</name>
+			<id>54</id>
+			<syntax>ax,ang1,ang2</syntax>
+			<sample>B,123:30:20,123:50:10</sample>
+		</command>
+		<command>
+			<name>set_S/W_Hi_limit</name>
+			<id>56</id>
+			<syntax>ax,ang1,ang2</syntax>
+			<sample>B,123:30:20,123:50:10</sample>
+		</command>
+		<command>
+			<name>Set_S/W_Lo_limit</name>
+			<id>58</id>
+			<syntax>ax,ang1,ang2</syntax>
+			<sample>B,123:30:20,123:50:10</sample>
+		</command>
+		<command>
+			<name>Set_windvel_limit</name>
+			<id>5A</id>
+			<syntax>windvel</syntax>
+			<sample>123.4567</sample>
+		</command>
+	</detailedcommands>
+
+
+	<trendplot>
+		<supportedx>
+			<param>
+				<label>time of day</label>
+				<paramname>timeofday</paramname>
+				<type>datetime</type>
+			</param>
+
+			<param>
+				<label>time</label>
+				<paramname>systemtime</paramname>
+				<type>time</type>
+			</param>
+
+		</supportedx>
+
+		<supportedy>
+			<param>
+				<label>motor current1</label>
+				<paramname>motorcurrent1</paramname>
+				<type>float</type>
+				<linestyle></linestyle>
+				<color>0x00FF00</color>
+			</param>
+			<param>
+				<label>motor current1</label>
+				<paramname>motorcurrent1</paramname>
+				<type>float</type>
+				<linestyle></linestyle>
+				<color>0x00FFFF</color>
+			</param>
+
+		</supportedy>
+
+
+	</trendplot>
+</engineering-ui>

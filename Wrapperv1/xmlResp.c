@@ -1,0 +1,303 @@
+/****** RESPXML.h and RESPXML.c are added to prepare the Response for CMS.
+ It prepare the RESPONSE.XML file which is read and sent on socket to the CMS.*****/
+
+//
+// xml Resources are being used by multiple threads like Nconnected, CMS_service and
+// consumer threads, it may clash get junk packet. Avoiding the mutex lock here
+// as proabability of dead lock situation may arrise. Instead we are affording the
+// junk packet. 21 Oct 2011 JPK/RAJ
+//
+#include "invokeWrapper.h"
+#include "wrapperCom.h"
+#include "handleQue.h"
+#include "xmlParse.h"
+#include "xmlResp.h"
+#include "consumCMS.h"
+
+
+void formBasicXmlResp( xmlNodePtr , BasicFlds *);
+void formAnsXmlResp(xmlNodePtr, devResponse *);
+void formDataXmlResp(xmlNodePtr, devResponse *);
+
+    char *nodeString[] = { "responses", "response", "data", "param", "alarms", "alarm" };
+    typedef enum        {  nResponses, nResponse, nData, nParam, nAlarms, nAlarm, TN } Nodes ;
+    xmlNodePtr node[TN];
+
+char final_xml[MaxBufSize];
+
+char * formRespXML(devResponse *);
+
+void formDataXmlResp(xmlNodePtr n, devResponse *respPtr) {
+  int i ; char tmpBuf[DATAPKT];
+
+    for (i=0; i < respPtr->data.numpkt; i++ ) {
+
+        node[nParam]= xmlNewNode(NULL, BAD_CAST nodeString[nParam]);
+        xmlAddChild(n, node[nParam]);
+
+           bzero(tmpBuf,DATALEN);strcpy(tmpBuf, (const char *)&respPtr->data.prmname[i]);
+           xmlNewChild(node[nParam], NULL, BAD_CAST "name",BAD_CAST tmpBuf);
+           bzero(tmpBuf,DATAPKT);strcpy(tmpBuf, (const char *)&respPtr->data.prmvalue[i]);
+           xmlNewChild(node[nParam], NULL, BAD_CAST "value",BAD_CAST tmpBuf);
+    }
+}
+
+
+void formAnsXmlResp(xmlNodePtr n, devResponse *respPtr) {
+   char tmpBuf[DATALEN];
+
+       //
+       // Will dummy structure clash with normal command transaction
+       //
+       formBasicXmlResp(n,&respPtr->cmdelem); 
+
+    switch (respPtr->event) {
+         case WRAPPER      :
+         case INTERMEDIATE :
+         case FINAL        :
+         case DPLOT        :
+         
+                              // code
+                              bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",respPtr->code);
+                              xmlNewChild(n, NULL, BAD_CAST "code",BAD_CAST tmpBuf);
+                              // event
+                              bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",respPtr->event);
+                              xmlNewChild(n, NULL, BAD_CAST "event",BAD_CAST tmpBuf);
+                              // msg
+                              xmlNewChild(n, NULL, BAD_CAST "message",BAD_CAST respPtr->message);
+
+                              //
+                              // numPkt > 0 formXmlDataPkt() 
+                              //  xml Data Param Name Value
+                              break ;
+         case ALARM        :   // Basic structure not matter
+                               //formBasicXmlResp(n,&respPtr->cmdelem); 
+                                 
+                              // code
+                              bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",respPtr->code);
+                              xmlNewChild(n, NULL, BAD_CAST "code",BAD_CAST tmpBuf);
+                              // event
+                              bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",respPtr->event);
+                              xmlNewChild(n, NULL, BAD_CAST "event",BAD_CAST tmpBuf);
+                              // msg
+                              xmlNewChild(n, NULL, BAD_CAST "message",BAD_CAST respPtr->message);
+
+                               // sscanf(respPtr->RespBuf,"%d %d %s",alarmid, Level, Descirption);
+                               // Form Alarm XML
+                                  node[nAlarms]= xmlNewNode(NULL, BAD_CAST nodeString[nAlarms]);
+                                 xmlAddChild(node[nResponse], node[nAlarms]);
+
+                                // One can add multiple alarm into nalarms
+                                 node[nAlarm]= xmlNewNode(NULL, BAD_CAST nodeString[nAlarm]);
+                                 xmlAddChild(node[nAlarms], node[nAlarm]); 
+
+                               /*   node[nAlarm]= xmlNewNode(NULL, BAD_CAST nodeString[nAlarm]);
+                                 xmlAddChild(node[nResponse], node[nAlarm]); */
+
+                                 bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d", respPtr->alarm.id);
+                                 xmlNewChild(node[nAlarm], NULL, BAD_CAST "id",BAD_CAST tmpBuf);
+
+                                 bzero(tmpBuf,DATALEN);sprintf(tmpBuf, "%s",respPtr->alarm.alarmname);
+                                 xmlNewChild(node[nAlarm], NULL, BAD_CAST "name",BAD_CAST tmpBuf);
+
+                                 bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d", respPtr->alarm.level);
+                                 xmlNewChild(node[nAlarm], NULL, BAD_CAST "level",BAD_CAST tmpBuf);
+
+                                 bzero(tmpBuf,DATALEN);strcpy(tmpBuf, (const char *)&respPtr->alarm.description);
+                                 xmlNewChild(node[nAlarm], NULL, BAD_CAST "message",BAD_CAST tmpBuf);
+
+                              break ;
+         default            : if( respPtr->event > 12) {
+                                    // code
+                                     bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",respPtr->code);
+                                     xmlNewChild(n, NULL, BAD_CAST "code",BAD_CAST tmpBuf);
+                                    // event
+                                     bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",respPtr->event);
+                                     xmlNewChild(n, NULL, BAD_CAST "event",BAD_CAST tmpBuf);
+                                    // msg
+                                    xmlNewChild(n, NULL, BAD_CAST "message",BAD_CAST respPtr->message);
+                              }else {
+                              
+                                      // code
+                                      bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",respPtr->code);
+                                      xmlNewChild(n, NULL, BAD_CAST "code",BAD_CAST tmpBuf);
+                                      // event
+                                      bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",respPtr->event);
+                                      xmlNewChild(n, NULL, BAD_CAST "event",BAD_CAST tmpBuf);
+                                      // msg
+                                      xmlNewChild(n, NULL, BAD_CAST "message",BAD_CAST "RESPONSE CORRUPTED");
+
+                              }
+    }
+}
+
+
+/*
+void takeXmlResp(xmlResponse *respPtr , char *respBuf, int *readEvent) 
+{
+      typedef enum { CODE, EVENT, NUMPKT, PKTSIZE, PKT } RESP_FLD;
+      int i=0, j=0;
+      char *fldSep, fldChar; 
+      char  *bPtr ; char tmpBuf[MaxBufSize];
+      static int fld=0, nPkt, numPkt=0, PktSize=0; 
+ 
+
+    i=0; j=0; fld=0;
+    PktSize=0; nPkt=0; numPkt=0;
+    bzero(tmpBuf,MaxBufSize);
+
+    if( ( fldSep = ( char * ) getenv("FLD_SEPARATOR")) == NULL ) { // It takes the LOGPATH from conf file.
+          fldChar = ' ';       
+    } else { fldChar = (char)fldSep[0]; }
+
+          while(isspace( (unsigned char) respBuf[i])  || isblank( (unsigned char) respBuf[i]) ) { i++; continue ; }
+          
+   if( strtok( (char *)&respBuf[i], fldSep) == NULL)  return ;
+   else {  fprintf(stderr, " CODE %s \n", respBuf); respPtr->code=atoi(respBuf); fld++ ; }
+
+
+     while(  (bPtr = strtok(NULL,fldSep))  != NULL) {
+                j=0;
+                switch(fld) {
+                     case EVENT  : fprintf(stderr, " Event %s \n", bPtr); respPtr->event=atoi(bPtr); 
+                                   *readEvent = respPtr->event;
+                                   fld++; break;
+                     case NUMPKT  : numPkt=(atoi(bPtr)); fprintf(stderr, " no Pkt  %d \n", numPkt); respPtr->numPkt=numPkt; fld++; break ;
+                     case PKTSIZE  : PktSize=(atoi(bPtr)); fprintf(stderr, " PktSize %d %s \n", PktSize, bPtr); fld++; break;
+                     case PKT  : while (j  < PktSize) { 
+                                  if(j== strlen(bPtr)) {tmpBuf[j]=fldChar; } 
+                                  else { tmpBuf[j]=bPtr[j]; } ;
+                                  j++;
+                               }
+                                tmpBuf[j]='\0';
+                                strcpy(respPtr->RespBuf[nPkt],tmpBuf);
+                                fprintf(stderr, " Packet %s \n", tmpBuf); 
+
+                               if(  (++nPkt < numPkt) && (nPkt != MAXRESP) ) {
+                                    bPtr= (char *) (bPtr+PktSize); 
+                                    bPtr = strtok(bPtr,fldSep); PktSize=atoi(bPtr);
+                                    fprintf(stderr, " PktSize %d %s \n", PktSize, bPtr);
+                                    fld=PKT;  
+                                    bzero(tmpBuf,MaxBufSize);
+                               } else { fld++; }
+                               break ;
+                } 
+     }
+}
+*/
+
+
+void formBasicXmlResp( xmlNodePtr n, BasicFlds *bptr) {
+
+ extern char *xmlKeyWords[];
+
+   char tmpBuf[DATALEN];
+
+    bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",bptr->seq);
+    xmlNewChild(n, NULL, BAD_CAST xmlKeyWords[Seq],BAD_CAST tmpBuf);
+
+    bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%s",bptr->id);
+    xmlNewChild(n, NULL, BAD_CAST xmlKeyWords[Id],BAD_CAST tmpBuf);
+
+    bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%s",bptr->cmdname);
+    xmlNewChild(n, NULL, BAD_CAST xmlKeyWords[Name],BAD_CAST tmpBuf);
+
+    bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%s",bptr->subsysid);
+    xmlNewChild(n, NULL, BAD_CAST xmlKeyWords[Systemid],BAD_CAST tmpBuf);
+
+    bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%s",bptr->timestamp);
+    xmlNewChild(n, NULL, BAD_CAST xmlKeyWords[Timestamp],BAD_CAST tmpBuf);
+
+/* TIMEOUT AND PRIORITY - NOT SUPPORTED SINCE PhaseII_M1_2012MAR14
+    bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",bptr->priority);
+    xmlNewChild(n, NULL, BAD_CAST xmlKeyWords[Priority],BAD_CAST  tmpBuf);
+
+    bzero(tmpBuf,DATALEN);sprintf(tmpBuf,"%d",bptr->timeout);
+    xmlNewChild(n, NULL, BAD_CAST xmlKeyWords[Timeout],BAD_CAST tmpBuf);
+*/
+}
+
+char * formRespXML(devResponse *respPtr)
+{
+    char responsefile[FileNameSize];
+    xmlDocPtr doc = NULL;       // document pointer 
+    char *envptr;
+//   FILE *respF;
+    xmlChar *xmlbuff;
+    int buffersize=0;
+
+    LIBXML_TEST_VERSION;
+    
+     bzero(responsefile,FileNameSize );
+/*
+    if( (final_xml= (char *)  realloc(sizeof(char) * MaxBufSize))  == NULL ) {
+         fprintf(stderr, "### ERROR : formRespXML() Could not allocate memory to final_xml");
+         return (char *)NULL;
+    }
+*/
+
+   if( ( envptr = ( char * ) getenv("RESPONSE_PATH")) != NULL ) { // It takes the LOGPATH from conf file.
+      strcpy(responsefile,envptr);
+    } else {
+      fprintf(stderr,"response_path is not defined is the conf file\n\n");
+    }
+
+    fprintf(stderr, " ###### formWrapperACK \n");
+   //printDevResp(respPtr);
+
+    bzero(&final_xml,MaxBufSize);
+    doc = xmlNewDoc(BAD_CAST "1.0");
+    node[nResponses] = xmlNewNode(NULL, BAD_CAST nodeString[nResponses]);
+    xmlDocSetRootElement(doc, node[nResponses]);
+
+//
+// Number of structure can be incorporated here 
+//
+    node[nResponse]= xmlNewNode(NULL, BAD_CAST nodeString[nResponse]);
+    xmlAddChild(node[nResponses], node[nResponse]);
+    formAnsXmlResp(node[nResponse],respPtr);
+
+ // Response/Monitoring Data
+    node[nData]= xmlNewNode(NULL, BAD_CAST nodeString[nData]);
+    xmlAddChild(node[nResponse], node[nData]);
+    formDataXmlResp(node[nData],respPtr);
+
+
+ /* We are now directly writing RESPONSE in memory buffer instead of file */
+    xmlDocDumpFormatMemoryEnc(doc, &xmlbuff,&buffersize,"UTF-8",0);
+ // fprintf(stderr, "\n Encoded Buffer %s %d\n", (char *)xmlbuff, buffersize);
+       /*
+        * Free associated memory.
+        */
+    if( buffersize > MaxBufSize || buffersize <= 0 ) { fprintf(stderr, "WARNING : formRespXML() : Invalid xmlbuffsize %d \n", buffersize); }
+    else { strcpy(final_xml,(char *)xmlbuff); strcat(final_xml,RESP_END); }
+
+/*
+       xmlSaveFormatFileEnc(responsefile, doc, "UTF-8", 1);
+       respF = fopen(responsefile,"r");
+
+        if (respF == NULL) {
+            fprintf(stderr,"File %s doesn't exist\n", responsefile);
+            return (char *) NULL;
+        }
+  
+            fseek(respF, 0, SEEK_END); long size = ftell(respF);
+            fseek(respF, 0, SEEK_SET);
+            fread(final_xml, sizeof(char), size,respF);
+            fclose(respF);
+            strcat(final_xml,RESP_END);
+            // puts(final_xml);
+            // free(responsefile); 
+ */
+
+          
+// Temporary solution 21 oct
+       if(xmlbuff != NULL)  xmlFree(xmlbuff);
+        if(doc != (xmlDocPtr) NULL) {
+            xmlFreeDoc(doc);
+            xmlCleanupParser();
+   // this is to debug memory for regression tests //
+    /*       xmlMemoryDump(); */
+         }
+            return &final_xml;
+}

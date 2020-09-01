@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<supportedconfig>
+
+<supportedcommands>
+		<command>
+			<name>loadProperty</name>
+			<id>1</id>
+			<syntax>propertyname,propertyvalue</syntax>
+			<sample>source_name,3C48</sample>
+			<params>
+			 	<param required="true">					
+					<paramname>propertyname</paramname>
+					<type>string</type>	
+					<validation>
+						<minLength>2</minLength>
+						<maxLength>20</maxLength>
+					</validation>						
+				</param>
+			 	<param required="true">
+					<paramname>propertyvalue</paramname>
+					<type>string</type>	
+					<validation>
+						<minLength>1</minLength>
+						<maxLength>20</maxLength>
+					</validation>						
+				</param>				
+			</params>	
+
+			<dependency_validations>
+				<params>
+					<param required="true">					
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>source_name</value>								
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>regex</type>
+						<validation>
+							<regex>
+								<regexp>[a-zA-Z0-9_+-]+$</regexp>
+							</regex>
+						</validation>			
+					</param>
+				 </params>
+				 <params>	
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>ra_mean</value>
+								<value>acq_duration</value>
+								<value>ra_app</value>								
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+								<format>HH:mm:ss</format>
+								<min>0</min>
+								<max>23</max>
+							</datetime>
+						</validation>				
+					</param>
+				</params>
+				<params>	
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>dec_mean</value>
+								<value>dec_app</value>
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>angle</type>
+						<validation>
+						<angle>
+							<degree>
+								<min>-56</min>
+								<max>90</max>
+							</degree>
+						</angle>
+					</validation>			
+					</param>
+				</params>
+				<params>	
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>epoch</value>						
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>double</type>
+						<validation>
+							<range>
+								<min>1900.0</min>
+							</range>
+						</validation>	
+					</param>
+				</params>
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>target_epoch</value>
+								<value>ra_offset</value>
+								<value>dra</value>
+								<value>dec_offset</value>
+								<value>ddec</value>
+								<value>d_ref_time</value>
+								<value>az_offset</value>
+								<value>daz</value>
+								<value>el_offset</value>
+								<value>del</value>
+								<value>ref_time_offset</value>
+								<value>mjd_source</value>
+								<value>freq</value>
+								<value>first_lo</value>
+								<value>bb_lo</value>
+								<value>rest_freq</value>
+								<value>lsr_velocity</value>
+								<value>azDiffLimit</value>
+								<value>elDiffLimit</value>
+								<value>az_target</value>
+								<value>el_target</value>
+								<value>az</value>
+								<value>el</value>								
+								<value>azTrackingErr</value>
+								<value>elTrackingErr</value>
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>double</type>		
+					</param>
+				</params>
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>data_file</value>	
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>regex</type>
+							<validation>
+								<regex>
+									<regexp>^([a-zA-Z0-9\s\._-]+)$</regexp>
+								</regex>
+						</validation>		
+					</param>
+				</params>	
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>acq_duration</value>	
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>datetime</type>
+						<validation>
+							<datetime>
+								<format>HH:mm:ss</format>
+								<min>0</min>	
+								<max>23</max>
+							</datetime>
+						</validation>	
+					</param>
+				</params>
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>observer_name</value>	
+								<value>project_code</value>
+								<value>project_title</value>
+								<value>pol_flux</value>	
+								<value>current_time</value>
+								<value>observer_name</value>
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>string</type>				
+					</param>
+				</params>	
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>ant_id</value>	
+								<value>source_id</value>
+								<value>antenna_id</value>	
+								<value>net_sign</value>
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>integer</type>				
+					</param>
+				</params>
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>scan_length</value>
+								<value>ant_az_offset</value>
+								<value>ant_el_offset</value>
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>angle</type>
+						<validation>
+							<angle>
+								<degree>
+									<min>0</min>
+									<max>360</max>
+								</degree>
+							</angle>
+						</validation>				
+					</param>
+				</params>	
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>srvcrd</value>								
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>integer</type>		
+						<validation>
+							<range>
+								<min>0</min>
+								<max>1</max>
+							</range>
+						</validation>				
+					</param>
+				</params>	
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>calcode</value>	
+								<value>band_mask</value>	
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>short</type>				
+					</param>
+				</params>	
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>monitoringfrequency</value>								
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>long</type>		
+						<validation>
+							<range>
+								<min>9000</min>
+								<max>900000</max>
+							</range>
+						</validation>				
+					</param>
+				</params>
+				<params>
+					<param required="true">					
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>on_source_flag</value>								
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>									
+							</values>
+						</validation>			
+					</param>
+				 </params>				 
+				 <params>
+					<param required="true">					
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>tracking_on</value>								
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>string</type>
+						<validation>
+							<values>
+								<value>true</value>
+								<value>false</value>									
+							</values>
+						</validation>			
+					</param>
+				 </params>
+				 <params>
+					<param required="true">					
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>off_source_timeout</value>
+								<value>off_source_starttime</value>									
+							</values>
+						</validation>					
+					</param>	
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>long</type>
+						<validation>
+							<range>
+								<min>0</min>								
+							</range>
+						</validation>			
+					</param>				
+				 </params>
+				<params>
+					<param required="true">
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>RFPOL1</value>
+								<value>RFPOL2</value>
+							</values>
+						</validation>					
+					</param>
+					<param required="true">
+						<paramname>propertyvalue</paramname>
+						<type>long</type>		
+						<validation>
+							<range>
+								<min>0</min>
+								<max>2000</max>
+							</range>
+						</validation>				
+					</param>
+				</params>
+				 <params>
+					<param required="true">					
+						<paramname>propertyname</paramname>
+						<type>string</type>		
+						<validation>
+							<values>
+								<value>adcclock</value>
+								<value>fftlen</value>
+								<value>acqinteg</value>
+								<value>fftshift</value>
+								<value>ltainteg</value>
+								<value>sampgain</value>
+								<value>channelstart</value>
+								<value>channelstop</value>
+								<value>channelincr</value>
+								<value>sampgainctrl</value>
+								<value>chanavg</value>
+								<value>adcmode</value>
+								<value>stokes</value>
+								<value>back-end</value>	
+							</values>
+						</validation>					
+					</param>	
+				 </params>				 
+			</dependency_validations>			
+		</command>		
+</supportedcommands>
+
+
+<supportedbatches>
+		<batchcommand>
+			<name>initAllSubsystems</name>
+			<id>412</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/initAllSubsystems.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>init_on_powerfailure</name>
+			<id>412</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/init_on_powerfailure.txt</filepath>
+		</batchcommand>
+		<batchcommand>
+			<name>shutdownAllSubsystems</name>
+			<id>1018</id>
+			<syntax></syntax>
+			<sample></sample>			
+			<filepath>/usr/ncra/lib/shutdownAllSubsystems.txt</filepath>
+		</batchcommand>
+
+</supportedbatches>
+
+<supportedalarms>		
+		<alarm>
+			<name>initAllSubsystems</name>
+			<label>init failed</label>
+			<id>100</id>
+			<level>5</level>
+			<message>cms initialization failed</message>
+		</alarm>
+		<alarm>
+			<name>init_on_powerfailure</name>
+			<label>init failed</label>
+			<id>101</id>
+			<level>5</level>
+			<message>cms initialization on power failure failed</message>
+		</alarm>
+		<alarm>
+			<name>shutdownAllSubsystems</name>
+			<label>shutdown failed</label>
+			<id>101</id>
+			<level>5</level>
+			<message>cms shoutdown failed</message>
+		</alarm>
+		
+		
+</supportedalarms>	
+</supportedconfig>

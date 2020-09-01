@@ -1,0 +1,31 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<unistd.h>
+#include<signal.h>
+
+/* handler for SIGUSR1 */
+struct sigevent sigev;
+
+
+static void sigusr1_handler(int signo)
+{
+   printf("caught SIGUSR1!\n");
+   exit(EXIT_SUCCESS);
+}
+
+int main(void)
+{
+   if(signal(SIGUSR1,sigusr1_handler) == SIG_ERR)
+   {
+     fprintf(stderr,"cannot handle SIGUSR1!\n");
+     exit(EXIT_FAILURE);
+   }
+
+    sigev.sigev_notify = SIGEV_SIGNAL;
+    sigev.sigev_signo = SIGUSR1;
+    
+    for(;;)
+        pause();
+     return 0;
+}
+ 

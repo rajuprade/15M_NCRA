@@ -1,0 +1,185 @@
+
+
+structure based commn between wrapper and device
+  aug 12, 2011
+
+SEP-26-2011------>
+We had been facing some problem realted to too many open files.
+We thought that it may be because of various files operation like
+command.xml,RESPONSE.xml.So we switched over to memory buffer operation.
+
+======================================================================
+
+SEP-27-2011 
+
+Today after running CMS-Wrapper-device for full night.
+1. We were getting cannot connect to CMS error.
+
+As we were not closing socket file descriptor.so in sendCMSPkt() we closed the socket fd.
+
+2. We also solved the problem of 1st init command.
+
+In the recv() fucntion of servCMS.c, we enable MSG_DONOTWAIT flag.After that first init command got properly parsed.
+
+====================================================================================
+Oct 15 Segmentaion problem due to memory allocation to final_xml pointer.
+ made static buffer.
+ formRespXml return checked for Null responses; response pointer freed
+ at each step
+==========================================================================
+
+OCt 17, 2011 ::: sockfile descriptor was not getting closed even after closing the socket.
+  used shutdown() and then closed()
+Now seems to be working
+===============================================================================
+
+Oct 19 2011
+
+---while running batch file, init command was failing after some 3-4 hours, domon command was working fine.
+---After going thru the logs,we found that it may be because of malloc used to allocate thread memory for service thread.
+
+---> Now we have used realloc for service thread..and started the test.
+
+========================================================================================
+
+OCT 20 2011
+
+---> Problem wasn't solved by the use of realloc.
+     pthread_detach was used in service() in servCMS.C to reclaim the resources.
+
+---> In ConsumCMS.c code is now divided into threadterminate() and checkevent()
+
+=============================================================================
+
+OCT 21 22 23 2011
+
+1. We started the batch file for Sentinal system on Friday ( 21.10.2011) at around 10 AM.
+
+2.  All communication were going fine upto Saturday (22.10.11) at around  3.38 AM.
+
+3. After that time CMS stopped sending init command, It is observed in the log that after 3.38 AM, Wrapper had not received Init command from CMS.
+
+4. Also Wrapper wasn't able to connect to CMS Monitoring_port (19999) from  5:50:14 AM on 22.10.2011 onwards.
+
+     ##### Some Portion of WRAPPER LOG ######
+       RESPONSE FROM DEVICE
+
+     seq [20445]  Subsystemid [sentinal] 
+     ID [5] CMDName [domon]
+     TimeStamp [2011-10-21T10:15:15.029+05:
+30]
+Number of Arg [5]
+5 name time Value 5:50:14
+5 name status Value Ok
+5 name temp Value 23
+5 name chan Value 1
+5 name rawcnt Value 264
+ Id 0 0 
+ Code 10  Event 99 Message Command received successfully
+ ###### formWrapperACK
+  XML RESPONSE <?xml version="1.0" encoding="UTF-8"?>
+<responses><response><seq>20445</seq><id>5</id><name>Monitoring_Data</name><systemid>sentinal</systemid><timestamp>2011-10-21T10:15:15.029+05:30</timestamp><priority>0</priority><timeout>0</timeout><code>10</code><event>99</event><message>Command received successfully</message><data><param><name>time</name><value>5:50:14</value></param><param><name>status</name><value>Ok</value></param><param><name>temp</name><value>23</value></param><param><name>chan</name><value>1</value></param><param><name>rawcnt</name><value>264</value></param></data></response></responses>
+<RESP_END>
+initClientConn() : Connection refused
+### Error : sendPktToCMS () Could not connect to CMS ..
+ initClientConn() : hostname- 192.168.3.203 resp_port 5000 Connection Successful.
+
+5. Communication between Device Client ( Rabbit running sentinel device program ) and Wrapper is still going on.
+
+6. All threads of InvokeWrapper are still alive.
+
+    [teleset@telab2 Desktop]$ ps -aL | grep invoke
+  945   945 pts/5    00:00:00 invokeWrapper
+  945   946 pts/5    00:00:03 invokeWrapper
+  945   947 pts/5    00:01:52 invokeWrapper
+
+7.  Wrapper program running machine's virtual memory count initially showed 38820, now it's showing 40072.
+
+8. File descriptor remains constant through out the execution of Wrapper program.
+
+    ##### Log showing info abt File descriptor
+     File Descript fd Open 6
+     File Descript fdinfo Open 6
+================================================================================
+
+
+30-NOV-2011
+
+1. We tested the basic SIGCON system with rabbit client.
+
+2. I changed the sigcon_commands.xml and sigcon_engineering.xml file to the need for sigcon system.
+
+3. Wrote the devSigcon.c file in Wrapper program
+
+4. Basic commands from CMS expert tab works well for SIGCOn system, we have tested lo command we were getting success as final response.
+
+5. For the time being I have kept the name of commands as lo,attn,reflo,init,reset,domon.
+
+6. Those names can be changed to SET LO etc.
+
+7. Tommorow will try to implement all other commands in Rabbit program.All commands have been included in Wrapper and CMS.
+
+8. For monitoring point will have to discuss with Mr.Navnath Shinde.
+
+===============================================================================================
+
+1-DEC-2011
+
+1. All commands are included in CMS as well in Wrapper and DeviceClient for SIGCON system
+
+2. Now commands are SET LO ,SET ATTN ,SET REFLO,DOMON.
+
+3. checked all commands with deviceClient, We got response for all commands.
+
+4. Response to Domon command is just timestamp and status which was displaying on SIGCON_engineering GUI.
+
+===========================================================================================================
+2-DEC-2011
+
+1. Tested the SIGCON and FRONTEND  system simultaneously.
+
+2. Some error was there in the init_on_powerfail.txt script file, after fixing that error.CMS was sending INIT and Domon commands properly.
+
+3. After reducing the refresh rate in cms.properties to 1 sec,We were able to get current Timestamp on GUI.
+
+4. Sentinel system is currently disconnected from CMS system.
+===================================================================
+5 DEC 2011 Need Following changes :
+
+a. instead of status variable state or STATE  variable (deviceClient.c)
+b. MON is just sending to 19999 port and not 5000 port.
+c. in servCMS.c status change to 'state'. cmdname is "Monitoring_Data".
+=====================================================================//
+
+28 DEC 2011 wrapperCom.h,c 'int chkpollEvent(int *)' functionality made common so that
+ deviceClient program running on PC can check the TCP/IP connectivity.
+=====================================================================
+12 JAN 2012
+(1) Event Port made separate by assignging value 5001
+    wrapperCom.c changed for EVNT_IP and EVNT_PORT for connectClient function
+(2) On RHEL 64 bit system , pack(push,1) and pop() not working, hence long type in basiccmd field
+made int // This is temporary for the servo only.
+   - long to int conversion in the BasicFields
+=====================================================================
+30 JAN 2012 
+ In order to make large response data packets so that spectral/correlator data can accommodate:
+ reqResp.h modified to introduce DATAPKT
+ For Plottting the DATA          DPLOT // enum
+ xmlResp.c modified to get the value for DATAPKT.
+ (??) Is maxDataSize to parse the XML buffer enough 4096?
+==============================================================================================
+2 FEB 2012
+MaxBufSize 409600 // invokeWrapper.h
+argName, argData  // xmlParse, xmlResp.c
+
+###################< Wrapper0 End >######################################################
+
+Wrapper1 updated the changes of Wrapper0
+
+Next pending work
+(1) Logging of xml logs
+(2) Frequent timeouts occurring  problem
+(3) Device Specific command implimentation in dev_<subsystem>.c
+(4) _ Response specific customizing
+(5) After deviceClient reconnect - minor memory leakage happens - debug
+

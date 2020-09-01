@@ -1,0 +1,39 @@
+	subroutine hms2r(it,time)
+C---------------------------------------------------------------------
+C	This subroutine converts hour,min,sec to radians
+C
+C  input:
+C        it(3)(hour,min,sec)   integer
+C
+C  output:
+C	time in radians        double precision
+C
+C----------------------------------------------------------------------
+	structure/ti/
+		union
+		    map
+			integer*4  hour
+			integer*4  min
+			integer*4  sec
+		    end map
+
+		    map
+			integer*4  itime(3)
+		    end map
+		end union
+	end structure
+
+	record/ti/ihms
+
+	double precision r2h,time
+	integer it(3),i
+	parameter(r2h=3.819718634205488)
+
+	do i=1,3
+	   ihms.itime(i)=it(i)
+	end do
+        write(*,*)   it(1),  it(2),  it(3);
+	time=(ihms.hour+(ihms.min/60.0)+(ihms.sec/3600.0))/r2h
+
+	return
+	end

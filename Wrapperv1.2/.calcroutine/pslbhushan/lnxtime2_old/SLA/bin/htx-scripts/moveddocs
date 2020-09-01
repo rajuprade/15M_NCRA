@@ -1,0 +1,28 @@
+
+      dir="${*}"
+      { 
+         for doc in ${HTX_ALLDOCS}; do echo "${doc}"; done \
+            | ${HTX_DIR}/stdfile | sed 's%^%> %'
+         if test -f "${dir}/htx.log" -a -r "${dir}/htx.log"; then
+            sed -n 's%^l  *\([^ ][^ ]*\).*$%< \1%p' "${dir}/htx.log"
+         fi
+      } | awk '
+          BEGIN {
+             old[ "" ] = ""
+             now[ "" ] = ""
+          }
+          {
+             if ( $1 == ">" ) {
+                now[ $2 ]++
+             } else {
+                old[ $2 ]++
+             }
+          }
+          END {
+             for ( i in old ) if ( i ) {
+                if ( ! now[ i ] ) print( i )
+             }
+             for ( i in now ) if ( i ) {
+                if ( ! old[ i ] ) print( i )
+             }
+          }'

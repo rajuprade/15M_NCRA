@@ -1,0 +1,1 @@
+gcc  -o libjnic.so -shared -Wl,-soname,libjnic.so  -I/usr/lib/jvm/java-6-sun/include -I//usr/lib/jvm/java-6-sun/include/linux/ jnic.c -static -lc

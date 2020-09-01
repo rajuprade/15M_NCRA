@@ -1,0 +1,9 @@
+<SubsystemName id="sentinal">
+	<params>
+		<param>
+			<name>temp</name>
+			<value>28</value>
+			<type>int</type>
+		</param>
+	</params>
+</SubsystemName>

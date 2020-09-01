@@ -1,0 +1,55 @@
+   March 21st, 2011
+....................................................
+
+1) slaFK45z- 1950 FK4 (Besselian) to FK5 (2000).
+
+...................................................................
+2) SLAFK5 J to J -
+          FK4 B to J -
+....................................................................
+3)
+B1979 - B1950 FK4
+B1950 - J2000 FK45
+J2000 - J2011 FK5 Model
+--------------------------------------------------------------------
+4)
+slaPreces() ep0 and ep1 starting (source) and ending (target) epoch
+            ra,dec argument will be over-written 
+            System char *FK4, FK5 
+--------------------------------------------------------------------
+5) 24 h - civil day or mean day
+23h 56m - sidereal day
+Local sidereal Time - RA of the stars which is vertically overhead.
+--------------------------------------------------------------------
+6)
+SLA_E2H- Equitorial to horizontal coordinates - page - 130
+---------------------------------------------------------------------
+7)
+IST ->LST - RA = HA ->EL = Antenna Elevation Limits?
+--------------------------------------------------------------------
+8) LST : 
+
+   IST -> UTC -> 
+
+   MJD - Modified Julian date. 12:00 Hrs.
+
+   slaCldj - calendar date to MJD  corresponding to UT 0h Greenwich
+
+   UTC = our time - 5:30 Hrs.
+
+#  UT1 = UTC + dut 
+?  mjd +=dut;
+
+   slaGmst Calculation - UT1 To GMST
+  
+   mst = sla_gmst(ut1)
+
+   lst = mst + sla_eqex(mjd)
+
+   lst += longitude.
+------------------------------------------------------
+
+   
+ 
+   
+   

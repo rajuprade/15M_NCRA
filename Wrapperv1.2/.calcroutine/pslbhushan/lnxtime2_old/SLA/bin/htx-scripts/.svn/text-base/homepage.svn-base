@@ -1,0 +1,34 @@
+
+         doc="${1}"
+         if test ! -n "${doc}"; then
+            echo >&2 "${HTX_SCRIPT}: homepage: no document name given"
+            exit 1
+         fi
+         file="${2}"
+         if test -n "${file}"; then
+            if test ! -f "${doc}.htx/${file}" -o \
+                    ! -r "${doc}.htx/${file}"; then
+               file=''
+            fi
+         fi
+         if test ! -n "${file}"; then
+            file=`echo "${doc}" | sed -e 's%.*/%%'`.html
+            if test ! -f "${doc}.htx/${file}" -o \
+                    ! -r "${doc}.htx/${file}"; then
+               file=''
+            fi
+         fi
+         if test ! -n "${file}"; then
+            html=`(cd "${doc}.htx" 1>/dev/null 2>/dev/null; echo *.html)`
+            if test "${html}" = "*.html"; then html=''; fi
+            html=`for f in ${html}; do echo "${f}"; done | sed \
+                     -e '/^icons.html$/d' \
+                     -e '/^footnode.html$/d'`
+            for f in index.html ${html} icons.html footnode.html; do
+               if test -f "${doc}.htx/${f}" -a -r "${doc}.htx/${f}"; then
+                  file="${f}"
+                  break
+               fi
+            done
+         fi
+         if test -n "${file}"; then echo "${file}"; fi

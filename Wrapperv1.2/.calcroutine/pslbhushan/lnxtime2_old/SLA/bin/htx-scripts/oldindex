@@ -1,0 +1,26 @@
+
+      doclist="${*}"
+      if test -n "${doclist}"; then
+         if test "${HTX_DEEP}" = "1"; then
+            for doc in ${doclist}; do
+               if test ! -f "${doc}.htx/htx.index"; then
+                  echo "${doc}"
+               else
+                  old=`find "${doc}.htx" \
+                            \( -name "${doc}.htx" -o -name '*.html' \) \
+                            -newer "${doc}.htx/htx.index" -print`
+                  if test -n "${old}"; then echo "${doc}"; fi
+               fi
+            done
+         else
+            ls -d -t -1 2>/dev/null `for doc in ${doclist}; do
+               echo "${doc}.htx ${doc}.htx/htx.index"
+            done` | awk -F/ '{
+               if ( $NF == "htx.index" ) {
+                  i[ substr( $0, 1, length( $0 ) - 10 ) ]++
+               } else if ( ! i[ $0 ] ) {
+                  print( substr( $0, 1, length( $0 ) - 4 ) )
+               }
+            }'
+         fi
+      fi

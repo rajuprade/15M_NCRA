@@ -1,0 +1,188 @@
+/* calepoch_ routine */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+#include "source.h" 
+#include "constant.h" 
+
+ 
+ double fangle_(char * , int *);
+ 
+struct lstInfo{
+      double  jd;
+      char *lststring;
+      double lstval;
+};
+
+ SOURCE sss;
+ final  val;
+//lstdata lst_val;
+ union udcoord ud ;
+/*
+ double r2h = 3.819718634205488 ;
+ double r2d = 57.29577951308232;
+ double twopi = 6.283185307179586 ;
+*/
+
+char* getString(){
+  char* ret1 = (char*)malloc(5);
+  strcpy(ret1,"aaa");
+  return ret1;
+}
+void calculatelst(char** argv, char** srcline,char** resultinfo)
+{
+  // char *argv[ ]= {"11","03","21","10","56","30"};
+  // char *srcline[ ] = {  "3C286","13h28m49.65s", "+30d45'58.6", "1950.0" };
+   //char* lstdata[3];
+ // char **result=malloc(3*sizeof(char*));
+//char result[3][80];	
+   struct lstInfo lst_val;	
+   char strout[12][512];
+   char lststring[80]; unsigned char lsti[8];
+   char *format_str = "\0";
+   int *d1, *d2, *d31, *stat, i;
+   double *mytime;
+   int *it[3];
+   float *d32;
+   double *d3, *epoch, *djm, ti, *lst, *t0az;
+   double tz1 = -5.5 ;
+   double long1 = (double)atof(argv[6]);// -74.05; 
+   double ra_Rad, dec_Rad;
+   int mode; /* mode 10 Reference to Target Epoch, 11 Precesses the coordinates */
+
+   /*if(argc == 1)  {
+       fprintf(stderr, "Usage %s YY MM DD Hr min sec \n",argv[0]) ;
+       exit(1);
+   }*/
+   printf("first arg %s\n", argv[4]);
+   printf("second arg %s\n",srcline[0]);
+   epoch =(double *) malloc(sizeof(double));
+   d32 =(float *) malloc(sizeof(float));
+   for(i=0;i<3;i++){ 
+	it[i] =(int *) malloc(sizeof(int));
+   }
+   i=0;
+   mytime= (double *)malloc(sizeof(double));
+
+   d1 =(int *) malloc(sizeof(int));
+   d2 =(int *) malloc(sizeof(int));
+   d31 =(int *) malloc(sizeof(int));
+   stat =(int *) malloc(sizeof(int));
+   d3   =(double *) malloc(sizeof(double));
+   djm  =(double *) malloc(sizeof(double));
+   t0az =(double *) malloc(sizeof(double));
+   lst  =(double *) malloc(sizeof(double));
+
+   *d1 = (int) atoi(argv[0]);
+   *d2 = (int) atoi(argv[1]);
+   *d3 = (double ) atof(argv[2]);
+   *it[0] = (int ) atoi(argv[3]);
+   *it[1] = (int ) atoi(argv[4]);
+   *it[2] = (int ) atof(argv[5]); 
+//-------------------< INPUT >---------------------------//
+   fprintf(stderr,  "  date %d %d %lf Time %d:%d:%d \n", (int) *d1, (int) *d2, (double) *d3, *it[0],*it[1],*it[2]); 
+
+   *mytime =    (double) ( (double) (*it[0] + ( *it[1]/60.0) + (*it[2]/3600.0) ))/r2h;
+
+   (void) fryej_(d1,d2,d3,epoch);   // Target Epoch
+   fprintf(stderr, " fryej_ epoch %lf ", (double) *epoch);   
+
+     ra_Rad = fangle_(srcline[1],&i);
+     dec_Rad = fangle_(srcline[2],&i);
+
+     ud.dcoord[0]=sss.ra0= ra_Rad;    /* REFERENCE RA  , DEC, EPOCH */
+     ud.dcoord[1]=sss.dec0= dec_Rad; 
+     ud.dcoord[2]= sss.ep0 = atof(srcline[3]);
+     ud.dcoord[7] = sss.epd =  *epoch ; /* Fortran DCOORD(8) : TARGET/REFERENCE EPOCH */
+     
+     sss.time = (float) *mytime ;    
+     sss.te0 = (float ) *mytime ; 
+     sss.raoff = sss.dra=sss.decoff=sss.ddec=sss.azoff=sss.daz=sss.del=0;    
+//-------------------< Modified Julian Date CALC >---------------------------//
+
+   (void) ep2daj_((float *)&sss.ep0,d1,d2,d31,d32);   /* Epoch To YYMMDD.D conversion */
+
+#ifdef DEBUGJ
+   fprintf(stderr, " ep2daj_  %d %d %d %f   ", (int) *d1, (int) *d2, (int) *d31, (float) *d32); 
+#endif
+   (void) slacaldj_(d1,d2,d31,&sss.ep0,stat);          // Calculation date to Reference MJD */ 
+   fprintf(stderr, " mjd_ref %lf %d \n", (double ) sss.ep0, (int) *stat);
+
+   (void) ep2daj_((float *)&sss.epd,d1,d2,d31,d32);   /* Epoch To YYMMDD.D conversion */
+#ifdef DEBUGJ
+   fprintf(stderr, " ep2daj_  %d %d %d %f   ", (int) *d1, (int) *d2, (int) *d31, (float) *d32); 
+#endif
+   (void) slacaldj_(d1,d2,d31,&sss.epd,stat);          // Calculation date to Target MJD */ 
+   fprintf(stderr, " mjd_target %lf %d \n", (double ) sss.epd, (int) *stat);
+//---------------< LST calculation Part >--------------------------//
+    *djm = sss.epd ;
+
+    ti= *mytime+(tz1/r2h);
+   *t0az = (double)*djm +(ti * r2h/24);
+
+    (void) slagmst_(t0az,lst);  
+    //Added by PSL was missing it earlier  
+   // *lst = *lst + sla_Eqeqx(t0az);
+
+     *lst = *lst - long1/r2d;
+     if(*lst > twopi)*lst=*lst - twopi;
+    
+     //printf("B4 LST test %f lststing %s \n", lstInfo->lstval,lstInfo->jd);
+	i=stime_(lst,format_str,lststring);     
+     printf(" LST %lf lststing %s \n", *lst, lststring); 
+//	result[0]=malloc(sizeof(char)*strlen(lststring));
+//	resultinfo[0]=lststring;
+//	strcpy(resultinfo[0],lststring);
+//	sscanf(lststring,"%s",resultinfo[0]);
+	resultinfo[0]="natashaaaaaaaaaaaaaaaaaaaaaaaaaaa:";
+        puts(resultinfo[0]);
+        strcpy(resultinfo[0],lststring);
+        printf("\n\n");
+        puts(resultinfo[0]);
+
+
+
+
+
+//puts(resultinfo[0]);
+
+//	printf("new %s",resultinfo[0]);
+	//sprintf(result[1],"%g",*lst);
+	//sprintf(result[2],"%g",sss.ep0);
+	printf("DONE");
+	//lstInfo->lstval=*lst;
+	//lstInfo->jd=sss.epd;
+	//lstInfo->lststring = (char *) malloc(sizeof(char)* strlen(lststring)); //strlen(lststring)*/);
+
+	//strcpy(lstInfo->lststring,lststring);
+	
+	//lst_val.lstval=*lst;
+        //lst_val.jd=sss.epd;
+        //lst_val.lststring = (char *) malloc(sizeof(char)* strlen(lststring));
+ 	//strcpy(lst_val.lststring,lststring);
+	// printf("Modified LST %f lststing %s \n", lst_val.lstval,lst_val.lststring);
+	// printf("Modified LST test %f lststing %s \n", lstInfo->lstval,lstInfo->lststring);
+	free(d1);
+	free(d2);
+	free(d31);
+	free(stat);
+	free(d3);
+	free(t0az);
+	free(lst);
+	free(epoch);
+	free(d32);
+	free(mytime);
+        free(djm);	
+	for(i=0;i<3;i++)
+	{	
+		free(it[i]);
+	}
+	
+       // lstdata[0] = (char*)malloc(sizeof(char) * strlen(lststring));     	
+       // lstdata[1] = (char*)
+//	return &result;
+
+}

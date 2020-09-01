@@ -1,0 +1,15 @@
+
+      install='/home/aips/libonline/SLA/star'
+      starlink='/home/aips/libonline/SLA/star'
+      if test "${install}" = '|INS''TALL|'; then
+         install="${INSTALL:-${HOME}/star}"
+      fi
+      if test "${starlink}" = '|STAR''LINK|'; then
+         starlink="${STARLINK:-/star}"
+      fi
+      if test "${install}" = "${starlink}"; then
+         echo "${starlink}/docs:${starlink}/help"
+      else
+         echo \
+         "${install}/docs:${install}/help:${starlink}/docs:${starlink}/help"
+      fi

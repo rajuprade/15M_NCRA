@@ -1,0 +1,1 @@
+gcc  -o libjcalepochc.so -shared -Wl,-soname,libjcalepochc.so  -I/usr/lib/jvm/java-6-sun/include -I//usr/lib/jvm/java-6-sun/include/linux/ jcalepochc.c -static -lc

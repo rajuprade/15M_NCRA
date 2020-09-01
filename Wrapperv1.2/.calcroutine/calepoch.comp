@@ -1,0 +1,30 @@
+\rm -rf core*
+cc -c fangle_.c
+cc -c sangle_.c
+cc -c calepoch.c
+cc -c stime_.c
+cc -c ltostr.c
+f77 -c fryej.f
+f77 -c ep2daj.f
+f77 -c slacaldj.f
+f77 -c slacldj.f
+f77 -c slagmst_.f
+f77 -c sladranrm.f
+f77 -c precess.f
+f77 -c crdprec.f
+f77 -c djm2e.f
+
+f77 -c slapreces.f
+f77 -c sladjcl.f
+f77 -c sladmxv.f 
+f77 -c slaprec.f 
+f77 -c sladcc2s.f
+f77 -c sladcs2c.f
+f77 -c slaprebn.f
+
+f77 -c azel.f
+f77 -c crdrd2ae.f
+f77 -c rset.f
+f77 -g -o calepoch calepoch.o fangle_.o sangle_.o precess.o slapreces.o crdprec.o djm2e.o sladjcl.o azel.o sladmxv.o slaprec.o sladcc2s.o sladcs2c.o slaprebn.o crdrd2ae.o rset.o fryej.o ep2daj.o slacaldj.o slacldj.o slagmst_.o sladranrm.o stime_.o ltostr.o /home/observer/lib/solaris/libsla.a
+
+rm -rf *.o

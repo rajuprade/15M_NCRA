@@ -1,0 +1,31 @@
+#load source_name field
+loadProperty("source_name,TEST12");
+#get a source from catalog
+$source = gts("3C48");
+if ($source ne "") {
+	#info("$source");
+	$name = [$source getSource];
+	info("source name = $name");
+	$ra = [$source getRa];
+	info("ra = $ra");
+	$dec = [$source getDec];
+	info("dec = $dec ");
+	$epoch = [$source getEpoch];
+	info("epoch = $epoch" );
+	$trackCmd = command("servo,trackObject,$name,$ra,$dec,$epoch");
+	if ($trackCmd ne "") {
+		info("trackobject issued with seq $trackCmd ");	
+		$trackresult = waitforCmdCompletion( $trackCmd ,10);
+		if ($trackresult ne "") {
+			info("command completion result =  $trackresult ");
+			$trackstatus = getCommandStatus($trackCmd);
+			info("command completed with status $trackstatus");
+			$trackstatusint = getCommandStatusInt($trackCmd);
+			info("command completed with status int $trackstatusint");
+		}
+	}
+}
+else {
+	error("source not found");
+} 
+

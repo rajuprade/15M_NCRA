@@ -1,0 +1,4 @@
+#initialization script for Frontend
+#doMon command
+#$cmd3 = command("frontend,doMon");
+#info("done with issuing doMon command $cmd3");

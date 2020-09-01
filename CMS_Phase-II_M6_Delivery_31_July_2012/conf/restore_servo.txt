@@ -1,0 +1,24 @@
+
+
+#restore az_cp and el_cp
+
+$az_cp = restore("servo,az_cp");
+$el_cp = restore("servo,el_cp");
+
+info("az_cp value restored-> $az_cp");
+info("el_cp value restored0> $el_cp");
+
+if ($az_cp ne "" && $el_cp ne ""){
+
+$cmd = command("servo,setstowangles,B,$az_cp,$el_cp");
+info("sent command setstowangles with seq $cmd");
+
+$cmdstatus =  waitforCmdCompletion($cmd ,10);
+info("status of setstowangles command : $cmdstatus");
+
+}
+
+
+if ($cmdstatus != 5){
+	updateBatchStatus(2);
+}

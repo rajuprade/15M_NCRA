@@ -1,0 +1,45 @@
+
+      maindoc="${1}"
+      shift
+      refs="${*}"
+      . ${HTX_DIR}/settrap
+      files=`sed -n -e 's%^> *\([^ ]*\).*$%\1%p' "${maindoc}.htx/htx.index" \
+                | sort -u`
+      docname=`basename ${maindoc}`
+      nfiles=`echo ${files} | wc -w | awk '{print $1}'`
+      echo \
+"   updating cross-references in document ${docname} (${nfiles} files to modify)..."
+      (
+         cd "${maindoc}.htx"
+         links="`find ${files} -type f ! -links 1 -print 2>/dev/null`"
+         if test -n "${links}"; then
+            tempfile="htx-relink-$$.nolink"
+            settrap 'rm -f "${tempfile}"'
+            for f in ${links}; do
+               cp "${f}" "${tempfile}"
+               rm -f "${f}"
+               mv "${tempfile}" "${f}"
+            done
+            settrap
+         fi
+      )
+      suffix=''
+      if test "`uname -s`" = 'Linux'; then suffix=".htx-relink"; fi
+      if test -n "${suffix}"; then
+         newfiles="`for f in ${files}; do echo "${f}${suffix}"; done`"
+         settrap '(cd "${maindoc}.htx"; rm -f ${newfiles})'
+      fi
+      (cd ${maindoc}.htx; grep '^' ${files} /dev/null) \
+       | eval "`${HTX_DIR}/resolve ${maindoc} ${refs} | ${HTX_DIR}/multised`" \
+       | ${HTX_DIR}/wrfiles "${maindoc}.htx" "${suffix}"
+      if test -n "${suffix}"; then
+         echo "   replacing original files with re-linked versions..."
+         (
+            cd ${maindoc}.htx
+            for f in ${files}; do mv "${f}${suffix}" "${f}"; done
+         )
+         settrap
+         sleep 1
+      fi
+      echo "      ...document ${docname} linked"
+      touch "${maindoc}.htx/htx.index"

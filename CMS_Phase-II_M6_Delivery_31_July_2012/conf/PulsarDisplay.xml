@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups template="">
+	<group name="Display Settings">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_Scale</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_Scale</cmdid>						
+						<label>Scale :</label>						
+					</control>
+				</column>
+				<column>	
+						<control>
+							<type>radio</type>
+							<name>sendpulsarplottingdata__scale</name>
+							<cmdid>sendpulsarplottingdata__Linear</cmdid>
+							<label>Linear</label>
+							<value>linear</value>
+							<checked>false</checked>
+						</control>
+				
+					<control>	
+						<name>Pulsar_linear</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_linear</cmdid>						
+						<label>Linear</label>						
+					</control>
+				</column>
+				<column>
+					<control>
+							<type>radio</type>
+							<name>sendpulsarplottingdata__scale</name>
+							<cmdid>sendpulsarplottingdata__Logarithmic</cmdid>
+							<label>Logarithmic</label>
+							<value>logarithmic</value>
+							<checked>false</checked>
+					</control>
+				
+					<control>	
+						<name>Pulsar_logarithmic</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_logarithmic</cmdid>						
+						<label>Logarithmic</label>						
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_Xaxis</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_Xaxis</cmdid>						
+						<label>X-axis :</label>						
+					</control>
+				</column>
+				<column>
+					<control>
+							<type>radio</type>
+							<name>sendpulsarplottingdata__xaxis</name>
+							<cmdid>sendpulsarplottingdata__Noofbins</cmdid>
+							<label>No. of Bins</label>
+							<value>noofbins</value>
+							<checked>false</checked>
+					</control>
+					<control>	
+						<name>Pulsar_Noofbins</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_Noofbins</cmdid>						
+						<label>No. of Bins</label>						
+					</control>
+				</column>	
+				<column>
+					<control>
+							<type>radio</type>
+							<name>sendpulsarplottingdata__xaxis</name>
+							<cmdid>sendpulsarplottingdata__frequency</cmdid>
+							<label>Frequency</label>
+							<value>frequency</value>
+							<checked>false</checked>
+						</control>
+				
+					<control>	
+						<name>Pulsar_Frequency</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_Frequency</cmdid>						
+						<label>Frequency</label>						
+					</control>
+				</column>					
+			</row> 
+		</controls>
+		</group>
+		<group name="Data Monitoring">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_Interval</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_Interval</cmdid>						
+						<label>Sample Interval</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small int" >	
+						<name>sendpulsarplottingdata__interval</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__interval</cmdid>
+						<maxLength>10</maxLength>
+					</control>
+				</column>
+
+				<column>
+					<control>	
+						<name>Pulsar_msec</name>
+						<type>LABEL</type>    
+						<colspan>4</colspan>
+						<cmdid>Pulsar_msec</cmdid>						
+						<label>msec</label>						
+					</control>
+				</column>
+				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>spectral_updates</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_updates</cmdid>						
+						<label>Spectral/fold updates</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small int">	
+						<name>sendpulsarplottingdata__updates</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__updates</cmdid>
+						<maxLength>10</maxLength>						
+					</control>
+				</column>
+
+				<column>	
+						<control>	
+						<name>Pulsar_sec</name>
+						<colspan>4</colspan>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_sec</cmdid>						
+						<label>Seconds</label>						
+					</control>				
+				</column>			
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_total_freq</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_total_freq</cmdid>						
+						<label>Total Freq Channels</label>						
+					</control>
+				</column>
+				<column>
+					<control>	
+						<name>Pulsar_start</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_start</cmdid>						
+						<label>Start</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxSmall int">	
+						<name>sendpulsarplottingdata__start_chnl</name>
+						<type>Text</type> 				
+						<cmdid>sendpulsarplottingdata__start_chnl</cmdid>
+						<maxLength>10</maxLength>						
+					</control>
+				</column>
+				<column>
+					<control>	
+						<name>Pulsar_stop</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_stop</cmdid>						
+						<label>Stop</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxSmall int">	
+						<name>sendpulsarplottingdata__stop_chnl</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__stop_chnl</cmdid>
+						<maxLength>10</maxLength>						
+					</control>
+				</column>
+				<column>
+					<control>	
+						<name>Pulsar_mhz</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_mhz</cmdid>						
+						<label>Mhz</label>						
+					</control>
+				</column>
+			</row> 
+			
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_ref_chnl</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_ref_chnl</cmdid>						
+						<label>Reference Channel</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small int">	
+						<name>sendpulsarplottingdata__ref_chnl</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__ref_chnl</cmdid>
+						<!--class>inputBoxSmall</class -->
+						<maxLength>10</maxLength>						
+					</control>
+				</column>
+				<column>	
+					<control>	
+						<name>Pulsar_dispersion</name>
+						<type>LABEL</type>  
+						<colspan>4</colspan>						
+						<cmdid>Pulsar_dispersion</cmdid>						
+						<label>For dispersion</label>						
+					</control>			
+				</column>	
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_dm</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_dm</cmdid>						
+						<label>DM (pc/cc)</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small int">	
+						<name>sendpulsarplottingdata__dm</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__dm</cmdid>
+						<maxLength>10</maxLength>						
+					</control>
+				</column>
+				<column>	
+					<control>	
+						<name>Pulsar_dispersion</name>
+						<type>LABEL</type>  
+						<colspan>4</colspan>						
+						<cmdid>Pulsar_dispersion</cmdid>						
+						<label>For dispersion</label>						
+					</control>			
+				</column>	
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_period</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_period</cmdid>						
+						<label>Period (msec)</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small int">	
+						<name>sendpulsarplottingdata__period</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__period</cmdid>
+						<maxLength>10</maxLength>						
+					</control>
+				</column>
+				<column>	
+					<control>	
+						<name>Pulsar_folding</name>
+						<type>LABEL</type>  
+						<colspan>4</colspan>						
+						<cmdid>Pulsar_folding</cmdid>						
+						<label>For folding</label>						
+					</control>			
+				</column>	
+			</row> 
+			
+		</controls>
+	</group>
+	<group name="Meta-data">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_project_code</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_project_code</cmdid>						
+						<label>Project code</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__project_code</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__project_code</cmdid>
+						<maxLength>10</maxLength>
+						<metaData>true</metaData> 						
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>spectral_obs_name</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_obs_name</cmdid>						
+						<label>Observer name</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__observer_name</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__observer_name</cmdid>
+						<maxLength>10</maxLength>	
+						<metaData>true</metaData> 
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_project_title</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_project_title</cmdid>						
+						<label>Project title</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendpulsarplottingdata__project_title</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__project_title</cmdid>
+						<maxLength></maxLength>	
+						<metaData>true</metaData> 
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>spectral_ant_id</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_ant_id</cmdid>						
+						<label>Ant id</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__ant_id</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__ant_id</cmdid>
+						<maxLength>10</maxLength>
+						<metaData>true</metaData> 
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_band_mask</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_band_mask</cmdid>						
+						<label>Band mask</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendpulsarplottingdata__band_mask</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__band_mask</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData> 
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>spectral_source_name</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_source_name</cmdid>						
+						<label>Source name</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendpulsarplottingdata__source_name</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__source_name</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_pol_flux</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_pol_flux</cmdid>						
+						<label>Pol flux</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendpulsarplottingdata__pol_flux</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__pol_flux</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>spectral_mjd_source</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_mjd_source</cmdid>						
+						<label>MJD source</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendpulsarplottingdata__mjd_source</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__mjd_source</cmdid>
+						<maxLength>50</maxLength>
+						<metaData>true</metaData>						
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_ra_app</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_ra_app</cmdid>						
+						<label>Ra Apparent</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendpulsarplottingdata__ra_app</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__ra_app</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Pulsar_dec_app</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_dec_app</cmdid>						
+						<label>Dec Apparent</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendpulsarplottingdata__dec_app</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__dec_app</cmdid>
+						<maxLength>50</maxLength>		
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_ra_mean</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_ra_mean</cmdid>						
+						<label>Ra mean</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendpulsarplottingdata__ra_mean</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__ra_mean</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Pulsar_dec_mean</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_dec_mean</cmdid>						
+						<label>Dec mean</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendpulsarplottingdata__dec_mean</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__dec_mean</cmdid>
+						<maxLength>50</maxLength>
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_dra</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_dra</cmdid>						
+						<label>DRA</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__dra</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__dra</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Pulsar_ddec</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_ddec</cmdid>						
+						<label>DDEC</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small double" disabled="true">	
+						<name>sendpulsarplottingdata__ddec</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__ddec</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_freq</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_freq</cmdid>						
+						<label>Frequency</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__freq</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__freq</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Pulsar_first_lo</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_first_lo</cmdid>						
+						<label>First lo</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__first_lo</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__first_lo</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_bb_lo</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_bb_lo</cmdid>						
+						<label>bb lo</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__bb_lo</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__bb_lo</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Pulsar_rest_freq</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_rest_freq</cmdid>						
+						<label>Rest freq</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__rest_freq</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__rest_freq</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_lsr_velocity</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_lsr_velocity</cmdid>						
+						<label>LSR velocity</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__lsr_velocity</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__lsr_velocity</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Pulsar_source_id</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_source_id</cmdid>						
+						<label>Source id</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__source_id</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__source_id</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_antenna_id</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_antenna_id</cmdid>						
+						<label>antenna_id</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__antenna_id</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__antenna_id</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Pulsar_calcode</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_calcode</cmdid>						
+						<label>calcode</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__calcode</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__calcode</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Pulsar_net_sign</name>
+						<type>LABEL</type>    
+						<cmdid>Pulsar_net_sign</cmdid>						
+						<label>Net sign</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendpulsarplottingdata__net_sign</name>
+						<type>Text</type>    
+						<cmdid>sendpulsarplottingdata__net_sign</cmdid>
+						<maxLength>30</maxLength>	
+						<colspan>3</colspan>
+						<metaData>true</metaData>
+					</control>
+				</column>			
+					
+			</row> 
+		</controls>
+	</group>
+</groups>

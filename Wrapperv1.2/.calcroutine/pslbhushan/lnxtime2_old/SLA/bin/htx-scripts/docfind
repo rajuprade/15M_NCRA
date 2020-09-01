@@ -1,0 +1,17 @@
+
+      dirlist="${*}"
+      if test "${dirlist}" = ""; then dirlist='.'; fi
+      for dir in ${dirlist}; do
+         if test "${dir}" = "."; then dir=''; else dir="${dir}/"; fi
+         doclist=`echo ${dir}*.htx`
+         if test ! "${doclist}" = "${dir}*.htx"; then
+            for doc in ${doclist}; do
+               if test ! -d ${doc}; then
+                  echo >&2 \
+"${HTX_SCRIPT}: warning document ${doc} is not a directory"
+               else
+                  echo "${doc}"
+               fi
+            done
+         fi
+      done | sed -e 's%.htx$%%'

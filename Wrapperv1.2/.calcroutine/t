@@ -1,0 +1,18 @@
+ date 2012 9 5.000000 Time 15:33:0                                        
+ fryej_ epoch 2012.681739 fangle_(): string 12h28m18.00s radian 3.26507    
+fangle_(): string 12d40'00.0 radian 0.221075                               
+ ----> th0 15.550000 [15.550000] 0.000000 0.000000                         
+ mjd_ref 33282.000000 0                                                    
+ mjd_target 56175.000000 0                                                 
+ LST 3.656177 lststing  13h57m56.03s                                       
+ Given RA 12h28m18.00s DEC 12d40'00.0                                      
+ MJD ref 33282  target 56175 : YEAR Ref 1950 Target 2012.68                
+ Precess out 3.2650746981684 0.22107503858595 1950 3.2788846984316         
+ 0.21504590400491 2.8392268197286 0.40318990203169 2012.6817388584         
+ Precessed RA 3.27888 DEC 0.215046 ref 56175
+ Source rises   9h11m52.36s  and set  19h05m35.59s [2.408:4.99859]
+  iLST    3.6561767532345124
+  LST -   209.48349797586823
+ Source AZIMUTH 256:26:27.8   and ELEVATION  68:16:11.0  [4.47574:1.19153]
+ #*# time 15.55 [1.33415] azin 76.4411 azout 76.4411 el 68.2697
+

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<engineering-ui>
+<detailedparams>
+	<paramsgroup>
+		<groupname>Vars</groupname>	
+		<param>
+			<label>dasstate</label>
+			<paramname>dasstate</paramname>
+			<type>integer</type>
+			<paramvalue></paramvalue>
+		</param>
+		<param>
+			<label>gps</label>
+			<paramname>gps</paramname>
+			<type>integer</type>
+			<paramvalue></paramvalue>
+		</param>
+	</paramsgroup>
+</detailedparams>
+<basiccommands>
+
+<!-- Commands for Back-End USER GUI start here-->
+		<command>
+			<name>SENDMETADATA</name>
+			<id>154</id>
+			<syntax>adcclock,fftlen,acqinteg,fftshift,ltainteg,sampgain,channelstart,channelstop,channelincr,sampgainctrl,stokes,chanavg,adcmode,back-end,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app, dec_app,ra_mean, dec_mean,dra, ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>200,1024,0.92,10,0.92,11,0,511,1,true,TOTALINTENSITY,10,1,BACKEND1,ncra,ncra,ncra,1,11,ncra,I,2011,1,1,10:10:10,10:10:10,1,1,1,1,1,1,1,1,1,1,1</sample>
+		</command>	
+		<command>
+			<name>INIT</name>
+			<id>154</id>
+			<syntax>adcclock,fftlen,acqinteg,fftshift,ltainteg,sampgain,channelstart,channelstop,channelincr,sampgainctrl,stokes,chanavg,adcmode,back-end</syntax>
+			<sample>200,1024,0.92,10,0.92,11,0,511,1,true,TOTAL INTENSITY,10,1,BACKEND1</sample>
+		</command>
+		<command>
+			<name>INITPRJ</name>
+			<id>147</id>
+			<syntax>project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app, dec_app,ra_mean, dec_mean,dra, ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>ncra,ncra,ncra,1,1,ncra,I,2011,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</sample>
+		</command>
+		<command>
+			<name>STRTDAS</name>
+			<id>148</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>STOPDAS</name>
+			<id>149</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>STOPPRJ</name>
+			<id>150</id>
+			<syntax>project_code</syntax>
+			<sample>project_code</sample>
+		</command>
+		<command>
+			<name>HALT</name>
+			<id>151</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>LNKNDAS</name>
+			<id>152</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>	
+		<command>
+			<name>START</name>
+			<id>101</id>
+			<syntax>data_file,acq_duration</syntax>
+			<sample>dataacqfile.dat,10:10:10</sample>
+		</command>
+
+		<command>
+			<name>METADATA</name>
+			<id>2</id>
+			<syntax>observer,proposal_id,source_name,ra,dec,epoch,az,el</syntax>
+			<sample>SAMPLE_DATA.1,123,M1,05 34 31.9,+22 00 52,2000,15,15</sample>
+		</command>
+		<command>
+			<name>STOP</name>
+			<id>3</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>FILE</name>
+			<id>4</id>
+			<syntax>filename</syntax>
+			<sample>14JNC01_28DEC08.DATA.1</sample>
+		</command>
+		<command>
+			<name>domon</name>
+			<id>105</id>
+			<syntax></syntax>
+		</command>
+		<command>
+			<name>sendspectralplottingdata</name>
+			<id>106</id>
+			<syntax>scale,xaxis,interval,integration,polarization,noofbins,steps,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app,dec_app,ra_mean,dec_mean,dra,ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>	
+			<sample>linear,noofbins,100,1,BOTH,100,1,123,expert,cms,1,2,moon,10,12,10,10,10:10:10,10:10:10,5,5,12,10,10,15,15,4,8,3,2</sample>
+		</command>
+		<command>
+			<name>sendpulsarplottingdata</name>
+			<id>107</id>
+			<syntax>scale,xaxis,interval,updates,start_chnl,stop_chnl,ref_chnl,dm,period,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app,dec_app,ra_mean,dec_mean,dra,ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>linear,noofbins,10,1,10,20,1,19.56,530.64,123,expert,cms,1,2,moon,10,12,10,10,10:10:10,10:10:10,5,5,12,10,10,15,15,4,8,3,2</sample>
+		</command>
+		<command>
+			<name>startpulsarplottingdata</name>
+			<id>108</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>stoppulsarplottingdata</name>
+			<id>109</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>startspectralplottingdata</name>
+			<id>110</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>stopspectralplottingdata</name>
+			<id>111</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>save_data</name>
+			<id>112</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+
+
+</basiccommands>
+
+<detailedcommands>
+<!-- Commands for Back-End USER GUI start here-->
+		<command>
+			<name>SENDMETADATA</name>
+			<id>154</id>
+			<syntax>adcclock,fftlen,acqinteg,fftshift,ltainteg,sampgain,channelstart,channelstop,channelincr,sampgainctrl,stokes,chanavg,adcmode,back-end,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app, dec_app,ra_mean, dec_mean,dra, ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>200,1024,0.92,10,0.92,11,0,511,1,true,TOTALINTENSITY,10,1,BACKEND1,ncra,ncra,ncra,1,11,ncra,I,2011,1,1,10:10:10,10:10:10,1,1,1,1,1,1,1,1,1,1,1</sample>
+		</command>	
+		<command>
+			<name>INIT</name>
+			<id>154</id>
+			<syntax>adcclock,fftlen,acqinteg,fftshift,ltainteg,sampgain,channelstart,channelstop,channelincr,sampgainctrl,stokes,chanavg,adcmode,back-end</syntax>
+			<sample>200,1024,0.92,10,0.92,11,0,511,1,true,TOTAL INTENSITY,10,1,BACKEND1</sample>
+		</command>
+		<command>
+			<name>INITPRJ</name>
+			<id>147</id>
+			<syntax>project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app, dec_app,ra_mean, dec_mean,dra, ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>ncra,ncra,ncra,1,1,ncra,I,2011,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</sample>
+		</command>
+		<command>
+			<name>STRTDAS</name>
+			<id>148</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>STOPDAS</name>
+			<id>149</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>STOPPRJ</name>
+			<id>150</id>
+			<syntax>project_code</syntax>
+			<sample>project_code</sample>
+		</command>
+		<command>
+			<name>HALT</name>
+			<id>151</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>LNKNDAS</name>
+			<id>152</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>	
+		<command>
+			<name>START</name>
+			<id>101</id>
+			<syntax>data_file,acq_duration</syntax>
+			<sample>dataacqfile.dat,10:10:10</sample>
+		</command>
+		<command>
+			<name>METADATA</name>
+			<id>2</id>
+			<syntax>observer,proposal_id,source_name,ra,dec,epoch,az,el</syntax>
+			<sample>SAMPLE_DATA.1,123,M1,05 34 31.9,+22 00 52,2000,15,15</sample>
+		</command>
+		<command>
+			<name>STOP</name>
+			<id>3</id>
+			<syntax></syntax>
+			<sample></sample>			
+		</command>
+		<command>
+			<name>FILE</name>
+			<id>4</id>
+			<syntax>filename</syntax>
+			<sample>14JNC01_28DEC08.DATA.1</sample>
+			<timeout>120000</timeout>			
+		</command>
+		<command>
+			<name>domon</name>
+			<id>105</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>sendspectralplottingdata</name>
+			<id>106</id>
+			<syntax>scale,xaxis,interval,integration,polarization,noofbins,steps,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app,dec_app,ra_mean,dec_mean,dra,ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>	
+			<sample>linear,noofbins,100,1,BOTH,100,1,123,expert,cms,1,2,moon,10,12,10,10,10:10:10,10:10:10,5,5,12,10,10,15,15,4,8,3,2</sample>
+		</command>
+		<command>
+			<name>sendpulsarplottingdata</name>
+			<id>107</id>
+			<syntax>scale,xaxis,interval,updates,start_chnl,stop_chnl,ref_chnl,dm,period,project_code,observer_name,project_title,ant_id,band_mask,source_name,pol_flux,mjd_source,ra_app,dec_app,ra_mean,dec_mean,dra,ddec,freq,first_lo,bb_lo,rest_freq,lsr_velocity,source_id,antenna_id,calcode,net_sign</syntax>
+			<sample>linear,noofbins,10,1,10,20,1,19.56,530.64,123,expert,cms,1,2,moon,10,12,10,10,10:10:10,10:10:10,5,5,12,10,10,15,15,4,8,3,2</sample>
+			
+		</command>
+		<command>
+			<name>startpulsarplottingdata</name>
+			<id>108</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>stoppulsarplottingdata</name>
+			<id>109</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>startspectralplottingdata</name>
+			<id>110</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>stopspectralplottingdata</name>
+			<id>111</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+		<command>
+			<name>save_data</name>
+			<id>112</id>
+			<syntax></syntax>
+			<sample></sample>
+		</command>
+</detailedcommands>
+
+</engineering-ui>

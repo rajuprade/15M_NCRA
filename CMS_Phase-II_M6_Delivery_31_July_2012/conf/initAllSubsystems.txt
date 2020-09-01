@@ -1,0 +1,134 @@
+#initialization script for all subsystems
+
+#execute domon and if fails try twice and if it fails set the subystem status as NOT CONNECTED
+sub doMonExecute
+{
+	
+	$domoncmd = command("$1,doMon,$monitoringfrequency");
+	updateBatchStatus(0);
+	info("sent command doMon to $1 with seq $domoncmd");
+	$domonstatus = waitforCmdCompletion($domoncmd,10);
+	#check for connection refused status
+	if ($domonstatus == -3){
+		error("$1 doMon connection refused ");
+
+		#try sending domon once again
+		$domoncmd = command("$1,doMon,$monitoringfrequency");
+		updateBatchStatus(0);
+		info("sent command doMon to $1 with seq $domoncmd");
+		$domonstatus = waitforCmdCompletion($domoncmd,10);
+
+		#check for connection refused status once again
+		if ($domonstatus == -3){
+
+			error("$1 doMon connection refused ");
+			#try sending domon the second time
+			$domoncmd = command("$1,doMon,$monitoringfrequency");
+			updateBatchStatus(0);
+			info("sent command doMon to $1 with seq $domoncmd");
+
+			$domonstatus = waitforCmdCompletion($domoncmd,10);
+			
+			if ($domonstatus == -3){
+
+				error("$1 doMon connection refused updating the subsystem state as NOT CONNECTED");
+				#domon failed thrice so update subsystem status as NOT CONNECTED
+				updateSubSystemState("$1,NOT CONNECTED");
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+
+$status = checkSubSystemStatus("servo");
+if($status == 1)
+{
+	#call servo init
+	$servoinit = command("servo,initServo");
+	info("done with issuing initServo command $servoinit");
+	$servoinitstatus =  waitforCmdCompletion($servoinit,10);
+	info("status of initServo command : $servoinitstatus");
+	$servodomon = doMonExecute("servo");
+	updateBatchStatus(0);
+	info("done with issuing servo domon command:  $servodomon ");
+}
+else
+{
+	info("Sub system:servo is deactive, so not executing the initServo batch script");
+	$servoinitstatus = 5;
+}
+
+
+$status = checkSubSystemStatus("backend");
+if($status == 1)
+{
+	#call backend init
+	$backendinit = command("backend,initbackend");
+	info("done with issuing initbackend command $backendinit ");
+	$backendinitstatus =  waitforCmdCompletion($backendinit,10);
+	$backenddomon = doMonExecute("backend");
+	updateBatchStatus(0);
+	info("done with issuing backend domon command:  $backenddomon ");
+}
+else
+{
+	info("Sub system:backend is deactive, so not executing the initbackend batch script");
+}
+
+$status = checkSubSystemStatus("sentinal");
+if($status == 1)
+{
+	#call sentinal init
+	$sentinalinit = command("sentinal,initSentinal");
+	info("done with issuing initSentinal command $sentinalinit ");
+	$sentinalinitstatus =  waitforCmdCompletion($sentinalinit ,10);
+	$sentinaldomon = doMonExecute("sentinal");
+	updateBatchStatus(0);
+	info("done with issuing sentinal domon command:  $sentinaldomon ");
+}
+else
+{
+	info("Sub system:sentinal is deactive, so not executing the initSentinal batch script");
+}
+
+$status = checkSubSystemStatus("sigcon");
+if($status == 1)
+{
+	#call sigcon init
+	$sigconinit = command("sigcon,initsigcon");
+	info("done with issuing initsigcon command $sigconinit ");
+	$sigconinitstatus =  waitforCmdCompletion($sigconinit,10);
+	$sigcondomon = doMonExecute("sigcon");
+	updateBatchStatus(0);
+	info("done with issuing sigcon domon command:  $sigcondomon ");
+}
+else{
+	info("Sub system:sigcon is deactive, so not executing the initsigcon batch script");
+}
+
+$status = checkSubSystemStatus("frontend");
+if($status == 1)
+{
+	#call frontend init
+	$frontendinit = command("frontend,initfrontend");
+	info("done with issuing initfrontend command $frontendinit ");
+	$frontendinitstatus =  waitforCmdCompletion($frontendinit ,10);
+	$frontenddomon = doMonExecute("frontend");
+	updateBatchStatus(0);
+	info("done with issuing frontend domon command:  $frontenddomon ");
+}
+else
+{
+	info("Sub system:frontend is deactive, so not executing the initfrontend batch script");
+}
+
+#if any initialization command fails mark initAllSubsystems also as failed with status 2
+#|| $backendinitstatus != 5 || $sentinalinitstatus != 5 || $sigconinitstatus != 5 || $frontendinitstatus !=5
+
+if ($servoinitstatus != 5  || $servodomon == 0) 
+{
+	error("marking batch as failed since servo initializaiton failed");
+	updateBatchStatus(2);	
+	
+}

@@ -1,0 +1,9 @@
+
+ Directory contain source code relating to control GSB LO Via ONLINE socket communication.
+ gsblosrv.c  --- server which accepts the client connection from the ONLINE
+ LoFsw.c     --- LO setting program
+ mytime.c    -- time-stamp routine
+
+ use makefile to compile
+
+   Nanaware D.K. and Kodilkar J.P.  JUN 2, 2010

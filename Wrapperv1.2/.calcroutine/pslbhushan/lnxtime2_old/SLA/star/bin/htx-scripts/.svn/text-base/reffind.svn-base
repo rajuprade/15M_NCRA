@@ -1,0 +1,25 @@
+
+      maindoc="${1}"
+      shift
+      refs="${*}"
+      for doc in ${refs}; do echo "${doc}"; done | awk '
+         BEGIN{
+            ref[ "" ] = ""
+         }
+         {
+            if ( FILENAME == "-" ) {
+               np = split( $0, path, "/" )
+               doc = path[ np ]
+               fullpath[ doc ] = $0
+            } else if ( $1 == ">" ) {
+               ref[ $3 ] = 1
+            }
+         }
+         END{
+            for ( doc in ref ) if ( doc ) {
+               if ( fullpath[ doc ] ) {
+                  print( fullpath[ doc ] )
+               }
+            }
+         }
+         ' - "${maindoc}.htx/htx.index"

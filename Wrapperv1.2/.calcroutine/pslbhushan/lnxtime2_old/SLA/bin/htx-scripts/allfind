@@ -1,0 +1,10 @@
+
+      extradirs="${*}"
+      path="${HTX_PATH-`${HTX_DIR}/htxpath`}"
+      for dir in ${extradirs} `echo "${path}" | tr ':' ' '`; do
+         ls -d -1 ${dir}/*.htx 2>/dev/null
+      done | awk -F/ '{
+         if ( !done[ $NF ]++ ) {
+            print( substr( $0, 1, length( $0 ) - 4 ) )
+         }
+      }'

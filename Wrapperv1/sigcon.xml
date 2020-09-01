@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+         <command>
+                  <seq>2278650</seq>
+                   <id>5</id>
+                   <name>domon</name>
+                   <systemid>sigcon</systemid>
+                   <timestamp>2012-07-04T13:41:05.680+05:30</timestamp>
+                   <data>
+                       <param>
+                             <name>monitoringfrequency</name>
+                             <value>3000</value>
+                      </param>
+                  </data>
+                  <priority>0</priority>
+                  <version>1</version>
+                  <syntax>monitoringfrequency</syntax>
+                  <username>raj</username>
+         </command>
+</commands>
+<REQ_END>

@@ -1,0 +1,165 @@
+if ($code != "10"){
+	#command failure
+	info("Error code received  $code");
+
+} else {
+
+#check if subsystem state is NOT CONNECTED
+$sub_state = getSubSystemState("servo");
+info("servo subsystem state was $sub_state and current $state");
+if ($sub_state eq "NOT CONNECTED" && $state ne "RESET") {
+	[$result setAlarmName : "invalid_state"];	
+	[$result setAlarmRaise: true];		
+	[$result setSubsystemName : "servo"];	
+	[$result setMessage : "RESET state not received after NOT CONNECTED state"];	
+	info("resending domon command to wrapper");
+	$cmd_domon = command("servo,domon");
+	info("sent domon command to wrapper with seq: $cmd_domon");
+	
+	
+}
+
+#check if track flag is set or if run flag is set
+$tracking_on = getProperty("tracking_on");
+info("tracking_on = $tracking_on ");
+info("track = $track");
+
+
+
+if ($track eq "true" || $run eq "true") {
+
+updateTrackingAttributes();
+
+
+#info("validating Monitoring response $result");
+info("validating for az_cp = $az_cp and el_cp = $el_cp");
+
+#update tracking attributes to current time
+updateTrackingAttributes();
+
+$az_target = getProperty("az_target");
+$el_target = getProperty("el_target");
+
+info("az_target = $az_target and el_target = $el_target");
+
+$on_source_flag = getProperty("on_source_flag");
+#$on_source_cnt = getProperty("on_source_count");
+
+#info("on_source_flag = $on_source_flag and on_source_cnt = $on_source_cnt");
+info("on_source_flag = $on_source_flag");
+
+$azDiffLimit  = getProperty("azDiffLimit");
+$elDiffLimit  = getProperty("elDiffLimit");
+
+$azDiffLimit_value  = [Double parseDouble : $azDiffLimit ];
+$elDiffLimit_value  = [Double parseDouble : $elDiffLimit ];
+
+$elDiffLimit_value  = getProperty("elDiffLimit");
+
+#info("azDiffLimit = $azDiffLimit and elDiffLimit = $elDiffLimit");
+
+$az_target_value = [Double parseDouble : $az_target ];
+$el_target_value = [Double parseDouble : $el_target ];
+
+$az_value = [Double parseDouble : $az_cp ];
+$el_value = [Double parseDouble : $el_cp ];
+
+$az_diff = [Math abs :($az_target_value - $az_value)];
+$el_diff = [Math abs :($el_target_value - $el_value)];
+
+$df = [new java.text.DecimalFormat: "#.####"];
+
+$az_diff_fmt = [$df format: $az_diff];
+$el_diff_fmt = [$df format: $el_diff];
+
+loadProperty("azTrackingErr,$az_diff_fmt");
+loadProperty("elTrackingErr,$el_diff_fmt");
+
+$off_source_starttime = getProperty("off_source_starttime");
+info(" off_source_starttime = $off_source_starttime ");
+
+if (($az_diff > $azDiffLimit_value) || ($el_diff > $elDiffLimit_value)) {
+	info("not on source: az_diff = $az_diff  and el_diff = $el_diff ");	
+	if ($on_source_flag eq "true") {
+		info("entered on_source_flag = true");
+		loadProperty("on_source_flag,false");
+		if ($off_source_starttime eq "0"){
+			#note the time when antenna goes offsource
+			info(" off_source_starttime = $off_source_starttime ");
+
+			$off_source_starttime = [System currentTimeMillis];
+			info(" off_source_starttime = $off_source_starttime ");
+
+			loadProperty("off_source_starttime,$off_source_starttime");
+
+		} else {
+			#check the timeout duration for offsource
+			info("checking the timeout duration for offsource ");			
+
+			$offsourcetimeout = getProperty("off_source_timeout");
+			$offsourcetimeoutvalue = [Long parseLong : $offsourcetimeout];
+			info("offsourcetimeoutvalue = $offsourcetimeoutvalue");
+			$currenttime = [System currentTimeMillis];
+			$off_source_starttime_value = [Long parseLong : $off_source_starttime ];
+			if (($currenttime - ($off_source_starttime_value + $offsourcetimeoutvalue)) > 0){
+				#current time is more than the timeout value raise alarm
+				info("antenna offsource time out occured so raising alarm");
+				[$result setAlarmName : "antenna_off_source"];	
+				[$result setAlarmRaise: true];		
+				[$result setSubsystemName : "servo"];	
+			}
+
+		}
+	} else if ($off_source_starttime ne "0") { 
+		#not on source, check for offsource time out
+		#check the timeout duration for offsource
+		info("checking the timeout duration for offsource ");
+		
+
+		$offsourcetimeout = getProperty("off_source_timeout");
+		$offsourcetimeoutvalue = [Long parseLong : $offsourcetimeout];
+		info("offsourcetimeoutvalue = $offsourcetimeoutvalue");
+		$currenttime = [System currentTimeMillis];
+		$off_source_starttime_value = [Long parseLong : $off_source_starttime ];
+		$diff = $currenttime - ($off_source_starttime_value + $offsourcetimeoutvalue);
+		info("Diff = $diff");
+		if (($currenttime - ($off_source_starttime_value + $offsourcetimeoutvalue)) > 0){
+			#current time is more than the timeout value raise alarm
+			info("antenna offsource time out occured so raising alarm");
+			[$result setSubsystemName : "servo"];	
+			[$result setAlarmName : "antenna_off_source"];	
+			[$result setAlarmRaise: true];	
+			$off_source_starttime = 0;	
+			loadProperty("off_source_starttime,$off_source_starttime");	
+		}
+
+	}
+}
+else {
+	info("on source");
+	if ($on_source_flag eq "false"){
+		
+		loadProperty("on_source_flag,true");
+		[$result setAlarmName : "antenna_off_source"];	
+		[$result setAlarmClear: true ];
+		[$result setSubsystemName : "servo"];	
+
+	}
+	
+}
+#$alarmName = [$result getAlarmName];
+#info("alarm name is  $alarmName ");
+#[$result setAlarmName : "antenna_off_source"];		
+#[$result setSubsystemName : "servo"];	
+#[$result setAlarmRaise: 1];	
+#[$result setAlarmClear: 1];	
+
+} else if ($tracking_on eq "true" && ($track ne "" || $run ne "")) {
+	
+	if ( ($track ne "true") && ($run ne "true")){
+		info("clearing tracking attributes");
+		clearTrackingAttributes();
+		loadProperty("tracking_on,false");	
+	}
+}
+}

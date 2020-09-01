@@ -1,0 +1,17 @@
+
+      nb="${1}"
+      shift
+      msg="${1}"
+      bs="`echo ' ' | tr ' ' '\010'`"
+      awk '
+      END{
+         chars=""
+         nb = int( nb )
+         while ( i++ < nb ) chars = chars bs
+         chars = chars msg
+         i = j = length( msg )
+         while ( i++ < nb ) chars = chars " "
+         while ( j++ < nb ) chars = chars bs
+         printf( "%s", chars ) >"/dev/tty"
+         print( length( msg ) )
+      }' nb="${nb}" msg="${msg}" bs="${bs}" /dev/null

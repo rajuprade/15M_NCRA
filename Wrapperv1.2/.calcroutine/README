@@ -1,0 +1,15 @@
+
+ A C language interface 'calepochc' created for the fortran SLALIB successfully to precess, 
+equitorial to horizontal coordinate (ALT-AZ) system, rise & set time calc. on 2/12/2010
+Compilation file : Makefile , used lib is solaris SLALIB.a.
+main C file is 'calepochc.c'
+
+* How to compile :
+(1) In Makefile, assign SLALIB SLA fortran library path, assign CC, F77 variables properly for the 
+compilation.
+(2) make clean
+(3) make
+(4) ./calepochc program will be created.
+
+#Both calepoch and gmrtt compilation on Linux
+# USE 'tmake'

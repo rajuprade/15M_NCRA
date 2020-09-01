@@ -1,0 +1,47 @@
+
+15:11:59 B 153:58:09 40:10:04 #  cms
+15:11:59   153:58:09.9 40:10:01.6
+Source AZIMUTH 333:58:08.7   and ELEVATION  40:10:03.8  [5.82886:0.701059]  -- calepoch
+                 azout 153.969 el 40.1677
+                       153:58:8.4  
+
+
+----------------------------------------------------------------------------------
+[servossl@serva15m calcroutine]$ ./calepochc 2012 08 27 15 49 34 00 00 00 
+  date 2012 8 27.000000 Time 15:49:34 
+ fryej_ epoch 2012.657098 fangle_(): string 17h03m00.00s radian 4.46368 
+fangle_(): string 22d00'00.00 radian 0.383972 
+ ----> th0 15.826111 [15.826111] 0.000000 0.000000 
+ mjd_ref 51544.000000 0 
+ mjd_target 56166.000000 0 
+ LST 3.573835 lststing  13h39m03.76s 
+ Given RA 17h03m00.00s DEC 22d00'00.00 
+ MJD ref 51544  target 56166 : YEAR Ref 2000 Target 2012.66  
+ Precess out 4.4636795619755 0.38397243543876 2000 4.4660558961838 
+ 0.38375233128566 4.0998044586721 0.46467565389423 2012.6570976949 
+ Precessed RA 4.46606 DEC 0.383752 ref 56166 
+ Source rises  14h08m09.50s  and set   0h22m45.23s [3.70079:0.0992828] 
+  iLST    3.5738351902579746     
+  LST -   204.76567393880194     
+ Source AZIMUTH  76:46:21.6   and ELEVATION  42:08:20.4  [1.33994:0.735464] 
+0 Inner(AZ) Outer(AZ)
+ #*# time 15.8261 [4.48153] azin -103.227 azout 256.773 el 42.139 
+[servossl@serva15m calcroutine]$ ./calepochc 2012 08 27 15 50 56 00 00 00 
+  date 2012 8 27.000000 Time 15:50:56 
+ fryej_ epoch 2012.657098 fangle_(): string 17h03m00.00s radian 4.46368 
+fangle_(): string 22d00'00.00 radian 0.383972 
+ ----> th0 15.848889 [15.848889] 0.000000 0.000000 
+ mjd_ref 51544.000000 0 
+ mjd_target 56166.000000 0 
+ LST 3.579815 lststing  13h40m25.98s 
+ Given RA 17h03m00.00s DEC 22d00'00.00 
+ MJD ref 51544  target 56166 : YEAR Ref 2000 Target 2012.66  
+ Precess out 4.4636795619755 0.38397243543876 2000 4.4660558961838 
+ 0.38375233128566 4.0998044586721 0.46467565389423 2012.6570976949 
+ Precessed RA 4.46606 DEC 0.383752 ref 56166 
+ Source rises  14h08m09.50s  and set   0h22m45.23s [3.70079:0.0992828] 
+  iLST    3.5798148428191405     
+  LST -   205.10828279351134     
+ Source AZIMUTH  76:48:51.1   and ELEVATION  42:27:18.7  [1.34066:0.740983] 
+ #*# time 15.8489 [4.48225] azin -103.186 azout 256.814 el 42.4552 
+

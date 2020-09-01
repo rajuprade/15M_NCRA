@@ -1,0 +1,46 @@
+
+      files="${*}"
+      if test -n "${files}"; then
+         awk -F"\n" '
+            {
+               if ( FILENAME != last ) {
+                  if ( last ) print( last":"output )
+                  last = FILENAME
+                  head = 0
+                  nhead = 0
+                  title = 0
+                  ntitle = 0
+                  output=""
+               }
+            }
+            /<[Hh][Ee][Aa][Dd]/{
+               if ( ! nhead++ ) head = 1
+            }
+            /<[Tt][Ii][Tt][Ll][Ee]/{
+               if ( head && ! ntitle++ ) title = 1
+            }
+            {
+               if ( title ) output = output $0 " "
+            }
+            /<\/[Tt][Ii][Tt][Ll][Ee]/{
+               title = 0
+            }
+            /<\/[Hh][Ee][Aa][Dd]/{
+               head = 0
+               title = 0
+            }
+            /<[Bb][Oo][Dd][Yy]>/{
+               head = 0
+               title = 0
+            }
+            END{
+               if ( last ) print( last":"output )
+            }' ${files} | sed '
+s%^\([^:]*\):.*<[Tt][Ii][Tt][Ll][Ee]>\(.*\)</[Tt][Ii][Tt][Ll][Ee]>.*$%\1 \2%
+s%^\([^:]*\):.*<[Tt][Ii][Tt][Ll][Ee]>\(.*\)</[Hh][Ee][Aa][Dd]>.*$%\1 \2%
+s%^\([^:]*\):.*<[Tt][Ii][Tt][Ll][Ee]>\(.*\)<[Bb][Oo][Dd][Yy]>.*$%\1 \2%
+s%^\([^:]*\): *$%\1%
+               s%[ 	][ 	]*% %g
+               s%^ *%%
+               s% *$%%'
+      fi

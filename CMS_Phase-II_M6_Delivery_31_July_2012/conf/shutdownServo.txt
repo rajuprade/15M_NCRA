@@ -1,0 +1,10 @@
+#shutdown script for Servo
+#call servo shutdown
+$servostop = command("servo,stop,B");
+info("done with issuing stop command $servostop");
+$servostopstatus =  waitforCmdCompletion($servostop,10);
+info("status of stop command : $servostopstatus");
+
+if ($servostopstatus != 5 && $servostopstatus != -3){
+	updateBatchStatus(2, "servo stop command failed");
+}

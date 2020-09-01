@@ -1,0 +1,10 @@
+
+  - Aug 16, 2012
+
+    Scan az,el working
+    antenna offset correction working (ldantcorrect)
+    scan ra,dec seems to be working.
+    
+    1/cos(elev) correction need to be done.
+
+

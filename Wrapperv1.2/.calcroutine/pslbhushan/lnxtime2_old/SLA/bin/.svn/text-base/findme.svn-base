@@ -1,0 +1,160 @@
+
+      if dir="`expr "//${0}" : '//\(.*\)/.*'`"; then :; else
+         dir="`IFS=':'; for d in $PATH; do file="${d:=.}/${0}"
+            test -x "${file}" -a ! -d "${file}" && echo "${d}" && break
+         done`"
+      fi
+      case "${dir}" in [!/]*) dir="`pwd`/${dir}";; esac
+      HTX_DIR="${dir}/htx-scripts"
+      HTX_SCRIPT="`basename "${0}"`"
+      if test -t 0; then
+         HTX_TTY="`tty 2>/dev/null`"
+      else
+         HTX_TTY='/dev/null'
+      fi
+      . ${HTX_DIR}/settrap
+      HTX_BRIEF=''
+      HTX_CASE=''
+      HTX_QUIET=''
+      HTX_SEARCH_HEADINGS=''
+      HTX_SEARCH_LINES=''
+      HTX_SEARCH_NAMES=''
+      HTX_SEARCH_TITLES=''
+      HTX_SHOWMATCH=''
+      HTX_SORT=''
+      HTX_WARN='1'
+      HTX_WORD=''
+      outfmt='browse'
+      while :; do
+         case "${1}" in
+         -b)
+            HTX_BRIEF='1'
+            shift;;
+         -c)
+            HTX_CASE='1'
+            shift;;
+         -f)
+            HTX_SEARCH_NAMES='1'
+            HTX_SEARCH_TITLES='1'
+            HTX_SEARCH_HEADINGS='1'
+            HTX_SEARCH_LINES='1'
+            shift;;
+         -h)
+            HTX_SEARCH_HEADINGS='1'
+            shift;;
+         -html)
+            outfmt='html'
+            shift;;
+         -l)
+            HTX_SEARCH_LINES='1'
+            shift;;
+         -m)
+            HTX_SHOWMATCH='1'
+            shift;;
+         -n)
+            HTX_SEARCH_NAMES='1'
+            shift;;
+         -q)
+            HTX_QUIET='1'
+            shift;;
+         -s)
+            HTX_SORT='1'
+            shift;;
+         -t)
+            HTX_SEARCH_TITLES='1'
+            shift;;
+         -w)
+            HTX_WORD='1'
+            shift;;
+         -warn)
+            HTX_WARN=''
+            shift;;
+         -*)
+            echo >&2 "${HTX_SCRIPT}: unknown flag \""${1}"\" given"
+            exit 1;;
+         *) break;;
+         esac
+      done
+      export DISPLAY
+      export HTX_BRIEF
+      export HTX_CASE
+      export HTX_DIR
+      export HTX_QUIET
+      export HTX_SCRIPT
+      export HTX_SEARCH_HEADINGS
+      export HTX_SEARCH_LINES
+      export HTX_SEARCH_NAMES
+      export HTX_SEARCH_TITLES
+      export HTX_SHOWMATCH
+      export HTX_SORT
+      export HTX_TTY
+      export HTX_WARN
+      export HTX_WHERE
+      export HTX_WORD
+      HTX_WHERE='i'
+      key="${1}"
+      if test "${#}" -gt '0'; then shift; fi
+      doclist="`for doc in ${*}; do
+         case "${doc}" in
+         *.htx)
+            expr "X${doc}" : 'X\(.*\)\.htx$';;
+         *)
+            echo "${doc}";;
+         esac
+      done`"
+      tempfile="/tmp/htx-findme-$$.ndocs"
+      settrap 'rm -f "${tempfile}"'
+      if test "${outfmt}" = 'html'; then
+            ${HTX_DIR}/dockey "${key}" ${doclist}
+            ndoc="$?"
+            echo "${ndoc}" >"${tempfile}"
+      else
+         {
+            cat <<END
+<HTML>
+<HEAD>
+<TITLE>Result of Document Search for Keyword "${key}"</TITLE>
+</HEAD>
+<BODY>
+<H1>Result of Document Search</H1>
+<H2>For keyword "${key}"</H2>
+<HR>
+<P>
+<H2>Documents found:</H2>
+<BLOCKQUOTE>
+END
+            ${HTX_DIR}/dockey "${key}" ${doclist}
+            ndoc="$?"
+            case "${ndoc}" in
+            0) 
+               echo 'None';;
+            1)
+               echo '1 document matched';;
+            *)
+               echo "${ndoc} documents matched";;
+            esac
+            echo "${ndoc}" >"${tempfile}"
+            HTX_WHERE=''
+            HTX_PATH="`echo "${HTX_DIR}/../../docs" | ${HTX_DIR}/stdfile`"
+            export HTX_WHERE
+            export HTX_PATH
+            cmdurl="`${HTX_DIR}/urlgen sun188 findme 2>/dev/null`"
+            docurl="`${HTX_DIR}/urlgen sun188 2>/dev/null`"
+            cat <<END
+</BLOCKQUOTE>
+<HR>
+For help, see the <A HREF="${cmdurl}">${HTX_SCRIPT}</A>
+command in <A HREF="${docurl}">SUN/188</A>.
+<HR>
+</BODY>
+</HTML>
+END
+         } | ${HTX_DIR}/browse
+      fi
+      if test -f "${tempfile}"; then
+         ndoc="`cat "${tempfile}"`"
+         rm -f "${tempfile}"
+         exit "${ndoc}"
+      else
+         exit 0
+      fi

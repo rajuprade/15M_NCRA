@@ -1,0 +1,18 @@
+#initialization script for Backend
+#doMon command
+
+info(" Executing the reset_dataserver.txt");
+
+$cmd1 = command("dataserver,init,5");
+info("done with issuing dataserver command $cmd1");
+$cmd1status =  waitforCmdCompletion($cmd1 ,20);
+
+$cmd3 = command("dataserver,domon,5000");
+info("done with issuing dataserver command $cmd3");
+$cmd2status =  waitforCmdCompletion($cmd2 ,20);
+
+if  ($cmd1status != 5 || $cmd2status != 5 ) 
+{
+	error("Dataserver : reset batch as failed since required commands failed");
+	updateBatchStatus(2);
+}

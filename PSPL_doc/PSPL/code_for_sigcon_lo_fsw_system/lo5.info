@@ -1,0 +1,81 @@
+
+################################################################
+######################LO5 Setting Through ONLINE ###############
+################################################################
+
+# Programme 'gsblosrv' is running on server as 'elab@loconf' 
+  and to start it's client programme to set LO5 through online 
+  machine 'lenyadri/shivneri.
+
+> /home/odsoft/bin/bblocli
+
+
+  By default, 'bblocli' program communicate with both
+  the servers. In case, user want to communicate with
+  only one server 
+
+> bblocli -c 0 [BB] | 1 [GSBLO].
+
+# run in USER0 only 
+
+
+ allant
+ cp 0;defs 0;subar 0
+ cp 9
+ initbbsrv 
+
+
+################################################################
+
+
+# login as elab@loconf to see messages    
+
+>  tail -f /usr/local/gsblosrv/gsblosrvmsg.0
+
+################################################################
+# Commands to be given via ONLINE :
+# user0/master :
+################################################################
+
+# Set GSB LO for IF BW 32,16,6 MHz
+
+       > stgsb32lo, stgsb6lo, stgsb6lo 
+
+# X valid GSBLO values in integer up to 6 digit      
+
+      > stgsblo('X','X') 
+
+# user2,3,4,5 :
+
+       > stgsblo('X','X')
+
+-> Internally the command received at server end "SET,GSBLO,nnnnnn,nnnnnn"
+   where nnnnnn - intger value
+################################################################
+# 32 MHz:149:156 
+################################################################
+
+stgsb32lo
+stgsblo('149000','156000') 
+
+
+################################################################
+# 16 MHz:138:167 
+################################################################
+
+stgsb16lo
+stgsblo('138000','167000')
+
+
+
+################################################################
+# 6 MHz:133:172 
+################################################################
+
+stgsb6lo
+stgsblo('133000','172000')
+
+
+################################################################
+# Custom LO5 : LO5 Can be tuned in step of 500Khz only.
+################################################################

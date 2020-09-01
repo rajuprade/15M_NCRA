@@ -1,0 +1,22 @@
+#initialization script for Servo
+
+# init command
+$cmd1 = command("servo,init");
+info("done with issuing init command $cmd1");
+$cmd1status =  waitforCmdCompletion($cmd1 ,10);
+info("status of init command : $cmd1status");
+
+# stowrelease command
+$cmd2 = command("servo,stowrelease,B");
+info("done with issuing stowrelease command $cmd2");
+$cmd2status =  waitforCmdCompletion($cmd2 ,10);
+info("status of stowrelease command : $cmd2status");
+
+# doMon command
+#$cmd3 = command("servo,doMon");
+#info("done with issuing doMon command $cmd3");
+
+if  ($cmd1status != 5  ||  $cmd2status != 5){
+	error("marking batch as failed since required commands failed");
+	updateBatchStatus(2);
+}

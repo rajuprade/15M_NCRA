@@ -1,0 +1,11 @@
+
+cat ../cygnus_track | awk '{ split($1,tim,":"); split ($2,az,":"); split($3,el,":"); print (tim[1]+tim[2]/60.0+tim[3]/3600.0), (az[1]-az[2]/60.0-az[3]/3600.0), (el[1]+el[2]/60.0+el[3]/3600.0); }'
+
+cat ../cygnus_track | awk '{ split($1,tim,":"); printf "./calepochc 2012 08 18 %0.2d %0.2d %0.2d\n",tim[1],tim[2],tim[3]; }' > trackcmd
+
+./trackcmd  >> t 2>&1
+cat t | grep "#*#"
+
+cat t | grep "#*#" | awk '{ print $3, $8,$10 }' > test1
+
+

@@ -1,0 +1,66 @@
+####################################################################
+#	makefile.libgen :
+# Use make -f makefile.libgen
+# This makefile is used to build targets.
+# libgen.a:  library contaning the vlba (astro) routines and general routines
+#######################################################################
+
+CC=cc
+OPT= -c ${DEBUG}
+
+CFLAGS_4=  ${OPT} 
+CFLAGS_5=  ${OPT}
+
+CFLAGS = ${CFLAGS_5}
+LOCLIB=$(PWD)
+
+
+SOURCES= ltostr.c fangle_.c cvrtuc.c date2mjd.c srclist.c \
+dotpr3.c rotate3.c rduce2p.c frac.c nutate.c gastm.c nutate.c \
+rectpol.c prcesj2.c position.c dircos.c aberrat.c arccos.c \
+Print_Err.c  intel_short.c Calc_Lst.c Debug_Print.c clrstring.c \
+Form_Date.c Get_Field.c format_angle.c Packet_Dump.c intel_int.c \
+tolower_.c clrfp.c
+#new_sleep.c
+
+OBJECTS1= ${SOURCES:.c=.o} 
+
+INCLUDES= display.h\
+        online.h\
+        libvlba.h MATHCNST.H NUTPARMS.H IAUCONST.H ASTRCNST.H \
+	ABPTRB.H 
+
+LIBRARY=libgen.a
+
+TARGET= ${LIBRARY}
+
+RANLIB_4= ranlib ${LIBRARY}
+
+RANLIB_5=
+#There is probelm with gcc and rsformat on sun4 so use cc for sun4
+OBJECTS= ${OBJECTS1}  rsformat_.o stime_.o sangle_.o
+
+CC.4 = cc
+
+CC.5 = cc
+####################################################################
+
+${LIBRARY}: ${INCLUDES} ${OBJECTS}
+	ar rv ${LIBRARY} ${OBJECTS}
+	$(RANLIB_5)
+#cp -i ${LIBRARY} ${LOCLIB}
+
+rsformat_.o:	rsformat_.c ${INCLUDES}
+	${CC} ${CFLAGS} rsformat_.c
+
+stime_.o:	stime_.c ${INCLUDES}
+	${CC} ${CFLAGS} stime_.c
+
+sangle_.o:	sangle_.c ${INCLUDES}
+	${CC} ${CFLAGS} sangle_.c
+
+clean:
+	rm -f *.o
+	rm -f libgen.a
+#	end of makefile.libgen
+####################################################################

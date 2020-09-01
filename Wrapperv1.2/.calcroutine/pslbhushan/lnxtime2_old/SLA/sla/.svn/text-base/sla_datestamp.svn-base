@@ -1,0 +1,30 @@
+Package : SLALIB
+Version : V2.4-12
+Library : V1.6
+
+Built by: jitendra on node astro1.gmrt.ncra.tifr.res.in
+On      : Fri Dec  3 16:25:03 IST 2010
+
+Machine : i686 running Linux #1 SMP Mon Jan 19 20:14:35 EST 2009 (release 2.6.27.12-78.2.8.fc9.i686)
+
+make macros:
+
+   SYSTEM  : ix86_Linux
+
+   EXPORT  : .
+   INSTALL : /home/jitendra
+   STARLINK: /star
+
+   AR_IN   : ar r
+   BLD_SHR : :
+   CC      : gcc
+   CFLAGS  : -O
+   FC      : g77
+   FFLAGS  : -O
+   LINK    : ln -s
+   RANLIB  : ranlib
+   SHARE   : .so
+   SOURCE_VARIANT: ix86_Linux
+   TAR_IN  : tar -cvhf
+   TAR_OUT : tar -xf
+

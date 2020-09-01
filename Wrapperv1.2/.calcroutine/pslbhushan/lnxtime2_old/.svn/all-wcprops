@@ -1,0 +1,509 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2
+END
+azel.f
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/azel.f
+END
+calepochc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/calepochc
+END
+sladcs2c.f
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/sladcs2c.f
+END
+sladcc2s.f
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/sladcc2s.f
+END
+precess.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/precess.c
+END
+calepoch.c.working.fort
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/calepoch.c.working.fort
+END
+precess.f
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/precess.f
+END
+sangle_.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/sangle_.c
+END
+ep2daj.f
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/ep2daj.f
+END
+calepoch.c.bak
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/calepoch.c.bak
+END
+display.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/display.h
+END
+gastm.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/gastm.c
+END
+gmrtt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/gmrtt
+END
+slagmst_.f
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/slagmst_.f
+END
+slagmst.f
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/slagmst.f
+END
+input
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/input
+END
+sladjcl.f
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/sladjcl.f
+END
+ABPTRB.H
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/ABPTRB.H
+END
+tmake
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/tmake
+END
+sladmxv.f
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/sladmxv.f
+END
+table2.save.bak
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/table2.save.bak
+END
+fryej.f
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/fryej.f
+END
+table0.save
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/table0.save
+END
+slapreces.f
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/slapreces.f
+END
+crdprec.f
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/crdprec.f
+END
+source.pickle
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/source.pickle
+END
+tmp.data
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/tmp.data
+END
+table2
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/table2
+END
+gmrtt.c.bak
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/gmrtt.c.bak
+END
+date2mjd.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/date2mjd.c
+END
+slaprec.f
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/slaprec.f
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/Makefile
+END
+hms2r.f
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/hms2r.f
+END
+ep2da.f
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/ep2da.f
+END
+nutate.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/nutate.c
+END
+leapsecupdate.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/leapsecupdate.pdf
+END
+junk1
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/junk1
+END
+sangle.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/sangle.c
+END
+gmrtt.comp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/gmrtt.comp
+END
+rset.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/rset.c
+END
+NUTPARMS.H
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/NUTPARMS.H
+END
+slacaldj.f
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/slacaldj.f
+END
+rset.f
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/rset.f
+END
+constant.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/constant.inc
+END
+stime_.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/stime_.c
+END
+table1.save
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/table1.save
+END
+MATHCNST.H
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/MATHCNST.H
+END
+cmjd
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/cmjd
+END
+calepoch
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/calepoch
+END
+input2
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/input2
+END
+hms2rf.f.bak
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/hms2rf.f.bak
+END
+slagmst_.f.org
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/slagmst_.f.org
+END
+source.h.model
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/source.h.model
+END
+source.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/source.h
+END
+ASTRCNST.H
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/ASTRCNST.H
+END
+DONOTF
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/DONOTF
+END
+slagmst_.f.bak
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/slagmst_.f.bak
+END
+calepoch.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/calepoch.c
+END
+slacldj.f
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/slacldj.f
+END
+libvlba.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/libvlba.h
+END
+calepochc.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/calepochc.c
+END
+table2.save
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/table2.save
+END
+source.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/source.inc
+END
+ltostr.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/ltostr.c
+END
+crdrd2ae.f
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/crdrd2ae.f
+END
+IAUCONST.H
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/IAUCONST.H
+END
+test.save
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/test.save
+END
+gmrtt.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/gmrtt.c
+END
+calepoch.compc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/calepoch.compc
+END
+constant.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/constant.h
+END
+djm2e.f
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/djm2e.f
+END
+nmjd
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/nmjd
+END
+frye.f
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/frye.f
+END
+input.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/input.m
+END
+slaprebn.f
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/slaprebn.f
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/README
+END
+map.f
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/map.f
+END
+Calc_Lst.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/Calc_Lst.c
+END
+sladranrm.f
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/sladranrm.f
+END
+online.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/online.h
+END
+calepoch.comp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/calepoch.comp
+END
+azel.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/azel.c
+END
+fangle_.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/fangle_.c
+END
+rsformat_.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/IUCCA/!svn/ver/671/Requirements/FromNCRA/NCRA15m/lnxtime2/rsformat_.c
+END

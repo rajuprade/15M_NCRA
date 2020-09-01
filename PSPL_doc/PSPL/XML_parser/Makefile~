@@ -1,0 +1,6 @@
+CC = gcc
+CFLAGS = -Wall -g -I/usr/include/libxml2
+ LIBS = -lxml2
+
+reader1:	reader1.o
+	$(CC) $(CFLAGS) $(LIBS) -o $@ reader1.o

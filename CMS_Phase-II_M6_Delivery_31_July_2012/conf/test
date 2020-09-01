@@ -1,0 +1,94 @@
++ '[' 2 -eq 0 ']'
++ dirold=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012
++ dirnew=/home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012
+++ ls /home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/binary
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/binary ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/CMS
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/CMS ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Build
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Build ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Manual.docx
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Manual.docx ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/CMS
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/CMS ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Build
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Build ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Manual.pdf
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Manual.pdf ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/CMS
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/CMS ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Configuration
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Configuration ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/and
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/and ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Deployment
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Deployment ']'
++ for var in '`ls $dirold`'
++ oldfile='/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/[NCRA].doc'
++ '[' -f '/home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/[NCRA].doc' ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/CMS
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/CMS ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Configuration
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Configuration ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/and
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/and ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Deployment
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Deployment ']'
++ for var in '`ls $dirold`'
++ oldfile='/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/[NCRA].pdf'
++ '[' -f '/home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/[NCRA].pdf' ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/CMS
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/CMS ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Developer
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Developer ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Manual.docx
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Manual.docx ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/CMS
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/CMS ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Developer
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Developer ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/Manual.pdf
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/Manual.pdf ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/CMS_Phase2_M5_Release_Notes-NCRA.doc
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/CMS_Phase2_M5_Release_Notes-NCRA.doc ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/CMS_USER_MANUAL
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/CMS_USER_MANUAL ']'
++ for var in '`ls $dirold`'
++ oldfile='/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/[NCRA].docx'
++ '[' -f '/home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/[NCRA].docx' ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/CMS_USER_MANUAL
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/CMS_USER_MANUAL ']'
++ for var in '`ls $dirold`'
++ oldfile='/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/[NCRA].pdf'
++ '[' -f '/home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/[NCRA].pdf' ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/conf
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/conf ']'
++ for var in '`ls $dirold`'
++ oldfile=/home/pslncra/PslFtp/CMS_Phase-II_M5_Delivery_20_July_2012/tactcalculation
++ '[' -f /home/pslncra/PslFtp/CMS_Phase-II_M6_Delivery_31_July_2012/tactcalculation ']'

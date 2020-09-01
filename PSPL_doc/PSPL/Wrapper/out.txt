@@ -1,0 +1,31 @@
+ init_server() : WRAPPER SERVER LISTENING ON PORT 7570
+<commands>
+    <timestamp>123456789</timestamp>
+                <command>
+                                <seq>123</seq>
+                                <id>44</id>
+                                <name>TRACK</name>
+                                <systemid>1</systemid>
+                                <data>
+
+                                                <param>
+                                                                <name>AX</name>
+                                                                <value>E</value>
+                                                </param>
+                                                <param>
+                                                                <name>TIME</name>
+                                                                <value>11:12:74</value>
+                                                </param>
+                                                <param>
+                                                                <name>ANG1</name>
+                                                                <value>45:24:31</value>
+                                                </param>
+                                                <param>
+                                                                <name>ANG2</name>
+                                                                <value>25:45:10</value>
+                                                </param>
+                                </data>
+                </command>
+</commands>
+
+

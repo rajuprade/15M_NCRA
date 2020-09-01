@@ -1,0 +1,266 @@
+
+      url="${1}"
+      export DISPLAY
+      export HTX_BROWSER
+      . ${HTX_DIR}/settrap
+      tmpdir="${HTX_TMP:-${HOME}/.htxtmp}"
+      if test ! -d "${tmpdir}"; then mkdir "${tmpdir}"; fi
+      case "${HTX_BROWSER:=netscape}" in
+      *[Nn][Ee][Tt][Ss][Cc][Aa][Pp][Ee]*)
+         if test "${HTX_WHERE}" = 'i'; then
+            tempfiles="`ls -t ${tmpdir}/htx-browse-netscape-${LOGNAME}-*.html \
+                        2>/dev/null`"
+            n="`echo "${tempfiles}" \
+            | sed -n 's%^.*/htx-browse-netscape-'"${LOGNAME}"'-\([1-9][0-9]*\)\.html$%\1%p
+                      t done
+                      b
+                      :done
+                      q'`"
+            if test ! -n "${n}"; then n='1'; else n="`expr "${n}" + 1`"; fi
+            url="${tmpdir}/htx-browse-netscape-${LOGNAME}-${n}.html"
+            oldfiles="`echo "${tempfiles}" | tail +3`"
+            if test -n "${oldfiles}"; then rm -f ${oldfiles}; fi
+         fi
+         wasset='1'
+         if test ! -n "${DISPLAY}"; then
+            wasset=''
+            xdisplay="`IFS=':'; for dir in ${PATH}; do
+               case "${dir}" in */bin)
+                  file="${dir}/../etc/xdisplay"
+                  test -x "${file}" -a ! -d "${file}" && echo "${file}" \
+                                                      && break;;
+               esac
+            done`"
+            if test -n "${xdisplay}"; then
+               if test -n ${HTX_TTY}; then
+                  DISPLAY="`${xdisplay} <${HTX_TTY}`"
+               else
+                  DISPLAY="`${xdisplay}`"
+               fi
+            else
+               echo >&2 \
+               "${HTX_SCRIPT}: please set DISPLAY to identify your X display"
+               exit 1
+            fi
+         fi
+         if test "${HTX_WHERE}" = 'l' -o "${HTX_WHERE}" = 'i'; then
+            url=`echo "${url}" | sed 's#file://#file://localhost/#'`
+            remcmd="openURL(${url})"
+         else
+            remcmd="openURL(${url})"
+         fi
+         if test "${HTX_WHERE}" = 'i'; then
+            settrap 'rm -f "${url}"'
+            cat >"${url}" || exit
+         fi
+         if ${HTX_BROWSER} -noraise -remote "${remcmd}" > /dev/null 2>&1; then
+            if test "${HTX_WHERE}" = 'i'; then settrap; fi
+         else
+            if test ! "${wasset}" = '1'; then
+               echo >&2 \
+"${HTX_SCRIPT}: for faster access, please set DISPLAY to identify your X display"
+            fi
+            echo "Starting ${HTX_BROWSER} WWW browser..."
+            if test "${HTX_WARN}" = '1'; then
+               ${HTX_BROWSER} "${url}" &
+            else
+               ${HTX_BROWSER} 2>/dev/null "${url}" &
+            fi
+            if test "${HTX_WHERE}" = 'i'; then settrap; fi
+         fi
+         ;;
+      *[Mm][Oo][Zz][Ii][Ll][Ll][Aa]*)
+         if test "${HTX_WHERE}" = 'i'; then
+            tempfiles="`ls -t ${tmpdir}/htx-browse-mozilla-${LOGNAME}-*.html \
+                        2>/dev/null`"
+            n="`echo "${tempfiles}" \
+            | sed -n 's%^.*/htx-browse-mozilla-'"${LOGNAME}"'-\([1-9][0-9]*\)\.html$%\1%p
+                      t done
+                      b
+                      :done
+                      q'`"
+            if test ! -n "${n}"; then n='1'; else n="`expr "${n}" + 1`"; fi
+            url="${tmpdir}/htx-browse-mozilla-${LOGNAME}-${n}.html"
+            oldfiles="`echo "${tempfiles}" | tail +3`"
+            if test -n "${oldfiles}"; then rm -f ${oldfiles}; fi
+         fi
+         wasset='1'
+         if test ! -n "${DISPLAY}"; then
+            wasset=''
+            xdisplay="`IFS=':'; for dir in ${PATH}; do
+               case "${dir}" in */bin)
+                  file="${dir}/../etc/xdisplay"
+                  test -x "${file}" -a ! -d "${file}" && echo "${file}" \
+                                                      && break;;
+               esac
+            done`"
+            if test -n "${xdisplay}"; then
+               if test -n ${HTX_TTY}; then
+                  DISPLAY="`${xdisplay} <${HTX_TTY}`"
+               else
+                  DISPLAY="`${xdisplay}`"
+               fi
+            else
+               echo >&2 \
+               "${HTX_SCRIPT}: please set DISPLAY to identify your X display"
+               exit 1
+            fi
+         fi
+         if test "${HTX_WHERE}" = 'l' -o "${HTX_WHERE}" = 'i'; then
+            url=`echo "${url}" | sed 's#file://#file://localhost/#'`
+            remcmd="openURL(${url})"
+         else
+            remcmd="openURL(${url})"
+         fi
+         if test "${HTX_WHERE}" = 'i'; then
+            settrap 'rm -f "${url}"'
+            cat >"${url}" || exit
+         fi
+         if ${HTX_BROWSER} -noraise -remote "${remcmd}" > /dev/null 2>&1; then
+            if test "${HTX_WHERE}" = 'i'; then settrap; fi
+         else
+            if test ! "${wasset}" = '1'; then
+               echo >&2 \
+"${HTX_SCRIPT}: for faster access, please set DISPLAY to identify your X display"
+            fi
+            echo "Starting ${HTX_BROWSER} WWW browser..."
+            if test "${HTX_WARN}" = '1'; then
+               ${HTX_BROWSER} "${url}" &
+            else
+               ${HTX_BROWSER} 2>/dev/null "${url}" &
+            fi
+            if test "${HTX_WHERE}" = 'i'; then settrap; fi
+         fi
+         ;;
+      *[Mm][Oo][Ss][Aa][Ii][Cc]*)
+         mosclean() {
+            if test -f "${clean}" -a -r "${clean}"; then
+               ids="`cat "${clean}"`"
+               rm -f "${clean}"
+               for id in ${ids}; do
+                  if kill 1>/dev/null 2>/dev/null -0 "${id}"; then
+                     echo >>"${clean}" "${id}"
+                  else
+                     rm -f "/tmp/Mosaic.${id}"
+                  fi
+               done
+            fi
+            for logfile in \
+                `ls ${tmpdir}/htx-browse-mosaic-${LOGNAME}-*.htmlfiles \
+                   2>/dev/null`; do
+               pid="`expr "X${logfile}" : \
+               'X.*/htx-browse-mosaic-'"${LOGNAME}"'-\([1-9][0-9]*\)\.htmlfiles$'`"
+               if test -n "${pid}"; then
+                  if kill 1>/dev/null 2>/dev/null -0 "${pid}"; then
+                     :
+                  else
+                     oldfiles="`sed -n \
+                     's%^.*/htx-browse-mosaic-'"${LOGNAME}"'-[1-9][0-9]*\.html$%&%p' "${logfile}"`"
+                     rm -f ${oldfiles} "${logfile}"
+                  fi
+               fi
+            done
+         }
+         if test "${HTX_WHERE}" = 'i'; then
+            n="`ls -t ${tmpdir}/htx-browse-mosaic-${LOGNAME}-*.html \
+                   2>/dev/null \
+            | sed -n 's%^.*/htx-browse-mosaic-'"${LOGNAME}"'-\([1-9][0-9]*\)\.html$%\1%p
+                      t done
+                      b
+                      :done
+                      q'`"
+            n="`expr "${n:-0}" + 1`"
+            url="${tmpdir}/htx-browse-mosaic-${LOGNAME}-${n}.html"
+         fi
+         clean="${tmpdir}/htx-browse-mosaic-${LOGNAME}.pids"
+         new='1'
+         if test -f "${HOME}/.mosaicpid" -a -r "${HOME}/.mosaicpid"; then
+            pid="`cat "${HOME}/.mosaicpid"`"
+            if kill 1>/dev/null 2>/dev/null -0 "${pid}"; then new=''; fi
+         fi
+         if test ! -n "${new}"; then
+            confile="/tmp/Mosaic.${pid}"
+            if test -f "${confile}"; then newcon=''; else newcon='1'; fi
+            echo  >"${confile}" 'goto'
+            if test "${HTX_WHERE}" = 'l' -o "${HTX_WHERE}" = 'i'; then
+               url=`echo "${url}" | sed 's#file://#file://localhost/#'`
+               echo >>"${confile}" "${url}"
+            else
+               echo >>"${confile}" "${url}"
+            fi
+            if test "${HTX_WHERE}" = 'i'; then
+               settrap 'rm -f "${url}"'
+               cat >"${url}" || exit
+            fi
+            kill -USR1 "${pid}"
+            if test "${newcon}" = '1'; then echo >>"${clean}" "${pid}"; fi
+            if test "${HTX_WHERE}" = 'i'; then
+               logfile="${tmpdir}/htx-browse-mosaic-${LOGNAME}-${pid}.htmlfiles"
+               newlog=''
+               if test -r "${logfile}"; then
+                   oldfiles="`awk -F"\n" '{
+                      l[ ++n ] = $0
+                   } END {
+                      while ( i < n - 2 ) print l[ ++i ]
+                      while ( i < n ) print l[ ++i ] >\"'"${logfile}"'\"
+                   }' "${logfile}" \
+                   | sed -n 's%^.*/htx-browse-mosaic-'"${LOGNAME}"'-[1-9][0-9]*\.html$%&%p'`"
+                   if test -n "${oldfiles}"; then rm -f ${oldfiles}; fi
+               else
+                  newlog='1'
+               fi
+               echo "${url}" >>"${logfile}"
+               settrap
+            fi
+            if test "${newcon}" = '1' -o "${newlog}" = '1'; then
+               mosclean
+            fi
+         else
+            if test ! -n "${DISPLAY}"; then
+               xdisplay="`IFS=':'; for dir in ${PATH}; do
+                  case "${dir}" in */bin)
+                     file="${dir}/../etc/xdisplay"
+                     test -x "${file}" -a ! -d "${file}" && echo "${file}" \
+                                                         && break;;
+                  esac
+               done`"
+               if test -n "${xdisplay}"; then
+                  if test -n ${HTX_TTY}; then
+                     DISPLAY="`${xdisplay} <${HTX_TTY}`"
+                  else
+                     DISPLAY="`${xdisplay}`"
+                  fi
+               else
+                  echo >&2 \
+                  "${HTX_SCRIPT}: please set DISPLAY to identify your X display"
+                  exit 1
+               fi
+            fi
+            mosclean
+            if test "${HTX_WHERE}" = 'i'; then
+               settrap 'rm -f "${url}"'
+               cat >"${url}" || exit
+            fi
+            echo "Starting ${HTX_BROWSER} WWW browser..."
+            {
+            if test "${HTX_WARN}" = '1'; then
+               ${HTX_BROWSER} "${url}" &
+            else
+               ${HTX_BROWSER} 2>/dev/null "${url}" &
+            fi
+               pid="${!}"
+               if test "${HTX_WHERE}" = 'i'; then
+                  echo "${url}" \
+                     >"${tmpdir}/htx-browse-mosaic-${LOGNAME}-${pid}.htmlfiles"
+               fi
+               wait
+               mosclean
+            } &
+            if test "${HTX_WHERE}" = 'i'; then settrap; fi
+         fi
+         ;;
+      *)
+         echo >&2 \
+         "${HTX_SCRIPT}: the ${HTX_BROWSER} WWW browser is not recognised"
+         exit 1
+      esac

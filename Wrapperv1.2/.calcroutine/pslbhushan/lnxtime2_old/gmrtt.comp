@@ -1,0 +1,10 @@
+gcc -c calepoch.c
+gcc -c stime_.c
+gcc -c ltostr.c
+g77 -c fryej.f
+g77 -c ep2daj.f
+g77 -c slacaldj.f
+g77 -c slacldj.f
+g77 -c slagmst_.f
+g77 -c sladranrm.f
+g77 -g -o calepoch calepoch.o fryej.o ep2daj.o slacaldj.o slacldj.o slagmst_.o sladranrm.o stime_.o ltostr.o

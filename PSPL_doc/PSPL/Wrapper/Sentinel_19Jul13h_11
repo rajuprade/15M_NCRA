@@ -1,0 +1,12 @@
+ Starting TIME is  Tue Jul 19 13:43:07 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>253</seq><id>1</id><name>INIT</name><systemid>sentinal</systemid><timestamp>2011-07-19T13:42:07.287+05:30</timestamp><data/></command></commands>
+ Closing TIME is  Tue Jul 19 13:43:07 2011
+ 
+ Starting TIME is  Tue Jul 19 13:43:16 2011
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<commands><command><seq>254</seq><id>2</id><name>SETCMD</name><systemid>sentinal</systemid><timestamp>2011-07-19T13:42:16.019+05:30</timestamp><data><param><name>mcmbit</name><value>0x1</value></param></data></command></commands>
+ Closing TIME is  Tue Jul 19 13:43:16 2011
+ 

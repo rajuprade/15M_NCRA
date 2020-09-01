@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups template="">
+	<group name="Display Settings">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_Scale</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_Scale</cmdid>						
+						<label>Scale :</label>						
+					</control>
+				</column>
+				<column>	
+						<control>
+							<type>radio</type>
+							<name>sendspectralplottingdata__scale</name>
+							<cmdid>sendspectralplottingdata__Linear</cmdid>
+							<label>Linear</label>
+							<value>linear</value>
+							<checked>false</checked>
+						</control>
+				
+					<control>	
+						<name>Spectral_linear</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_linear</cmdid>						
+						<label>Linear</label>						
+					</control>
+				</column>
+				<column>
+					<control>
+							<type>radio</type>
+							<name>sendspectralplottingdata__scale</name>
+							<cmdid>sendspectralplottingdata__Logarithmic</cmdid>
+							<label>Logarithmic</label>
+							<value>logarithmic</value>
+							<checked>false</checked>
+					</control>
+				
+					<control>	
+						<name>Spectral_logarithmic</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_logarithmic</cmdid>						
+						<label>Logarithmic</label>						
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_Xaxis</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_Xaxis</cmdid>						
+						<label>X-axis :</label>						
+					</control>
+				</column>
+				<column>
+					<control>
+							<type>radio</type>
+							<name>sendspectralplottingdata__xaxis</name>
+							<cmdid>sendspectralplottingdata__Noofbins</cmdid>
+							<label>No. of Bins</label>
+							<value>noofbins</value>
+							<checked>false</checked>
+					</control>
+					<control>	
+						<name>Spectral_Noofbins</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_Noofbins</cmdid>						
+						<label>No. of Bins</label>						
+					</control>
+				</column>	
+				<column>
+					<control>
+							<type>radio</type>
+							<name>sendspectralplottingdata__xaxis</name>
+							<cmdid>sendspectralplottingdata__frequency</cmdid>
+							<label>Frequency</label>
+							<value>frequency</value>
+							<checked>false</checked>
+						</control>
+				
+					<control>	
+						<name>Spectral_Frequency</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_Frequency</cmdid>						
+						<label>Frequency</label>						
+					</control>
+				</column>					
+			</row> 
+		</controls>
+		</group>
+		<group name="Data Monitoring">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_Interval</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_Interval</cmdid>						
+						<label>Interval</label>						
+					</control>
+				</column>
+				<column>
+					<control class="int">	
+						<name>sendspectralplottingdata__interval</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__interval</cmdid>
+						<maxLength>10</maxLength>						
+					</control>
+				</column>
+
+				<column >
+					<control>	
+						<name>Spectral_msec</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_msec</cmdid>						
+						<label>msec</label>						
+					</control>
+				</column>
+				<column>
+				</column>
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_Integration</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_Integration</cmdid>						
+						<label>Integration</label>						
+					</control>
+				</column>
+				<column>
+					<control class="int">	
+						<name>sendspectralplottingdata__integration</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__integration</cmdid>
+						<maxLength>10</maxLength>						
+					</control>
+				</column>
+
+				<column>	
+						<control>	
+						<name>Spectral_records</name>
+						<colspan>2</colspan>
+						<type>LABEL</type>    
+						<cmdid>Spectral_records</cmdid>						
+						<label>Records</label>						
+					</control>				
+				</column>			
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_Polarization</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_Polarization</cmdid>						
+						<label>Polarization</label>						
+					</control>
+				</column>
+				<column>
+					<control class="combobox_small">  
+						<type>DropDown</type>
+						<colspan>3</colspan>
+						<cmdid>sendspectralplottingdata__polarization</cmdid>
+						<name>sendspectralplottingdata__polarization</name>
+						<options>
+						<option>
+							<key>RR</key>
+							<value>RR</value>
+						</option>
+						<option>
+							<key>LL</key>
+							<value>LL</value>
+						</option>
+						<option>
+							<key>BOTH</key>
+							<value>BOTH</value>
+						</option>
+						</options>
+					</control>
+				</column>
+			</row> 	
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_Noofbins</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_Noofbins</cmdid>						
+						<label>No of Bins</label>						
+					</control>
+				</column>
+				<column>
+					<control class="int">	
+						<name>sendspectralplottingdata__noofbins</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__noofbins</cmdid>
+						<maxLength>10</maxLength>						
+					</control>
+				</column>
+
+				<column>	
+					<control>	
+						<name>Spectral_Steps</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_Steps</cmdid>						
+						<label>Steps</label>						
+					</control>			
+				</column>	
+				<column>
+					<control class="int">	
+						<name>sendspectralplottingdata__steps</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__steps</cmdid>
+						<maxLength>10</maxLength>						
+					</control>
+				</column>				
+			</row> 
+		</controls>
+	</group>
+	<group name="Meta-data">
+		<controls>	 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_project_code</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_project_code</cmdid>						
+						<label>Project code</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__project_code</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__project_code</cmdid>
+						<maxLength>10</maxLength>
+						<metaData>true</metaData> 						
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>spectral_obs_name</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_obs_name</cmdid>						
+						<label>Observer name</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__observer_name</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__observer_name</cmdid>
+						<maxLength>10</maxLength>	
+						<metaData>true</metaData> 
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_project_title</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_project_title</cmdid>						
+						<label>Project title</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendspectralplottingdata__project_title</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__project_title</cmdid>
+						<maxLength></maxLength>	
+						<metaData>true</metaData> 
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>spectral_ant_id</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_ant_id</cmdid>						
+						<label>Ant id</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__ant_id</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__ant_id</cmdid>
+						<maxLength>10</maxLength>
+						<metaData>true</metaData> 
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_band_mask</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_band_mask</cmdid>						
+						<label>Band mask</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendspectralplottingdata__band_mask</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__band_mask</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData> 
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>spectral_source_name</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_source_name</cmdid>						
+						<label>Source name</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendspectralplottingdata__source_name</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__source_name</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_pol_flux</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_pol_flux</cmdid>						
+						<label>Pol flux</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendspectralplottingdata__pol_flux</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__pol_flux</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>spectral_mjd_source</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_mjd_source</cmdid>						
+						<label>MJD source</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendspectralplottingdata__mjd_source</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__mjd_source</cmdid>
+						<maxLength>50</maxLength>
+						<metaData>true</metaData>						
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_ra_app</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_ra_app</cmdid>						
+						<label>Ra Apparent</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendspectralplottingdata__ra_app</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__ra_app</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Spectral_dec_app</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_dec_app</cmdid>						
+						<label>Dec Apparent</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendspectralplottingdata__dec_app</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__dec_app</cmdid>
+						<maxLength>50</maxLength>		
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_ra_mean</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_ra_mean</cmdid>						
+						<label>Ra mean</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendspectralplottingdata__ra_mean</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__ra_mean</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Spectral_dec_mean</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_dec_mean</cmdid>						
+						<label>Dec mean</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle" disabled="true">	
+						<name>sendspectralplottingdata__dec_mean</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__dec_mean</cmdid>
+						<maxLength>50</maxLength>
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_dra</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_dra</cmdid>						
+						<label>DRA</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__dra</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__dra</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Spectral_ddec</name>
+						<type>LABEL</type>    
+						<cmdid>spectral_ddec</cmdid>						
+						<label>DDEC</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__ddec</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__ddec</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_freq</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_freq</cmdid>						
+						<label>Frequency</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__freq</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__freq</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Spectral_first_lo</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_first_lo</cmdid>						
+						<label>First lo</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__first_lo</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__first_lo</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_bb_lo</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_bb_lo</cmdid>						
+						<label>bb lo</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__bb_lo</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__bb_lo</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Spectral_rest_freq</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_rest_freq</cmdid>						
+						<label>Rest freq</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__rest_freq</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__rest_freq</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_lsr_velocity</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_lsr_velocity</cmdid>						
+						<label>LSR velocity</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__lsr_velocity</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__lsr_velocity</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Spectral_source_id</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_source_id</cmdid>						
+						<label>Source id</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__source_id</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__source_id</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_antenna_id</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_antenna_id</cmdid>						
+						<label>antenna_id</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__antenna_id</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__antenna_id</cmdid>
+						<maxLength>30</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>			
+				<column>
+					<control>	
+						<name>Spectral_calcode</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_calcode</cmdid>						
+						<label>calcode</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__calcode</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__calcode</cmdid>
+						<maxLength>50</maxLength>	
+						<metaData>true</metaData>
+					</control>
+				</column>				
+			</row> 
+			<row>
+				<column>
+					<control>	
+						<name>Spectral_net_sign</name>
+						<type>LABEL</type>    
+						<cmdid>Spectral_net_sign</cmdid>						
+						<label>Net sign</label>						
+					</control>
+				</column>
+				<column>
+					<control class="inputBoxMiddle_small" disabled="true">	
+						<name>sendspectralplottingdata__net_sign</name>
+						<type>Text</type>    
+						<cmdid>sendspectralplottingdata__net_sign</cmdid>
+						<maxLength>30</maxLength>	
+						<colspan>3</colspan>
+						<metaData>true</metaData>
+					</control>
+				</column>			
+					
+			</row> 
+		</controls>
+	</group>
+</groups>

@@ -1,0 +1,78 @@
+
+      if dir="`expr "//${0}" : '//\(.*\)/.*'`"; then :; else
+         dir="`IFS=':'; for d in $PATH; do file="${d:=.}/${0}"
+            test -x "${file}" -a ! -d "${file}" && echo "${d}" && break
+         done`"
+      fi
+      case "${dir}" in [!/]*) dir="`pwd`/${dir}";; esac
+      HTX_DIR="${dir}/htx-scripts"
+      HTX_SCRIPT="`basename "${0}"`"
+      if test -n "${HTX_NOLINK+z}"; then 
+         echo "${HTX_SCRIPT}: hypertext link bypassed because HTX_NOLINK is set";
+         exit
+      fi
+      HTX_ALL='0'
+      HTX_DEEP='0'
+      HTX_REMOTE='0'
+      HTX_VERBOSE='0'
+      while :; do
+         case "${1}" in
+         -a) HTX_ALL='1'; shift;;
+         -d) HTX_DEEP='1'; shift;;
+         -r) HTX_REMOTE='1'; shift;;
+         -v) HTX_VERBOSE='1'; shift;;
+         -*)
+            echo >&2 "${HTX_SCRIPT}: unknown flag \""${1}"\" given"
+            exit 1;;
+         *) break;;
+         esac
+      done
+      export HTX_ALL
+      export HTX_ALLDOCS
+      export HTX_DEEP
+      export HTX_DIR
+      export HTX_REMOTE
+      export HTX_SCRIPT
+      export HTX_VERBOSE
+      linkdirs="${*:-.}"
+      HTX_ALLDOCS="`${HTX_DIR}/allfind ${linkdirs}`"
+      linkdocs="`${HTX_DIR}/docfind ${linkdirs}`"
+      if test ! "${HTX_ALL}" = "1"; then
+         ${HTX_DIR}/newindex `${HTX_DIR}/oldindex ${linkdocs}`
+      else
+         ${HTX_DIR}/newindex ${linkdocs}
+      fi
+      newdocs="`${HTX_DIR}/newdocs ${linkdocs}`"
+      linklist="${newdocs} "
+      for dir in ${linkdirs}; do
+         linklist="${linklist}`${HTX_DIR}/docfind ${dir} | ${HTX_DIR}/depends \
+                               ${newdocs} \`${HTX_DIR}/moveddocs ${dir}\`` "
+      done
+      linklist="`for doc in ${linklist}; do echo ${doc}; done | sort -u`"
+      if test ! -n "${linklist}"; then
+         echo 'No hypertext documents need re-linking'
+      else
+         nlink="`echo ${linklist} | wc -w | awk '{print $1}'`"
+         case "${nlink}" in
+         1)
+            echo "1 hypertext document needs re-linking";;
+         *)
+            echo "${nlink} hypertext documents need re-linking";;
+         esac
+         for doc in ${linklist}; do
+            ${HTX_DIR}/relink ${doc} `${HTX_DIR}/reffind ${doc} ${HTX_ALLDOCS}`
+         done
+      fi
+      for dir in ${linkdirs}; do
+         log="${dir}/htx.log"
+         echo >"${log}" \
+"# Hypertext documents in this directory were last linked by user `whoami` using"
+         echo >>"${log}" \
+"# the \"${HTX_SCRIPT}\" command on `date`. The following local"
+         echo >>"${log}" \
+'# documents were available:'
+         for doc in ${HTX_ALLDOCS}; do echo "${doc}"; done \
+            | ${HTX_DIR}/stdfile | sed 's%^%l %' >>"${log}"
+         echo >>"${log}" '# End of HTX log file.'
+         touch "${log}"
+      done

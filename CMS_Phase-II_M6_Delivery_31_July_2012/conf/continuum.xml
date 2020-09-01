@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups template="">
+    <group name="RF">
+	<controls>
+	 <row>
+	 <column>
+	  <control disabled="true">
+	    <type>label</type>
+	    <name>RFSWAP</name>
+	    <cmdid>RFSWAP</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>RF SWAP:</label>
+	    <value></value> 
+	  </control>
+	  </column>	 
+	 <column>
+	  <control disabled="true">
+	    <type>radio</type>
+	    <name>SWAP</name>
+	    <cmdid>SWAP</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>SWAP:</label>
+	    <value>true</value>
+	    <checked>false</checked>
+	    <subSystemName>frontend</subSystemName>
+	  </control>
+	  </column>
+	 <column>
+	  <control disabled="true">
+	    <type>radio</type>
+	    <name>SWAP</name>
+	    <cmdid>SWAP</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>UNSWAP:</label>
+	    <value>false</value>
+	    <checked>true</checked>
+	    <subSystemName>frontend</subSystemName>
+	  </control>
+	  </column>	  
+	 </row>
+	 <row>
+	  <column>
+	   <control disabled="true">
+	    <name>POWER</name>
+	    <type>checkbox</type>    
+	    <cmdid>POWER</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>FRONTEND UNIT:</label>
+	    <value>true</value>
+	    <subSystemName>frontend</subSystemName>
+	    <checked>true</checked>
+	   </control>
+	  </column>
+	 </row>
+	</controls>	
+	<controls type="channelheader">
+	 <row>
+	 <column>
+	  <control disabled="true">
+	    <name>BAND__RFPOL1</name>
+	    <type>Text</type>    
+	    <cmdid>BAND__RFPOL1</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>BAND CENTRE:</label>
+	    <value>300</value>
+	    <subSystemName>frontend</subSystemName>
+		<unit>MHz</unit>
+	  </control>
+	 </column>
+	 <column>
+	  <control disabled="true">
+	    <name>BAND__RFPOL2</name>
+	    <type>Text</type>    
+	    <cmdid>BAND__RFPOL2</cmdid>
+	    <maxLength>5</maxLength>
+	    <label></label>
+	    <value>350</value>
+	    <subSystemName>frontend</subSystemName>
+		<unit>MHz</unit>
+	  </control>
+	  </column>	  
+	 </row>  
+	 <row>	  
+	  <column>
+	   <control disabled="true">
+	    <type>DropDown</type>
+	    <name>ATENN__POL1</name>
+	    <cmdid>ATENN__POL1</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>RF ATTENUATION:</label>
+	    <options>
+	       <option>
+	            <key>0</key>
+	            <value>0</value>
+	            <selected>true</selected>
+	       </option>
+	       <option>
+	            <key>5</key>
+	            <value>5</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>10</key>
+	            <value>10</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>15</key>
+	            <value>15</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>20</key>
+	            <value>20</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>25</key>
+	            <value>25</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>30</key>
+	            <value>30</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>35</key>
+	            <value>35</value>
+	            <selected>false</selected>
+	       </option>
+	     </options>
+	    <subSystemName>frontend</subSystemName>
+		<unit>dB</unit>
+	   </control>
+	  </column>
+	  <column>
+	   <control disabled="true">
+	    <type>DropDown</type>
+	    <name>ATENN__POL2</name>
+	    <cmdid>ATENN__POL2</cmdid>
+	    <maxLength>5</maxLength>
+	    <label></label>
+	    <options>
+	       <option>
+	            <key>0</key>
+	            <value>0</value>
+	            <selected>true</selected>
+	       </option>
+	       <option>
+	            <key>5</key>
+	            <value>5</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>10</key>
+	            <value>10</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>15</key>
+	            <value>15</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>20</key>
+	            <value>20</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>25</key>
+	            <value>25</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>30</key>
+	            <value>30</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>35</key>
+	            <value>35</value>
+	            <selected>false</selected>
+	       </option>
+	     </options>
+	    <subSystemName>frontend</subSystemName>
+		<unit>dB</unit>
+	   </control>
+	  </column>	  
+	 </row>
+	 <row>
+	  <column>
+	   <control disabled="true">
+	    <name>TERMINATE__POL1</name>
+	    <type>checkbox</type>    
+	    <cmdid>TERMINATE__POL1</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>RF TERMINATE:</label>
+	    <value>true</value>
+	    <subSystemName>frontend</subSystemName>
+	    <checked>true</checked>
+	   </control>
+	  </column>
+	  <column>
+	   <control disabled="true">
+	    <name>TERMINATE__POL2</name>
+	    <type>checkbox</type>
+	    <cmdid>TERMINATE__POL2</cmdid>
+	    <maxLength>5</maxLength>
+	    <label></label>
+	    <value>true</value>
+	    <subSystemName>frontend</subSystemName>
+	    <checked>false</checked>
+	   </control>	  
+	  </column>
+	 </row>
+	 <row>
+	  <column>
+	   <control disabled="true">
+	    <name>RFFILTER__POL1</name>
+	    <type>Text</type>    
+	    <cmdid>RFFILTER__POL1</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>RF FILTER:</label>
+	    <value>100</value>
+	    <subSystemName>frontend</subSystemName>
+	   </control>
+	  </column>
+	  <column>
+	   <control disabled="true">
+	    <name>RFFILTER__POL2</name>
+	    <type>Text</type>    
+	    <cmdid>RFFILTER__POL2</cmdid>
+	    <maxLength>5</maxLength>
+	    <label></label>
+	    <value>150</value>
+	    <subSystemName>frontend</subSystemName>
+	   </control>
+	  </column>	  
+	 </row>	 
+	</controls>
+    </group>
+    <group name="SIGCON">
+	<controls type="channelheader">
+	 <row>
+	 <column>
+	  <control disabled="true">
+	    <name>PREATTN__POL1</name>
+	    <type>Text</type>    
+	    <cmdid>PREATTN__POL1</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>IF PRE-ATTN:</label>
+	    <value>10</value>
+	    <subSystemName>sigcon</subSystemName>
+		<unit>dB</unit>
+	  </control>
+	 </column>
+	 <column>
+	  <control disabled="true">
+	    <name>PREATTN__POL2</name>
+	    <type>Text</type>    
+	    <cmdid>PREATTN__POL2</cmdid>
+	    <maxLength>5</maxLength>
+	    <label></label>
+	    <value>5</value>
+	    <subSystemName>sigcon</subSystemName>
+		<unit>dB</unit>
+	  </control>
+	  </column>	  
+	 </row>  
+	 <row>
+	 <column>
+	  <control disabled="true">
+	    <type>Text</type>
+	    <name>LO__POL1</name>
+	    <cmdid>LO__POL1</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>LOCAL OSC:</label>
+	    <value>300</value>
+	    <subSystemName>sigcon</subSystemName>
+		<unit>MHz</unit>
+	  </control>
+	  </column>
+	 <column>
+	  <control disabled="true">
+	    <type>Text</type>
+	    <name>LO__POL2</name>
+	    <cmdid>LO__POL2</cmdid>
+	    <maxLength>5</maxLength>
+	    <label></label>
+	    <value>400</value>
+	    <subSystemName>sigcon</subSystemName>
+		<unit>MHz</unit>
+	  </control>
+	  </column>
+	 </row>
+	 <row>	  
+	  <column>
+	   <control disabled="true">
+	    <type>DropDown</type>
+	    <name>FILTER__POL1</name>
+	    <cmdid>FILTER__POL1</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>SIGCON FILTER:</label>
+	    <options>
+	       <option>
+	            <key>25</key>
+	            <value>25</value>
+	            <selected>true</selected>
+	       </option>
+	       <option>
+	            <key>50</key>
+	            <value>50</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>100</key>
+	            <value>100</value>
+	            <selected>true</selected>
+	       </option>
+	     </options>
+	    <subSystemName>sigcon</subSystemName>
+		<unit>MHz</unit>
+	   </control>
+	  </column>
+	  <column>
+	   <control disabled="true">
+	    <type>DropDown</type>
+	    <name>FILTER__POL2</name>
+	    <cmdid>FILTER__POL2</cmdid>
+	    <maxLength>5</maxLength>
+	    <label></label>
+	    <options>
+	       <option>
+	            <key>25</key>
+	            <value>25</value>
+	            <selected>true</selected>
+	       </option>
+	       <option>
+	            <key>50</key>
+	            <value>50</value>
+	            <selected>false</selected>
+	       </option>
+	       <option>
+	            <key>100</key>
+	            <value>100</value>
+	            <selected>true</selected>
+	       </option>
+	     </options>
+	    <subSystemName>sigcon</subSystemName>
+		<unit>MHz</unit>
+	   </control>
+	  </column>
+	 </row>
+	 <row>
+	  <column>
+	   <control disabled="true">
+	    <name>POSTATTEN__POL1</name>
+	    <type>Text</type>    
+	    <cmdid>POSTATTEN__POL1</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>IF POST-ATTN:</label>
+	    <value>10</value>
+	    <subSystemName>sigcon</subSystemName>
+		<unit>dB</unit>
+	   </control>
+	  </column>
+	  <column>
+	   <control disabled="true">
+	    <name>POSTATTEN__POL2</name>
+	    <type>Text</type>    
+	    <cmdid>POSTATTEN__POL2</cmdid>
+	    <maxLength>5</maxLength>
+	    <label></label>
+	    <value>14</value>
+	    <subSystemName>sigcon</subSystemName>
+		<unit>dB</unit>
+	   </control>
+	  </column>
+	 </row>
+	 <row>
+	  <column>
+	   <control disabled="true">
+	    <name>AGC__POL1</name>
+	    <type>checkbox</type>    
+	    <cmdid>AGC__POL1</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>AGC:</label>
+	    <value>true</value>
+	    <subSystemName>sigcon</subSystemName>
+	    <checked>true</checked>
+	   </control>
+	  </column>
+	  <column>
+	   <control disabled="true">
+	    <name>AGC__POL2</name>
+	    <type>checkbox</type>    
+	    <cmdid>AGC__POL2</cmdid>
+	    <maxLength>5</maxLength>
+	    <label></label>
+	    <value>true</value>
+	    <subSystemName>sigcon</subSystemName>
+	    <checked>false</checked>
+	   </control>
+	  </column>
+	 </row>
+	</controls>
+    </group>
+    <group name="DIGITAL BACKEND">
+	<controls>
+	<row>
+		<column>
+			<control disabled="true">
+				<name>sendmetadata__adcclock</name>
+				<type>DropDown</type>    
+				<cmdid>sendmetadata__adcclock</cmdid>
+				<maxLength>5</maxLength>
+				<label>ADC CLOCK:</label>
+				<options>
+				   <option>
+						<key>100</key>
+						<value>100</value>
+						<selected>false</selected>
+				   </option>
+				   <option>
+						<key>200</key>
+						<value>200</value>
+						<selected>true</selected>
+				   </option>
+				   <option>
+						<key>300</key>
+						<value>300</value>
+						<selected>false</selected>
+				   </option>	       
+					   <option>
+						<key>400</key>
+						<value>400</value>
+						<selected>false</selected>
+				   </option>
+				   <option>
+						<key>500</key>
+						<value>500</value>
+						<selected>false</selected>
+				   </option>
+				   <option>
+						<key>600</key>
+						<value>600</value>
+						<selected>false</selected>
+				   </option>
+				 </options>
+				<subSystemName>backend</subSystemName>				
+			</control>
+		</column>
+		<column>
+			<control disabled="true">
+				<name>sendmetadata__fftlen</name>
+				<type>Text</type>    
+				<cmdid>sendmetadata__fftlen</cmdid>
+				<maxLength>5</maxLength>
+				<label>FFT LENGTH:</label>
+				<value>10</value>
+				<subSystemName>backend</subSystemName>				
+			</control>
+		</column>		
+	</row>
+	<row>
+		<column>
+			<control disabled="true">
+				<name>sendmetadata__acqinteg</name>
+				<type>Text</type>    
+				<cmdid>sendmetadata__acqinteg</cmdid>
+				<maxLength>5</maxLength>
+				<label>ACQ INTEG:</label>
+				<value>0.92</value>
+				<subSystemName>backend</subSystemName>
+				<unit>Sec</unit>
+			</control>
+		</column>
+		<column>
+			<control disabled="true">
+				<name>sendmetadata__fftshift</name>
+				<type>Text</type>    
+				<cmdid>sendmetadata__fftshift</cmdid>
+				<maxLength>5</maxLength>
+				<label>FFT SHIFT:</label>
+				<value>10</value>
+				<subSystemName>backend</subSystemName>				
+			</control>
+		</column>		
+	</row>	
+	<row>
+	 <column>
+	  <control disabled="true">
+	    <name>sendmetadata__ltainteg</name>
+	    <type>Text</type>    
+	    <cmdid>sendmetadata__ltainteg</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>LTA INTEG:</label>
+		<value>0.92</value>
+   	    <subSystemName>backend</subSystemName>
+		<unit>Sec</unit>
+	  </control>
+	 </column>	
+	 <column>
+	  <control disabled="true">
+	    <name>sendmetadata__sampgain</name>
+	    <type>Text</type>    
+	    <cmdid>sendmetadata__sampgain</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>SCALING FACTOR:</label>
+		<value>11</value>
+    	<subSystemName>backend</subSystemName>
+	  </control>
+	 </column>
+	</row>
+	<row>
+	 <column>
+	  <control disabled="true">
+	    <type>label</type>
+	    <name>CHANNELS</name>
+	    <cmdid>CHANNELS</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>CHANNELS:</label>
+	    <value></value>
+	    <subSystemName>backend</subSystemName>
+	  </control>
+	 </column>
+	 </row>
+	 <row>
+		 <column>
+		  <control disabled="true">
+			<type>Text</type>
+			<name>sendmetadata__channelstart</name>
+			<cmdid>sendmetadata__channelstart</cmdid>
+			<maxLength>5</maxLength>
+			<label>START:</label>
+			<value>10</value>
+			<subSystemName>backend</subSystemName>
+		  </control>
+		 </column>	 
+	 </row>	 
+	 <row>
+	 <column>
+	  <control disabled="true">
+	    <type>Text</type>
+	    <name>sendmetadata__channelstop</name>
+	    <cmdid>sendmetadata__channelstop</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>STOP:</label>
+	    <value>15</value>
+	    <subSystemName>backend</subSystemName>
+	  </control>
+	 </column>	 
+	 </row>
+	<row>
+	 <column>
+	  <control disabled="true">
+	    <type>Text</type>
+	    <name>sendmetadata__channelincr</name>
+	    <cmdid>sendmetadata__channelincr</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>INCR:</label>
+	    <value>1</value>
+	    <subSystemName>backend</subSystemName>
+	  </control>
+	 </column>	 	
+	</row>
+	 <row>
+	 <column>
+	 <control disabled="true" colspan="2">
+	    <type>Label</type>
+	    <name>sendmetadata__sampgainctrl</name>
+	    <cmdid>sendmetadata__sampgainctrl</cmdid>
+	    <maxLength></maxLength>
+	    <label>SAMPLING GAIN CONTROL:</label>
+	    <value></value>
+	    <subSystemName>backend</subSystemName>
+	 </control>
+	 </column>
+	 </row>
+	 <row>
+	 <column>
+	 <control disabled="true">
+	    <type>radio</type>
+	    <name>sendmetadata__sampgainctrl</name>
+	    <cmdid>sendmetadata__sampgainctrl</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>ON:</label>
+	    <value>true</value>
+	    <subSystemName>backend</subSystemName>
+	    <checked>true</checked>
+	 </control>
+	 </column>
+	 <column>
+	 <control disabled="true" >
+	    <type>radio</type>
+	    <name>sendmetadata__sampgainctrl</name>
+	    <cmdid>sendmetadata__sampgainctrl</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>OFF:</label>
+	    <value>false</value>
+	    <subSystemName>backend</subSystemName>
+	    <checked>false</checked>
+	 </control>
+	 </column>
+	 </row>
+	 <row>
+	 <column>
+	 <control disabled="true">
+	    <type>Text</type>
+	    <name>sendmetadata__chanavg</name>
+	    <cmdid>sendmetadata__chanavg</cmdid>
+	    <maxLength>5</maxLength>
+	    <label>CHAN AVG:</label>
+	    <value>100</value>
+	    <subSystemName>backend</subSystemName>
+	 </control>
+	 </column>	 
+	 </row>
+	 <row>
+		 <column>
+		 <control disabled="true">
+			<type>DropDown</type>
+			<name>sendmetadata__adcmode</name>
+			<cmdid>sendmetadata__adcmode</cmdid>
+			<maxLength>5</maxLength>
+			<label>ADC MODE:</label>
+			<options>
+				  <option>
+						<key>1</key>
+						<value>String1</value>
+						<selected>true</selected>
+				   </option>
+				   <option>
+						<key>2</key>
+						<value>String2</value>
+						<selected>false</selected>
+				   </option>
+				</options>
+				<subSystemName>backend</subSystemName>
+		 </control>
+		 </column>	 
+	 </row>
+	 <row>
+		 <column>
+			 <control disabled="true">
+				<type>DropDown</type>
+				<name>sendmetadata__stokes</name>
+				<cmdid>sendmetadata__stokes</cmdid>
+				<maxLength>5</maxLength>
+				<label>STOKES:</label>
+				<options>
+					  <option>
+							<key>TOTALINTENSITY</key>
+							<value>TOTAL INTENSITY</value>
+							<selected>true</selected>
+					   </option>
+					   <option>
+							<key>FULLSTOKES</key>
+							<value>FULL STOKES</value>
+							<selected>false</selected>
+					   </option>
+					   <option>
+							<key>IQUV</key>
+							<value>(I, Q, U, V)</value>
+							<selected>false</selected>
+					   </option>
+					   <option>
+							<key>I</key>
+							<value>I</value>
+							<selected>false</selected>
+					   </option>
+					   <option>
+							<key>Q</key>
+							<value>Q</value>
+							<selected>false</selected>
+					   </option>
+					   <option>
+							<key>U</key>
+							<value>U</value>
+							<selected>false</selected>
+					   </option>
+					   <option>
+							<key>V</key>
+							<value>V</value>
+							<selected>false</selected>
+					   </option>			   
+					</options>
+					<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>	 
+	 </row>
+	 <row>
+		 <column>
+			 <control disabled="true">
+				<type>DropDown</type>
+				<name>sendmetadata__back-end</name>
+				<cmdid>sendmetadata__back-end</cmdid>
+				<maxLength>5</maxLength>
+				<label>BACK-END:</label>
+				<options>
+					  <option>
+							<key>BACKEND1</key>
+							<value>BACKEND1</value>
+							<selected>true</selected>
+					   </option>
+					   <option>
+							<key>BACKEND2</key>
+							<value>BACKEND2</value>
+							<selected>false</selected>
+					   </option>
+					</options>
+					<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		
+	 </row>
+	 <row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__project_code</name>
+				<cmdid>sendmetadata__project_code</cmdid>
+				<maxLength>5</maxLength>
+				<label>PROJECT CODE:</label>
+				<value>ncra</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__observer_name</name>
+				<cmdid>sendmetadata__observer_name</cmdid>
+				<maxLength>5</maxLength>
+				<label>OBSERVER NAME:</label>
+				<value>ncra</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__project_title</name>
+				<cmdid>sendmetadata__project_title</cmdid>
+				<maxLength>5</maxLength>
+				<label>PROJECT TITLE:</label>
+				<value>ncra</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__ant_id</name>
+				<cmdid>sendmetadata__ant_id</cmdid>
+				<maxLength>5</maxLength>
+				<label>ANT ID:</label>
+				<value>1</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__band_mask</name>
+				<cmdid>sendmetadata__band_mask</cmdid>
+				<maxLength>5</maxLength>
+				<label>BANDMASK:</label>
+				<value>11</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__source_name</name>
+				<cmdid>sendmetadata__source_name</cmdid>
+				<maxLength>5</maxLength>
+				<label>SOURCE NAME:</label>
+				<value>ncratest</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>DropDown</type>
+				<name>sendmetadata__pol_flux</name>
+				<cmdid>sendmetadata__pol_flux</cmdid>
+				<maxLength>5</maxLength>
+				<label>POL FLUX:</label>
+				<options>
+				  <option>
+						<key>I</key>
+						<value>I</value>
+						<selected>true</selected>
+				   </option>
+				   <option>
+						<key>Q</key>
+						<value>Q</value>
+						<selected>false</selected>
+				   </option>
+				  <option>
+						<key>U</key>
+						<value>U</value>
+						<selected>false</selected>
+				   </option>
+				   <option>
+						<key>V</key>
+						<value>V</value>
+						<selected>false</selected>
+				   </option>				   
+				</options>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__mjd_source</name>
+				<cmdid>sendmetadata__mjd_source</cmdid>
+				<maxLength>5</maxLength>
+				<label>MJD SOURCE:</label>
+				<value>10</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__ra_app</name>
+				<cmdid>sendmetadata__ra_app</cmdid>
+				<maxLength>5</maxLength>
+				<label>APPARENT RA:</label>
+				<value>10:00:00</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__dec_app</name>
+				<cmdid>sendmetadata__dec_app</cmdid>
+				<maxLength>5</maxLength>
+				<label>APPARENT DEC:</label>
+				<value>10</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__ra_mean</name>
+				<cmdid>sendmetadata__ra_mean</cmdid>
+				<maxLength>5</maxLength>
+				<label>MEAN RA:</label>
+				<value>10:10:10</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__dec_mean</name>
+				<cmdid>sendmetadata__dec_mean</cmdid>
+				<maxLength>5</maxLength>
+				<label>MEAN DEC:</label>
+				<value>10:10:10</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__dra</name>
+				<cmdid>sendmetadata__dra</cmdid>
+				<maxLength>5</maxLength>
+				<label>DRA:</label>
+				<value>1</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__ddec</name>
+				<cmdid>sendmetadata__ddec</cmdid>
+				<maxLength>5</maxLength>
+				<label>DDEC:</label>
+				<value>1</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__freq</name>
+				<cmdid>sendmetadata__freq</cmdid>
+				<maxLength>5</maxLength>
+				<label>FREQ:</label>
+				<value>11</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__first_lo</name>
+				<cmdid>sendmetadata__first_lo</cmdid>
+				<maxLength>5</maxLength>
+				<label>FIRST LO:</label>
+				<value>1</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__bb_lo</name>
+				<cmdid>sendmetadata__bb_lo</cmdid>
+				<maxLength>5</maxLength>
+				<label>BB LO:</label>
+				<value>2</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__rest_freq</name>
+				<cmdid>sendmetadata__rest_freq</cmdid>
+				<maxLength>5</maxLength>
+				<label>REST FREQ:</label>
+				<value>12</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__lsr_velocity</name>
+				<cmdid>sendmetadata__lsr_velocity</cmdid>
+				<maxLength>5</maxLength>
+				<label>LSR VELOCITY:</label>
+				<value>1</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__source_id</name>
+				<cmdid>sendmetadata__source_id</cmdid>
+				<maxLength>5</maxLength>
+				<label>SOURCE ID:</label>
+				<value>0</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__antenna_id</name>
+				<cmdid>sendmetadata__antenna_id</cmdid>
+				<maxLength>5</maxLength>
+				<label>ANTENNA ID:</label>
+				<value>11</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__calcode</name>
+				<cmdid>sendmetadata__calcode</cmdid>
+				<maxLength>5</maxLength>
+				<label>CALCODE:</label>
+				<value>1</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>		 
+	</row>
+	<row>
+		 <column>
+			 <control disabled="true">
+				<type>Text</type>
+				<name>sendmetadata__net_sign</name>
+				<cmdid>sendmetadata__net_sign</cmdid>
+				<maxLength>5</maxLength>
+				<label>NET SIGN:</label>
+				<value>1</value>
+				<subSystemName>backend</subSystemName>
+			 </control>
+		 </column>
+	</row>
+	</controls>
+    </group>
+</groups>

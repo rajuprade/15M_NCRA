@@ -1,0 +1,30 @@
+<SubsystemName id="sigcon">
+	<params>
+      <param>
+        <name>time</name>
+        <value>16:04:00</value>
+      </param>
+      <param>
+        <name>status</name>
+        <value>TEST</value>
+      </param>
+      <param>
+        <name>temp</name>
+        <value>25</value>
+      </param>
+      <param>
+        <name>chan</name>
+        <value>0</value>
+      </param>
+      <param>
+        <name>rawcnt</name>
+        <value>128</value>
+      </param>
+	<param>
+		<name>state</name>
+		<value>sigconOK</value>
+		<type>string</type>
+	</param>
+    </params>
+
+</SubsystemName>

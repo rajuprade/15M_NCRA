@@ -1,0 +1,24 @@
+#update Data acq Progress percentage
+
+
+if  ($acq-percentage ne ""){
+
+	info("received acq-percentage = $acq-percentage and acq-message = $acq-message");
+	updateDataAcqProgress("$acq-percentage , $acq-message");
+	
+		$acq-numeric  = [Float parseFloat : $acq-percentage ];
+		if ($acq-numeric > 0 && $acq-numeric < 101){
+			updateDataAcqHeaderStatus("On");
+
+		} else {
+			updateDataAcqHeaderStatus("On");
+
+		}
+	
+	
+
+
+} else {
+	updateDataAcqHeaderStatus("Off");
+
+}

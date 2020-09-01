@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<configuration scan="false" scanPeriod="120 seconds">
+
+	<!-- Appenders -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%date] [%-5level] [%thread] %logger.%M - %msg%n</pattern>
+		</encoder>
+    </appender>
+	
+	
+    <!-- Daily Rolling File Appender -->
+    <appender name="cms-core-logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">		
+        <file>${catalina.home}/logs/cms-core.log</file>        
+		<encoder>
+			<pattern>[%date] [%-5level] [%thread] %logger.%M - %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      	<!-- daily rollover -->
+      		<fileNamePattern>${catalina.home}/logs/cms-core.log.%d{yyyy-MM-dd}</fileNamePattern>
+
+      		<!-- keep 365 days' worth of history -->
+      		<!--<maxHistory>365</maxHistory> -->
+   		</rollingPolicy>
+		
+    </appender>
+    <appender name="cms-state-machine-logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		
+        <file>${catalina.home}/logs/cms-statemachine.log</file>        
+		<encoder>
+			<pattern>[%date] [%-5level] [%thread] %logger.%M - %msg%n</pattern>
+		</encoder>	
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      	<!-- daily rollover -->
+      		<fileNamePattern>${catalina.home}/logs/cms-statemachine.log.%d{yyyy-MM-dd}</fileNamePattern>
+
+      		<!-- keep 365 days' worth of history -->
+      		<!--<maxHistory>365</maxHistory> -->
+   		</rollingPolicy>
+    </appender>
+    <appender name="cms-web-logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		
+        <file>${catalina.home}/logs/cms-web.log</file>        
+		<encoder>
+			<pattern>[%date] [%-5level] [%thread] %logger.%M - %msg%n</pattern>
+		</encoder>	
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      	<!-- daily rollover -->
+      		<fileNamePattern>${catalina.home}/logs/cms-web.log.%d{yyyy-MM-dd}</fileNamePattern>
+
+      	<!-- keep 365 days' worth of history -->
+      	<!-- 	<maxHistory>365</maxHistory> -->
+   		</rollingPolicy>
+    </appender>
+    <appender name="messageConsoleLogfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		
+        <file>${catalina.home}/logs/messageconsole.log</file>        
+		<encoder>
+			<pattern>[%date] [%-5level] [%thread] %logger.%M - %msg%n</pattern>
+		</encoder>	
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      	<!-- daily rollover -->
+      		<fileNamePattern>${catalina.home}/logs/messageconsole.log.%d{yyyy-MM-dd}</fileNamePattern>
+
+      		<!-- keep 365 days' worth of history -->
+      		<!-- <maxHistory>365</maxHistory> -->
+   		</rollingPolicy>
+    </appender>
+    <appender name="dashboardHistoryLogfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		
+        <file>${catalina.home}/logs/dashboardhistory.log</file>
+       
+		<encoder>
+			<pattern>[%date] [%-5level] [%thread] %logger.%M - %msg%n</pattern>
+		</encoder>	
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      	<!-- daily rollover -->
+      		<fileNamePattern>${catalina.home}/logs/dashboardhistory.log.%d{yyyy-MM-dd}</fileNamePattern>
+
+      		<!-- keep 365 days' worth of history -->
+      		<!--<maxHistory>365</maxHistory> -->
+   		</rollingPolicy>
+    </appender>
+    <logger name="com.cms.common.astronomy" level="info">      
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+    <logger name="com.cms.common.command" level="info">        
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.dao" level="info">        
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.exception" level="info">       
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.global" level="info">      
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.messaging" level="info">        
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.model" level="info">       
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.scheduler" level="info">       
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.service" level="info">       
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.track" level="info">        
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.util" level="info">        
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.validator" level="info">        
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.ncra.model" level="info">       
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.ncra.service" level="info">       
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.ncra.util" level="info">       
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.statemachine" level="info">       
+		<appender-ref ref="cms-state-machine-logfile" />
+    </logger>
+	<logger name="com.cms.common.concurrent" level="info">        
+		<appender-ref ref="cms-state-machine-logfile" />
+    </logger>	
+	<logger name="com.cms.common.batch" level="info">       
+		<appender-ref ref="cms-core-logfile" />
+    </logger>
+	<logger name="com.cms.common.web" level="info">       
+		<appender-ref ref="cms-web-logfile" />
+    </logger>
+	<logger name="com.cms.ncra.web" level="info">       
+		<appender-ref ref="cms-web-logfile" />
+    </logger>
+	<logger name="MessageConsole" level="info">        
+		<appender-ref ref="messageConsoleLogfile" />
+    </logger>
+    <logger name="StateManager" level="info">
+        <level value="info" />
+		<appender-ref ref="dashboardHistoryLogfile" />
+    </logger>  
+    <logger name="org.hibernate" level="info">       
+    </logger>
+
+    <logger name="org.apache.cxf" level="info">      
+    </logger>
+    <logger name="org.apache.cxf.transport.https.HttpsURLConnectionFactory" level="warn">        
+    </logger>
+    <logger name="org.apache.tiles" level="info">       
+    </logger>
+    <logger name="org.apache.commons.digester" level="info">       
+    </logger>
+    <logger name="org.apache.velocity" level="info">       
+    </logger>
+    <logger name="org.springframework.security" level="warn">       
+    </logger>
+
+    <logger name="org.springframework.beans" level="warn">       
+    </logger>
+
+    <logger name="org.springframework.binding" level="warn">       
+    </logger>
+
+    <logger name="org.springframework.jdbc" level="warn">        
+    </logger>
+
+    <logger name="org.springframework.transaction" level="warn">        
+    </logger>
+
+    <logger name="org.springframework.orm" level="warn">        
+    </logger>
+
+    <logger name="org.springframework.web" level="warn">        
+    </logger>
+    
+    <logger name="sleep" level="info">        
+    </logger>
+
+    <!-- Root Logger -->
+    <root level="info">   
+    	<appender-ref ref="console" />
+    </root>
+
+</configuration>

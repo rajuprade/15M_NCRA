@@ -1,0 +1,17 @@
+#update Tracking status on receiving ack or intermediate response
+
+info("code = $code and event=$event");
+
+if ($code == "10" && ($event == "10" ||  $event == "11")){
+#ack received
+	
+
+} else if ($event == "12"){
+#final response
+	#loadProperty("tracking_on,false");	
+	#info("setting tracking on flag to false");
+	loadProperty("tracking_on , true");	
+	info("setting tracking on flag to true");
+	#update tracking attributes to current time
+	updateTrackingAttributes();
+}

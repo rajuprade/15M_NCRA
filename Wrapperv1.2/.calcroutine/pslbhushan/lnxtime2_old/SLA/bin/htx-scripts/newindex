@@ -1,0 +1,20 @@
+
+      doclist="${*}"
+      for doc in ${doclist}; do
+         base=`basename ${doc}`
+         if test ! -w "${doc}.htx"; then
+            echo >&2 \
+            "${HTX_SCRIPT}: cannot update index for document \"${base}\" \
+- no write access to directory ${doc}.htx"
+         else
+            echo "Updating index file for document: ${base}"
+            ${HTX_DIR}/creindex "${doc}" >"${doc}.htx/htx.index"
+            modes=`ls -dl "${doc}.htx" | \
+                      sed -e 's%^.\(..\).\(..\).\(..\)..*%u=\1 g=\2 o=\3%' \
+                          -e 's%-%%'g`
+            for mode in ${modes}; do
+               chmod "${mode}" "${doc}.htx/htx.index"
+            done
+            touch "${doc}.htx/htx.index"
+         fi
+      done

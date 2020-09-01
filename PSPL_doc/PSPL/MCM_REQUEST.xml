@@ -1,0 +1,24 @@
+# FE - FRONT END
+# SN - SENTINEL SYSTEM
+# BE - ANALOG BACKEND 
+# CB - COMMON BOX
+# FE - FRONT END BOX
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MCM_Module>
+      <TIMESTAMP>1283928575000</TIMESTAMP>
+      <COMMAND>
+            <ID> FE / SN / BE </ID>
+            <DATA> SET XXXX </DATA>
+      </COMMAND>
+       <TIMESTAMP>1283928575001</TIMESTAMP>
+      <COMMAND>
+            <ID>  FE / SN / BE  </ID>
+            <DATA> MON CB OR FE BOX  / MON TEMP / MON BE PARAMMETER  </DATA>
+      </COMMAND>
+     <TIMESTAMP>1283928575002</TIMESTAMP>
+      <COMMAND>
+            <ID> FE / SN / BE  </ID>
+            <DATA>MON RAW </DATA>
+      </COMMAND>    
+</MCM_Module>

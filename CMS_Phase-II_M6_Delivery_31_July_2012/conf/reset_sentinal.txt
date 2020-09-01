@@ -1,0 +1,2 @@
+$domoncmd = command("sentinal,doMon");
+info("sent command doMon to sentinal with seq $domoncmd");

@@ -1,0 +1,35 @@
+# Wrapper layer program for 15m NCRA CMS.
+
+1. Wrapper program reads the enviornmental variables which are source by conf file and set the variable in the wrapper program, like REQ_PORT,RESP_PORT,CMS_IP,DEVICE_IP,LOGPATH etc.
+
+2. Wrapper is a TCP/IP server program which communicates with multiple clients program.
+
+3. It takes commands in a XML file from CMS client.
+
+4. After sucessfully receiving XML command file with proper <REQ_END> tag,it sends the Wrapper ACK in a XML Response file.
+
+5. It parse the XML file using libxml library.
+
+6. Stores the parsed commands in structure and put the structure in Queue.
+
+7. When the Device Client program gets connect to the Wrapper server,it retrives the command from queue and sends it to the device client program.
+
+8. After getting the commands,device client send subsystem ACK and final Response.
+
+9. Wrapper layer prepares XML Response file for both subsystem ACK and final Response.
+
+10.If CMS send DOMON,Wrapper stores the monitoring duration(scanning rate) and periodically send DOMON command to the subsystem.
+
+11. After getting monitoring response from device client,Wrapper prepares XML monitoring file and send it to CMS event port.
+
+12. If subsystem send some asynchronous events,wrapper prepares XML alarm file and sent it to CMS event port.
+
+13. If subsystem client gets killed because of abrupt power failure, Wrapper layer handles that situation properly.
+
+14. If some subsystem is not connected to the Wrapper layer,Wrapper will send ACK to the CMS that particular subsystem is not connected.
+
+15. If subsystem doesn't respond within 15 sec,wrapper will prepare XML TIMEOUT file and send it to the CMS.
+
+16. Wrapper logs all the activity in the LOGPATH defined in the server_system_name conf file.
+
+17. Tested the Batch file execution commands, ran it continuous for three days. After analyzing logs file found out that CMS is not sending INIT command and after some 15 hrs   	Monitoring port (19999), gets closed so wrapper gets could not connect to CMS error.

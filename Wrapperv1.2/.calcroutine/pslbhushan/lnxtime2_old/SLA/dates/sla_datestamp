@@ -1,0 +1,30 @@
+Package : SLALIB
+Version : V2.4-12
+Library : V1.6
+
+Built by: star on node rlsul0
+On      : Fri May 21 16:52:58 BST 2004
+
+Machine : sun4u running SunOS Generic_112233-11 (release 5.9)
+
+make macros:
+
+   SYSTEM  : sun4_Solaris
+
+   EXPORT  : /home/rlsul0/cvsbuild/classic/export-star
+   INSTALL : /star
+   STARLINK: /star
+
+   AR_IN   : ar -r
+   BLD_SHR : f() ld -G -z text -o $1 $2; f
+   CC      : cc
+   CFLAGS  : -I/star/include -O -K PIC
+   FC      : f77
+   FFLAGS  : -O -PIC
+   LINK    : ln -s
+   RANLIB  : :
+   SHARE   : .so
+   SOURCE_VARIANT: sun4_Solaris
+   TAR_IN  : tar -cvhf
+   TAR_OUT : tar -xf
+
